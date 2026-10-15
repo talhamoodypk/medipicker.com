@@ -6,7 +6,7 @@ Static websites for **medipicker.com** and its product review subdomains.
 |---|---|---|
 | `medipicker.com/` | https://medipicker.com | Main site: product directory (119 products), `/blog/` with a review page per product |
 | `trimology/` | https://trimology.medipicker.com | In-depth Trimology review |
-| `gelatinesculpt/` | https://gelatinesculpt.medipicker.com | In-depth Gelatine Sculpt review |
+| `gelatinesculpt.medipicker.com/` | https://gelatinesculpt.medipicker.com | In-depth Gelatine Sculpt review (live: Pages project `gelatinesculpt`, deployed with wrangler) |
 | `regenvive/` | https://regenvive.medipicker.com | In-depth RegenVive review |
 | `first-version/` | — | Original NuraVive design (not published) |
 | `_build/` | — | Product list and scripts that generate `medipicker.com/` (not published) |
@@ -25,7 +25,7 @@ Each website is its own Cloudflare Pages project pointing at this repo.
 | Project | Build output directory | Custom domain |
 |---|---|---|
 | trimology | `trimology` | `trimology.medipicker.com` |
-| gelatinesculpt | `gelatinesculpt` | `gelatinesculpt.medipicker.com` |
+| gelatinesculpt | `gelatinesculpt.medipicker.com` | `gelatinesculpt.medipicker.com` (done) |
 | regenvive | `regenvive` | `regenvive.medipicker.com` |
 
 Every push to the `Medipicker` branch redeploys automatically.
