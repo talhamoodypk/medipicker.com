@@ -43,12 +43,12 @@ What helps it rank on Bing, and what we did about each:
 
 | Factor | trimologee.com | Our page |
 |---|---|---|
-| Domain | Near exact-match domain (trimologee.com) | Keyword subdomain: trimology.medipure.com |
+| Domain | Near exact-match domain (trimologee.com) | Keyword subdomain: trimology.medipicker.com |
 | Length | ~3,000 words, one long page | ~3,570 words, one long page |
 | Brand mentions | "trimology" 73× (~2.4%) | "trimology" 99× (~2.8%) — not stuffed |
 | "trimology supplement" | 1× | 19× (title, H1, H2s, alt text) |
 | "buy trimology" | 0× | 30× (H2s, buttons, alt text) |
-| Title | "Trimology \|Gut-based support" (short) | "Trimology Supplement Review 2026: Where to Buy Trimology \| MediPure" |
+| Title | "Trimology \|Gut-based support" (short) | "Trimology Supplement Review 2026: Where to Buy Trimology \| MediPicker" |
 | Headings | 1 H1, then H3s only (no H2) | 1 H1, 16 H2s, H3s — correct order |
 | Section topics | Why choose, reviews, what is, how it works, science, ingredients, benefits, how to use, guarantee, FAQ | All of these (except fake reviews) + who it's for, side effects, pros/cons, comparison table, before you buy, price, where to buy |
 | Images | 14 images, all alt="Trimology" | 5 images with descriptive keyword alt text + 1200×630 social image |
@@ -60,9 +60,9 @@ What helps it rank on Bing, and what we did about each:
 
 ## After you go live
 
-1. Add `trimology.medipure.com` in Bing Webmaster Tools and paste its code into the `msvalidate.01` meta tag.
-2. Submit `https://trimology.medipure.com/sitemap.xml`.
+1. Add `trimology.medipicker.com` in Bing Webmaster Tools and paste its code into the `msvalidate.01` meta tag.
+2. Submit `https://trimology.medipicker.com/sitemap.xml`.
 3. Submit the URL with URL Submission, or ping IndexNow (key file `a8180ab04ca40c008b994fb49b5a7d85.txt` is already in the site root):
-   `https://www.bing.com/indexnow?url=https://trimology.medipure.com/&key=a8180ab04ca40c008b994fb49b5a7d85`
+   `https://www.bing.com/indexnow?url=https://trimology.medipicker.com/&key=a8180ab04ca40c008b994fb49b5a7d85`
    Ping it again every time you update the page.
-4. Link to the subdomain from the MediPure main site.
+4. Link to the subdomain from the MediPicker main site.

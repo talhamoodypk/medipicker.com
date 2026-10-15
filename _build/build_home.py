@@ -1,4 +1,4 @@
-"""Build the MediPure home page (index.html at the repo root) from products.tsv.
+"""Build the MediPicker home page (index.html at the repo root) from products.tsv.
 
 Run:  py -I -X utf8 _build/build_home.py
 Edit products.tsv (name<TAB>link) to add products; the first link for each product wins.
@@ -58,8 +58,8 @@ CAT_ICON = {  # simple stroke icons (24x24)
   "General Wellness": '<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
 }
 REVIEWS = {  # products that have a full review site
-  "trimology": "https://trimology.medipure.com/",
-  "gelatine sculpt": "https://gelatinesculpt.medipure.com/",
+  "trimology": "https://trimology.medipicker.com/",
+  "gelatine sculpt": "https://gelatinesculpt.medipicker.com/",
 }
 
 
@@ -141,17 +141,17 @@ def build():
     item_list = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "MediPure Health Product Directory",
+        "name": "MediPicker Health Product Directory",
         "numberOfItems": len(items_sorted),
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"]} for i, p in enumerate(items_sorted)],
     }
     site_ld = {
         "@context": "https://schema.org",
         "@graph": [
-            {"@type": "Organization", "@id": "https://medipure.com/#org", "name": "MediPure", "url": "https://medipure.com/",
-             "logo": "https://medipure.com/favicon.svg"},
-            {"@type": "WebSite", "@id": "https://medipure.com/#website", "url": "https://medipure.com/", "name": "MediPure",
-             "publisher": {"@id": "https://medipure.com/#org"}, "inLanguage": "en-US"},
+            {"@type": "Organization", "@id": "https://medipicker.com/#org", "name": "MediPicker", "url": "https://medipicker.com/",
+             "logo": "https://medipicker.com/favicon.svg"},
+            {"@type": "WebSite", "@id": "https://medipicker.com/#website", "url": "https://medipicker.com/", "name": "MediPicker",
+             "publisher": {"@id": "https://medipicker.com/#org"}, "inLanguage": "en-US"},
         ],
     }
 
@@ -170,4 +170,6 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    # The full site (home + blog) is now built by build_site.py
+    import build_site
+    build_site.main()

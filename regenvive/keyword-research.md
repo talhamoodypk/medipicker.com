@@ -44,10 +44,10 @@ For "regenvive scam" the results are all review sites, which is why the page ans
 
 ## After you go live (needed for ranking — keywords alone are not enough)
 
-1. Add `regenvive.medipure.com` as a site in Bing Webmaster Tools and paste the verification code into
+1. Add `regenvive.medipicker.com` as a site in Bing Webmaster Tools and paste the verification code into
    the `msvalidate.01` meta tag in `index.html`.
-2. Submit `https://regenvive.medipure.com/sitemap.xml` under Sitemaps.
+2. Submit `https://regenvive.medipicker.com/sitemap.xml` under Sitemaps.
 3. Submit the URL with URL Submission / IndexNow so Bing crawls it fast.
-4. Build a few real links: link to the subdomain from the MediPure main site's navigation and a relevant article.
+4. Build a few real links: link to the subdomain from the MediPicker main site's navigation and a relevant article.
 5. Update the page (price, date) every month or two; Bing favours fresh review pages.
 6. Check "Search Performance" after 2–4 weeks and add sections for any new queries that show up.

@@ -4,9 +4,9 @@ Source: Bing Webmaster Tools → Keyword Research (site: agentrixa.com; numbers 
 Period: 14 Jul 2026 – 11 Oct 2026 (3 months). Pulled 15 Oct 2026.
 Rule: only keywords Bing shows with search volume are targeted.
 
-Subdomain: **gelatinesculpt.medipure.com** (matches the one-word keyword "gelatinesculpt", 738 searches)
+Subdomain: **gelatinesculpt.medipicker.com** (matches the one-word keyword "gelatinesculpt", 738 searches)
 Official vendor site: https://gelatinesculpt.com/
-Affiliate link: **not provided yet** — buy buttons currently point to https://gelatinesculpt.com/ (12 links).
+Affiliate link: https://mwebtrackwise.com/12163/2843/7/? (on all 12 buy buttons).
 
 ## Product keywords with Bing search volume
 
@@ -55,9 +55,9 @@ geltine sculpt; bariatric jelly; gelatin for weight loss. No question or newly d
 
 ## After you go live
 
-1. Replace `https://gelatinesculpt.com/` with your affiliate link (12 places in index.html).
-2. Add `gelatinesculpt.medipure.com` in Bing Webmaster Tools; paste its code into the `msvalidate.01` meta tag.
-3. Submit `https://gelatinesculpt.medipure.com/sitemap.xml`.
+1. Affiliate link is already on all 12 buy buttons.
+2. Add `gelatinesculpt.medipicker.com` in Bing Webmaster Tools; paste its code into the `msvalidate.01` meta tag.
+3. Submit `https://gelatinesculpt.medipicker.com/sitemap.xml`.
 4. Ping IndexNow (key file `bea36d6936b03e1a05ab4485419a2b29.txt` is in the site root):
-   `https://www.bing.com/indexnow?url=https://gelatinesculpt.medipure.com/&key=bea36d6936b03e1a05ab4485419a2b29`
-5. Link to the subdomain from the MediPure main site.
+   `https://www.bing.com/indexnow?url=https://gelatinesculpt.medipicker.com/&key=bea36d6936b03e1a05ab4485419a2b29`
+5. Link to the subdomain from the MediPicker main site.

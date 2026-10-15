@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://regenvive.medipure.com/sitemap.xml
+Sitemap: https://regenvive.medipicker.com/sitemap.xml

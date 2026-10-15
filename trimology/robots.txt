@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trimology.medipure.com/sitemap.xml
+Sitemap: https://trimology.medipicker.com/sitemap.xml
