@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://regenvive.medipure.com/sitemap.xml
