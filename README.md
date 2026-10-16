@@ -6,7 +6,7 @@ Static websites for **medipicker.com** and its product review subdomains.
 |---|---|---|
 | `medipicker.com/` | https://medipicker.com | Main site: product directory (119 products), `/blog/` with a review page per product |
 | `trimology/` | https://trimology.medipicker.com | In-depth Trimology review |
-| `gelatinesculpt.medipicker.com/` | https://gelatinesculpt.medipicker.com | In-depth Gelatine Sculpt review (live: Pages project `gelatinesculpt`, deployed with wrangler) |
+| `gelatinesculpt.medipicker.com/` | https://gelatinesculpt.medipicker.com | In-depth Gelatine Sculpt review (live: branch `gelatinesculpt.medipicker.com` → Pages project `gelatinesculpt-medipicker`) |
 | `regenvive/` | https://regenvive.medipicker.com | In-depth RegenVive review |
 | `first-version/` | — | Original NuraVive design (not published) |
 | `_build/` | — | Product list and scripts that generate `medipicker.com/` (not published) |
@@ -17,7 +17,7 @@ Each website is its own Cloudflare Pages project pointing at this repo.
 
 **Main site (medipicker.com)**
 1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Pick the repo `rommeoromi327/Medipicker`, branch **Medipicker**.
+2. Pick the repo `talhamoodypk/medipicker.com`, branch **medipicker.com**.
 3. Build settings: Framework preset **None**, Build command **(leave empty)**, Build output directory **`medipicker.com`**.
 4. Save and Deploy, then **Custom domains → Set up a custom domain → `medipicker.com`** (and `www.medipicker.com` if you like).
 
@@ -28,7 +28,7 @@ Each website is its own Cloudflare Pages project pointing at this repo.
 | gelatinesculpt | `gelatinesculpt.medipicker.com` | `gelatinesculpt.medipicker.com` (done) |
 | regenvive | `regenvive` | `regenvive.medipicker.com` |
 
-Every push to the `Medipicker` branch redeploys automatically.
+Each product has its own branch named after its subdomain (e.g. `gelatinesculpt.medipicker.com`) and its own Pages project with that folder as root directory. Pushing to a branch redeploys that site. `*.pages.dev` addresses redirect to the real domain (`functions/_middleware.js`).
 
 ## After publishing (Bing)
 1. Add each site in Bing Webmaster Tools and paste its code into the `msvalidate.01` meta tag of that site's `index.html`
