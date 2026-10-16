@@ -134,6 +134,42 @@ for f, (t, d, b) in pages.items():
     io.open(os.path.join(folder, f), "w", encoding="utf-8", newline="\n").write(
         HEAD.format(title=t, desc=d, url=url, file=f, site=site, logo=logo, product=P, body=b.strip("\n")))
 
+# Contact email on every page + privacy contact section
+CONTACT = "info@medipicker.com"
+for f in ["index.html", "privacy-policy.html", "disclaimer.html", "terms.html"]:
+    fp = os.path.join(folder, f)
+    t = io.open(fp, encoding="utf-8").read()
+    if CONTACT not in t:
+        line = f'    <p class="copyright">Contact: <a href="mailto:{CONTACT}" style="color:inherit">{CONTACT}</a></p>'
+        t = re.sub(r'(\s*<p class="copyright">)', "\n" + line + r"\1", t, count=1)
+    if f == "privacy-policy.html" and "<h2>Contact</h2>" not in t:
+        t = t.replace("      <h2>Changes</h2>", f'      <h2>Contact</h2>\n      <p>Questions about this website? Email us at <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>\n      <h2>Changes</h2>', 1)
+    io.open(fp, "w", encoding="utf-8", newline="\n").write(t)
+
+# Remove the placeholder Bing tag (verification is done with a CNAME record)
+t = io.open(p, encoding="utf-8").read()
+t = t.replace("  <!-- Paste your Bing Webmaster Tools verification code here -->\n", "")
+t = t.replace('  <meta name="msvalidate.01" content="REPLACE_WITH_BING_CODE">\n', "")
+io.open(p, "w", encoding="utf-8", newline="\n").write(t)
+
+# Redirect the *.pages.dev preview address to the real subdomain
+os.makedirs(os.path.join(folder, "functions"), exist_ok=True)
+io.open(os.path.join(folder, "functions", "_middleware.js"), "w", encoding="utf-8", newline="\n").write(
+f'''// Send visitors on the *.pages.dev preview address to the real subdomain.
+const HOST = "{host}";
+
+export async function onRequest(context) {{
+  const url = new URL(context.request.url);
+  if (url.hostname.endsWith(".pages.dev")) {{
+    url.hostname = HOST;
+    url.protocol = "https:";
+    url.port = "";
+    return Response.redirect(url.toString(), 301);
+  }}
+  return context.next();
+}}
+''')
+
 # Report anything left over
 for f in os.listdir(folder):
     if f.endswith((".html", ".xml", ".txt", ".js", ".css")):
