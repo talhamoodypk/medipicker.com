@@ -185,6 +185,7 @@ FULL_REVIEWS = {
   "gelatine sculpt": "https://gelatinesculpt.medipicker.com/",
   "cellucare": "https://cellucare.medipicker.com/",
   "alphafuel pro": "https://alphafuelpro.medipicker.com/",
+  "gluco armor": "https://glucoarmor.medipicker.com/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed

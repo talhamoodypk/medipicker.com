@@ -64,7 +64,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 
 /* Featured reviews */
 .featured { padding: 64px 0; }
-.review-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 @media (max-width: 1100px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
 .review-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-top: 6px solid var(--green); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
 .review-card h3 { font-size: 22px; }
