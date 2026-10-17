@@ -1,0 +1,4 @@
+# ProstaPeak – Bing keywords & notes (18 Oct 2026)
+Subdomain https://prostapeak.medipicker.com/ · link https://mwebtrackwise.com/11201/4383/3/? · vendor prostapeak.com · 60 caps/30 days · $79/$69/$49 · 180-day guarantee · label not published (named: saw palmetto, pygeum, green tea, raspberry, cat's claw, soursop).
+Keywords: prostapeak 5.1K, prosta peak 4K, prosta peak buy 684, prosta peak price 612, prosta peak order 589, prostapeak supplement 547, prosta peak official website 473, prostapeak order 469, prostapeak official 445, prostapeak sale 444, prostapeak official website 436, prostapeak price 424, prostapeak buy 421, prosta peak supplement 388, prosta peak sale 383, prostapeak reviews 212.
+Competitors: prostapeak.mediprimes.com (#1, ~1,990 words; blue #2e5693 + yellow #ffe145, Jost — design ref), prostapeak.deliverycaviar.com (~2,540). Ours ~3,200 words, 22 H2.

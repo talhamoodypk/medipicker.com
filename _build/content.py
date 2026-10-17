@@ -190,6 +190,10 @@ FULL_REVIEWS = {
   "visiflora": "https://visiflora.medipicker.com/",
   "flashburn": "https://flashburn.medipicker.com/",
   "dentavive": "https://dentavive.medipicker.com/",
+  "prostapeak": "https://prostapeak.medipicker.com/",
+  "sugarmute": "https://sugarmute.medipicker.com/",
+  "glycomute": "https://glycomute.medipicker.com/",
+  "titan transform": "https://titantransform.medipicker.com/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed
