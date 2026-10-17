@@ -10,7 +10,7 @@ HEAD = '''<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | MediPicker</title>
   <meta name="description" content="{desc}">
-  <link rel="canonical" href="https://medipicker.com/{file}">
+  <link rel="canonical" href="https://medipicker.com/{page}">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +38,9 @@ HEAD = '''<!doctype html>
   <div class="container">
     <nav class="footer-links" aria-label="Footer">
       <a href="index.html">Home</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="terms">Terms</a>
+      <a href="disclaimer">Disclaimer</a>
     </nav>
     <p class="copyright" style="margin-top:16px">&copy; 2026 MediPicker. All rights reserved.</p>
   </div>
@@ -88,11 +88,11 @@ PAGES = {
 }
 
 for f, (t, d, b) in PAGES.items():
-    io.open(os.path.join(ROOT, f), "w", encoding="utf-8", newline="\n").write(HEAD.format(title=t, desc=d, file=f, body=b.strip("\n")))
+    io.open(os.path.join(ROOT, f), "w", encoding="utf-8", newline="\n").write(HEAD.format(title=t, desc=d, file=f, page=f[:-5], body=b.strip("\n")))
 
 io.open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8", newline="\n").write(
     "User-agent: *\nAllow: /\nDisallow: /_build/\n\nSitemap: https://medipicker.com/sitemap.xml\n")
-urls = ["", "privacy-policy.html", "terms.html", "disclaimer.html"]
+urls = ["", "privacy-policy", "terms", "disclaimer"]
 io.open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f"  <url>\n    <loc>https://medipicker.com/{u}</loc>\n    <lastmod>2026-10-15</lastmod>\n  </url>\n" for u in urls)

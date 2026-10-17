@@ -53,7 +53,7 @@ HEAD = '''<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | {site}</title>
   <meta name="description" content="{desc}">
-  <link rel="canonical" href="{url}{file}">
+  <link rel="canonical" href="{url}{page}">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,9 +82,9 @@ HEAD = '''<!doctype html>
   <div class="container">
     <nav class="footer-links" aria-label="Footer">
       <a href="/">{product} Review</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="disclaimer">Disclaimer</a>
+      <a href="terms">Terms &amp; Conditions</a>
     </nav>
     <p class="copyright">&copy; 2026 {site}. All rights reserved.</p>
   </div>
@@ -132,7 +132,7 @@ pages = {
 }
 for f, (t, d, b) in pages.items():
     io.open(os.path.join(folder, f), "w", encoding="utf-8", newline="\n").write(
-        HEAD.format(title=t, desc=d, url=url, file=f, site=site, logo=logo, product=P, body=b.strip("\n")))
+        HEAD.format(title=t, desc=d, url=url, file=f, page=f[:-5], site=site, logo=logo, product=P, body=b.strip("\n")))
 
 # Contact email on every page + privacy contact section
 CONTACT = "info@medipicker.com"
@@ -144,6 +144,13 @@ for f in ["index.html", "privacy-policy.html", "disclaimer.html", "terms.html"]:
         t = re.sub(r'(\s*<p class="copyright">)', "\n" + line + r"\1", t, count=1)
     if f == "privacy-policy.html" and "<h2>Contact</h2>" not in t:
         t = t.replace("      <h2>Changes</h2>", f'      <h2>Contact</h2>\n      <p>Questions about this website? Email us at <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>\n      <h2>Changes</h2>', 1)
+    io.open(fp, "w", encoding="utf-8", newline="\n").write(t)
+
+# Link to the clean legal URLs everywhere (Cloudflare Pages 308-redirects *.html)
+for f in ["index.html", "privacy-policy.html", "disclaimer.html", "terms.html"]:
+    fp = os.path.join(folder, f)
+    t = io.open(fp, encoding="utf-8").read()
+    t = re.sub(r'href="(privacy-policy|disclaimer|terms)\.html"', r'href="\1"', t)
     io.open(fp, "w", encoding="utf-8", newline="\n").write(t)
 
 # Remove the placeholder Bing tag (verification is done with a CNAME record)

@@ -126,9 +126,9 @@ FOOT = """<footer class="site-footer">
       <nav class="footer-links" aria-label="Footer">
         <a href="{root}blog/">Reviews</a>
         <a href="{root}#products">All Products</a>
-        <a href="{root}privacy-policy.html">Privacy Policy</a>
-        <a href="{root}terms.html">Terms</a>
-        <a href="{root}disclaimer.html">Disclaimer</a>
+        <a href="{root}privacy-policy">Privacy Policy</a>
+        <a href="{root}terms">Terms</a>
+        <a href="{root}disclaimer">Disclaimer</a>
       </nav>
     </div>
     <p class="disclaimer">We may earn a commission when you buy through links on this site, at no extra cost to you.</p>
@@ -404,7 +404,7 @@ def main():
     for p in items:
         write(os.path.join(SITE, "blog", p["slug"], "index.html"), product_page(p, by_cat))
 
-    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items] + ["/privacy-policy.html", "/terms.html", "/disclaimer.html"]
+    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items] + ["/privacy-policy", "/terms", "/disclaimer"]
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
