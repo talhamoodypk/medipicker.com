@@ -187,6 +187,9 @@ FULL_REVIEWS = {
   "alphafuel pro": "https://alphafuelpro.medipicker.com/",
   "gluco armor": "https://glucoarmor.medipicker.com/",
   "nervealive": "https://nervealive.medipicker.com/",
+  "visiflora": "https://visiflora.medipicker.com/",
+  "flashburn": "https://flashburn.medipicker.com/",
+  "dentavive": "https://dentavive.medipicker.com/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed

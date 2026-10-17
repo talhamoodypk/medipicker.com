@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dentavive.medipicker.com/sitemap.xml
