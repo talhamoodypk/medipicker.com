@@ -194,6 +194,11 @@ FULL_REVIEWS = {
   "sugarmute": "https://sugarmute.medipicker.com/",
   "glycomute": "https://glycomute.medipicker.com/",
   "titan transform": "https://titantransform.medipicker.com/",
+  "whispeara": "https://whispeara.medipicker.com/",
+  "seroburn": "https://seroburn.medipicker.com/",
+  "neuro serge": "https://neuroserge.medipicker.com/",
+  "slim boost tea": "https://slimboosttea.medipicker.com/",
+  "biodentex": "https://biodentex.medipicker.com/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed

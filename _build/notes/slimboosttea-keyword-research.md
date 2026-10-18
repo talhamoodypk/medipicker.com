@@ -1,0 +1,4 @@
+# Slim Boost Tea – Bing keywords & notes (18 Oct 2026)
+Subdomain https://slimboosttea.medipicker.com/ · link https://mwebtrackwise.com/9479/13306/2/? → tryslimboosttea.com · loose-leaf herbal tea, 1 bag = 1 month; 14 herbs: green tea, oolong, garcinia, lemongrass, dandelion leaf, Korean ginseng, SENNA LEAF (stimulant laxative), licorice root, peppermint, orange peel, ginger, fennel, monk fruit, Ceylon cinnamon + lemon/mint flavour · $59 / $49×3 ($147) / $39×6 ($234, free ship) · 60-day guarantee · 2 bonuses.
+Bing: slim boost tea ~21 (US 19); slimming tea 5.2K; slim tea 398; weight loss tea 304; slimming tea for weight loss 213; best tea for weight loss 85. NO DATA: slim boost tea reviews, slimboost tea.
+Competitor teaslimboost.com: ~2,840 words, 1.73%, no schema, green #2e9155, Jost; slim-boost-tea.com ~3,050 words.
