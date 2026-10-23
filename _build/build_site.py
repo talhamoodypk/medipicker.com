@@ -193,13 +193,13 @@ def product_page(p, by_cat):
             {"@type": "ListItem", "position": 3, "name": f"{n} Review", "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]},
     ]}
-    if p["cat"] != "Home & Lifestyle":
-        prod = {"@type": "Product", "name": n, "category": "Dietary Supplement" if p["cat"] != "Pets" else "Pet Supplement",
-                "description": f"{n} is a {c['noun']} designed to {c['purpose']}."}
-        if lo:
-            prod["offers"] = {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": str(lo), "highPrice": str(hi),
-                              "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock"}
-        ld["@graph"].append(prod)
+    # Google rejects Product markup that has no offers/review/rating, so only emit it when we know real prices.
+    if p["cat"] != "Home & Lifestyle" and lo:
+        ld["@graph"].append({
+            "@type": "Product", "name": n, "category": "Dietary Supplement" if p["cat"] != "Pets" else "Pet Supplement",
+            "description": f"{n} is a {c['noun']} designed to {c['purpose']}.",
+            "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": str(lo), "highPrice": str(hi),
+                       "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url}})
 
     facts_rows = [("Category", e(p["cat"]))]
     if f.get("form"):
@@ -214,18 +214,18 @@ def product_page(p, by_cat):
     facts_html = "\n".join(f"          <div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in facts_rows)
 
     if f.get("ingredients"):
-        ing_html = ("        <p>These ingredients are named on the official " + e(n) + " website:</p>\n        <ul class=\"ing-list\">\n"
+        ing_html = ("        <p>These ingredients are named on the official website:</p>\n        <ul class=\"ing-list\">\n"
                     + "\n".join(f"          <li>{e(nice(i))}</li>" for i in f["ingredients"])
                     + "\n        </ul>\n        <p>Exact amounts aren't always shown on the sales page, so check the supplement facts label on your bottle for the complete formula.</p>")
     else:
-        ing_html = (f"        <p>The official {e(n)} website doesn't list its full ingredients in text form. Check the product label or the official website for the complete formula and amounts before you buy, especially if you have allergies or take medication.</p>")
+        ing_html = (f"        <p>The official website doesn't list its full ingredients in text form. Check the product label or the official website for the complete formula and amounts before you buy, especially if you have allergies or take medication.</p>")
 
     if lo:
         price_p = (f"On the official website, {e(n)} costs <strong>${lo} per bottle</strong>." if lo == hi else
                    f"On the official website, {e(n)} costs between <strong>${lo} and ${hi} per bottle</strong>, depending on the package. Buying more bottles at once lowers the price per bottle, which is why multi-bottle packages are the most popular.")
     else:
-        price_p = f"Current {e(n)} prices and package options are shown on the official website. Like most products in this category, the price per unit usually drops when you buy a larger package."
-    guar_p = (f"Every order from the official website is covered by a <strong>{g}-day money-back guarantee</strong>, so you have time to try {e(n)} and request a refund if it isn't right for you." if g else
+        price_p = f"Current prices and package options are shown on the official website. Like most products in this category, the price per unit usually drops when you buy a larger package."
+    guar_p = (f"Every order from the official website is covered by a <strong>{g}-day money-back guarantee</strong>, so you have time to try it and request a refund if it isn't right for you." if g else
               f"Check the official website for {e(n)}'s refund policy before ordering.")
 
     review_callout = ""
@@ -259,7 +259,7 @@ def product_page(p, by_cat):
       <span class="rc-tag">{e(p["cat"])}</span>
       <h1>{e(n)} Review 2026: Ingredients, Price &amp; Where to Buy</h1>
       <p class="byline">By <strong>MediPicker Editorial Team</strong> &middot; Updated <time datetime="{TODAY}">{TODAY_TXT}</time></p>
-      <p class="lede"><strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this {e(n)} review we cover what it is, the ingredients named on its official website, the current {e(n)} price, its money-back guarantee and how to buy {e(n)} safely.</p>
+      <p class="lede"><strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named on its official website, the current price, the money-back guarantee and how to buy it safely.</p>
       <p>{buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg")}</p>
 
       <div class="facts-box">
@@ -273,12 +273,12 @@ def product_page(p, by_cat):
       <p>{e(n)} is a {e(c["noun"])} sold through its official website. {e(c["intro"])}</p>
 
       <h2>How Does {e(n)} Work?</h2>
-      <p>{e(c["how"])} As with any {e(c["noun"])}, results with {e(n)} vary from person to person.</p>
+      <p>{e(c["how"])} As with any {e(c["noun"])}, results vary from person to person.</p>
 {ing_section}
       <h2>{e(n)} Price &amp; Money-Back Guarantee</h2>
       <p>{price_p}</p>
       <p>{guar_p}</p>
-      <p>{buy(p, "Check the Current " + e(n) + " Price")}</p>
+      <p>{buy(p, "Check the Current Price")}</p>
 
       <h2>{safety_title}</h2>
       <ul class="check-list warn">
