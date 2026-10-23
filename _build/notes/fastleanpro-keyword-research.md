@@ -1,0 +1,3 @@
+# Fast Lean Pro – Bing keywords & notes (23 Oct 2026)
+Subdomain https://fastleanpro.medipicker.com/ · link https://mwebtrackwise.com/8255/3562/6/? → thefastleanpro.com (BuyGoods) · POWDER, 51 g jar (~30 servings), tasteless, mixed in water/tea/coffee; named: niacin, vitamin B12, chromium, Fibersol-2, "Sukre", Biogenic Polyamine Complex (page FAQ says "eleven ingredients" — mismatch; no label) · 2 jars $158 + $9.99 ship / 3 jars $207 / 6 jars $294 free ship + 3 bonuses · 180-day guarantee. Real images: tsl-flp.png, fe_6_bottle.png.
+Bing: fast lean pro 2.8K; discount 412; official website 361; buy 324; sale 256; fast lean pros 202; reviews 51. GSC: fast lean pro (11 impr, pos 27), reviews, review.

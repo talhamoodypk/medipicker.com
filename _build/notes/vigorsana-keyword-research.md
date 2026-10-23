@@ -1,0 +1,3 @@
+# VigorSana – keywords & notes (23 Oct 2026)
+Subdomain https://vigorsana.medipicker.com/ · link https://mwebtrackwise.com/12225/1134/3/? → myvigorsana.com (GERMAN-language EU offer) · 30 capsules (size 00, HPMC); per capsule: L-carnitine 150 mg, niacin 20 mg, L-citrulline 150 mg, pine bark extract 100 mg, zinc (oxide) 11 mg, maca 50 mg, saffron 5 mg · €69 + €9 ship / 3×€59=€177 / 6×€49=€294 · 60-day "empty bottle" guarantee · "Dr. Eric Wood" — site disclaimer says speakers may be fictional persons with pseudonyms. Real images: media/694128b6...(1 bottle), 694126cb...(6 bottles).
+Bing: vigorsana NO DATA (EU product). GSC: vigorsana 12 impr pos 8.5 → headings use product name only.

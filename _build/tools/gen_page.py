@@ -290,7 +290,7 @@ def build(spec_path):
          "publisher": {"@id": url + "#org"}, "mainEntityOfPage": {"@id": url + "#webpage"}, "about": {"@id": url + "#product"}, "inLanguage": "en-US"},
         {"@type": "Product", "@id": url + "#product", "name": name, "alternateName": P["alt_names"], "image": f"{url}images/{slug}-bottle.png",
          "description": P["product_desc"], "category": "Dietary Supplement",
-         "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": P["low"], "highPrice": P["high"], "offerCount": "3",
+         "offers": {"@type": "AggregateOffer", "priceCurrency": P.get("currency", "USD"), "lowPrice": P["low"], "highPrice": P["high"], "offerCount": "3",
                     "availability": "https://schema.org/InStock", "url": url + "#price"}},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in faq]},
     ]

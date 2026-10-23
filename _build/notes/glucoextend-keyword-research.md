@@ -1,0 +1,3 @@
+# Gluco Extend – Bing keywords & notes (23 Oct 2026)
+Subdomain https://glucoextend.medipicker.com/ · link https://mwebtrackwise.com/10293/2299/6/? → goglucoextend.com (ClickBank) · 30 capsules; named: bean extract, berberine, cocoa, gymnema, "leaf extract", turmeric ("11+"); no label; same reused template as Neuro Serge/BioDentex (toothpaste line, "brain health" in guarantee) · 2×$79=$158+ship / 3×$69=$207 / 6×$49=$294 · 180-day. Real images: glucoextend-01.png, -02.png.
+Bing: gluco extend 4.4K; discount 224; official website 170; glucoextend 43. GSC: gluco extend reviews (7, pos 16), gluco extend (6), supplement.
