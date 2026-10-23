@@ -126,6 +126,8 @@ FOOT = """<footer class="site-footer">
       <nav class="footer-links" aria-label="Footer">
         <a href="{root}blog/">Reviews</a>
         <a href="{root}#products">All Products</a>
+        <a href="{root}about">About</a>
+        <a href="{root}how-we-review">How We Review</a>
         <a href="{root}privacy-policy">Privacy Policy</a>
         <a href="{root}terms">Terms</a>
         <a href="{root}disclaimer">Disclaimer</a>
@@ -185,7 +187,7 @@ def product_page(p, by_cat):
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": f"{n} Review 2026: Ingredients, Price & Where to Buy", "description": desc,
          "datePublished": TODAY, "dateModified": TODAY, "mainEntityOfPage": url,
-         "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": DOMAIN + "/"},
+         "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": DOMAIN + "/about"},
          "publisher": {"@type": "Organization", "name": "MediPicker", "url": DOMAIN + "/"}, "inLanguage": "en-US"},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "MediPicker", "item": DOMAIN + "/"},
@@ -258,7 +260,7 @@ def product_page(p, by_cat):
     <article>
       <span class="rc-tag">{e(p["cat"])}</span>
       <h1>{e(n)} Review 2026: Ingredients, Price &amp; Where to Buy</h1>
-      <p class="byline">By <strong>MediPicker Editorial Team</strong> &middot; Updated <time datetime="{TODAY}">{TODAY_TXT}</time></p>
+      <p class="byline">By <a href="{root}about"><strong>MediPicker Editorial Team</strong></a> &middot; <a href="{root}how-we-review">How we review</a> &middot; Updated <time datetime="{TODAY}">{TODAY_TXT}</time></p>
       <p class="lede"><strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named on its official website, the current price, the money-back guarantee and how to buy it safely.</p>
       <p>{buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg")}</p>
 
@@ -404,7 +406,7 @@ def main():
     for p in items:
         write(os.path.join(SITE, "blog", p["slug"], "index.html"), product_page(p, by_cat))
 
-    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items] + ["/privacy-policy", "/terms", "/disclaimer"]
+    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items] + ["/about", "/how-we-review", "/privacy-policy", "/terms", "/disclaimer"]
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
