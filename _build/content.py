@@ -199,6 +199,11 @@ FULL_REVIEWS = {
   "neuro serge": "https://neuroserge.medipicker.com/",
   "slim boost tea": "https://slimboosttea.medipicker.com/",
   "biodentex": "https://biodentex.medipicker.com/",
+  "fast lean pro": "https://fastleanpro.medipicker.com/",
+  "sonovive": "https://sonovive.medipicker.com/",
+  "gluco extend": "https://glucoextend.medipicker.com/",
+  "vigorsana": "https://vigorsana.medipicker.com/",
+  "arteris plus": "https://arterisplus.medipicker.com/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed

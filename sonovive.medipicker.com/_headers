@@ -1,0 +1,3 @@
+# Keep *.pages.dev preview addresses out of search results (the homepage there also 301s to the real domain).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

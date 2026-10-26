@@ -7,8 +7,9 @@ import html, io, json, os, re, runpy, shutil, sys
 
 ROOT = r"D:\Medicne Bing"
 TEMPLATE = os.path.join(ROOT, "sugarmute.medipicker.com")
-DATE = "2026-10-18"
-DATE_TXT = "October 18, 2026"
+import datetime as _dt
+DATE = _dt.date.today().isoformat()
+DATE_TXT = _dt.date.today().strftime("%B %d, %Y").replace(" 0", " ")
 
 E = html.escape
 

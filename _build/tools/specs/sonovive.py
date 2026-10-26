@@ -109,7 +109,7 @@ S = [
     sec("brainlink", "Hearing and Brain Health: The Real Connection", prose(
         "Supplement ads often link hearing and memory, and there is a genuine connection — just not the one the ads suggest.",
         h3("Hearing loss is a major dementia risk factor"),
-        "Large reviews, including the Lancet Commission on dementia prevention, list untreated hearing loss in mid-life as one of the biggest modifiable risk factors for later cognitive decline. When the brain receives less sound, it has to work harder to understand speech, and people with hearing loss often become more socially isolated.",
+        "Large reviews, including a major report on dementia prevention published in The Lancet, list untreated hearing loss in mid-life as one of the biggest modifiable risk factors for later cognitive decline. When the brain receives less sound, it has to work harder to understand speech, and people with hearing loss often become more socially isolated.",
         h3("Treating hearing loss may help the brain"),
         "In a large randomized trial of older adults, those at higher risk who received hearing aids and audiology support showed slower cognitive decline over three years than those who only received health education. Hearing aids don't restore damaged hair cells, but they keep the brain engaged with sound and conversation.",
         h3("What this means for you"),
