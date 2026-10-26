@@ -133,7 +133,7 @@ FOOT = """<footer class="site-footer">
         <a href="{root}disclaimer">Disclaimer</a>
       </nav>
     </div>
-    <p class="disclaimer">We may earn a commission when you buy through links on this site, at no extra cost to you.</p>
+    <p class="disclaimer">MediPicker is an independent review site. We are not the maker, seller or distributor of any product listed — always buy from the official website, check the label and talk to your doctor before starting a supplement.</p>
     <p class="disclaimer">*Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. Information here is for general education and is not a substitute for advice from a qualified medical professional. Individual results may vary.</p>
     <p class="copyright">&copy; {year} MediPicker. All rights reserved.</p>
   </div>
@@ -316,6 +316,16 @@ def product_page(p, by_cat):
             + body + FOOT.format(root=root, year=YEAR))
 
 
+def review_btn(p):
+    """Outlined review button for product cards; full reviews go straight to the in-depth sub-site."""
+    arrow = '<svg class="rb-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>'
+    if p.get("full_review"):
+        star = '<svg class="rb-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>'
+        return (f'<a class="btn btn-review btn-review-full" href="{e(p["full_review"])}">{star}Full Review{arrow}'
+                f'<span class="sr-only"> of {e(p["name"])}</span></a>')
+    return f'<a class="btn btn-review" href="blog/{p["slug"]}/">Read Review{arrow}<span class="sr-only"> of {e(p["name"])}</span></a>'
+
+
 def blog_index(items, cats):
     root = "../"
     url = f"{DOMAIN}/blog/"
@@ -359,7 +369,7 @@ def home(items, cats):
         </div>
         <div class="p-actions">
           <a class="btn btn-buy" href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">Buy Now<span class="sr-only"> {e(p["name"])}</span></a>
-          <a class="link-review" href="blog/{p["slug"]}/">Read review</a>
+          {review_btn(p)}
         </div>
       </li>'''
 
