@@ -38,19 +38,17 @@
 
 Rules: only facts the seller's page states, plus well-established research. No invented prices; if prices are hidden, use price_note. Be honest about mismatches.
 
-## Done (13)
-synogut, vivogut, claritox-pro, metaglucent, brain-memory-keeper, goldalign, fitspresso, prostastream, neurozoom,
-cleansesana, triple-blood-balance, endopeak, visium-plus.
-Valiora was disabled (broken tracking link).
+## Status (5 Nov 2026): COMPLETE
+- 85 product-specific reviews are live and indexable: median 1,054 words (min 767, max 1,480), up from a 576-word median.
+- Same-category overlap: median 21% shared 8-word phrases (max 55% for products that really are the same formula), down from 53-59%.
+- Sitemap: 93 URLs (85 reviews + home, blog, about, how-we-review, contact and legal pages). Submitted to GSC (read OK) and IndexNow.
+- Kept noindex on purpose:
+  - The 23 products that have in-depth subdomain reviews (avoids two pages competing).
+  - Thin or no-data pages: fast-brain-booster, triple-collagen, triple-anti-aging-cream, fungus-elixir, vitasana-collections, sonus-complete, dentivive, ocurenew (fetch timed out).
+  - Off-topic pages: derila-ergo-pillow, certified-concealed-first.
+- Valiora disabled (broken tracking link).
 
-## Next, in priority order (GSC impressions first)
-dentasmile-pro, supranail, derma-prime-plus, ultrak9-pro, refirmance, terracalm, sonivon(?), audifort, revanail, keyslim,
-honeyburn, tinnitrol, glucoflush, primebiome, triple-liver-health; then all remaining slugs
-(`ls medipicker.com/blog`, minus the ones done).
-
-## Findings worth reusing
-- VivoGut is a thyroid-style formula sold as gut support.
-- Visium Plus is a prostate formula sold as vision support.
-- CleanseSana is the SynoGut formula with published mg amounts (glucomannan 8.5 mg).
-- MetaGlucent and EndoPeak use the same $158 / $207 / $294 package structure.
-- Claritox, SynoGut and Visium share the "$69 one-time, 60-day, FDA/GMP" letter template.
+## Daily follow-up
+- GSC Request Indexing (about 10 a day). Already requested on 5 Nov: vivogut, visium-plus, synogut, claritox-pro, goldalign, brain-memory-keeper, prostastream, neurozoom, cleansesana.
+- Next: dentasmile-pro, then the remaining sitemap URLs in order.
+- Watch GSC Performance weekly; re-check sales pages roughly monthly for price changes (re-run `fetch_sales.py` and update the batch files).
