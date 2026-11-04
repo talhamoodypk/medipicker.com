@@ -1,0 +1,47 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Simple Indian Ritual Flushes Away Nail Fungus In Seconds",
+ "claim": "Mycosyn Pro is a capsule sold to 'flush away nail fungus in seconds'. Its letter is written by an author who says they worked at a Chicago dermatology clinic, together with a research colleague.",
+ "story": "The ingredients it names (horsetail, saw palmetto, fo-ti, spirulina, biotin, folate, alfalfa and barley grass) are a typical hair-loss formula, not an antifungal one.",
+ "ingredients": [
+  "horsetail",
+  "saw palmetto",
+  "fo-ti",
+  "spirulina",
+  "vitamin c",
+  "folate",
+  "biotin",
+  "alfalfa",
+  "barley grass"
+ ],
+ "ing_note": "The letter names these ingredients 'and more'; amounts aren't disclosed.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is used up.",
+ "checks": [
+  "Nothing clears nail fungus 'in seconds'; even prescription treatment takes months while the nail grows out.",
+  "None of the ingredients has antifungal evidence for nails.",
+  "Fo-ti (He Shou Wu) has been linked to liver injury in several countries.",
+  "The author and colleague can't be verified."
+ ],
+ "pros": [
+  "One-time price with free shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Hair formula sold for nail fungus",
+  "Impossible 'in seconds' claim",
+  "Fo-ti liver risk",
+  "Unverifiable author"
+ ],
+ "verdict": "Mycosyn Pro doesn't contain anything that treats nail fungus, and fo-ti carries a liver risk. See a doctor or podiatrist for proven antifungal treatment."
+}

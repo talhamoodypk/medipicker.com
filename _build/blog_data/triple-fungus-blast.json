@@ -1,0 +1,34 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Over 1,000,000 Bottles Sold!",
+ "claim": "Triple Fungus Blast, from Triple Naturals, is a capsule sold for antifungal and antibacterial support and healthy toenails.",
+ "story": "The page uses the same '1,000,000 bottles sold' claim and layout as the company's Triple Blood Balance formula.",
+ "ingredients": [
+  "green tea",
+  "garlic",
+  "turmeric",
+  "olive leaf",
+  "pomegranate"
+ ],
+ "ing_note": "These are described as immune-supporting ingredients; amounts aren't disclosed.",
+ "packages": [],
+ "price_note": "Prices appear after choosing a package under a '55% off' banner.",
+ "checks": [
+  "None of the ingredients is an antifungal medicine or has clinical evidence against nail fungus.",
+  "Garlic compounds (ajoene) have been tested topically on skin fungus, not as capsules for nails.",
+  "The '1,000,000 bottles' claim appears identically on another product's page.",
+  "Nail fungus needs months of targeted treatment to clear."
+ ],
+ "pros": [
+  "Made by an established US supplement brand",
+  "Generally well-tolerated ingredients"
+ ],
+ "cons": [
+  "No antifungal ingredient",
+  "Recycled sales claims",
+  "No amounts",
+  "Prices hidden behind discount banners"
+ ],
+ "verdict": "Triple Fungus Blast is a general antioxidant capsule. It won't clear nail fungus. A podiatrist or doctor can confirm the infection and offer topical or oral antifungals that work."
+}

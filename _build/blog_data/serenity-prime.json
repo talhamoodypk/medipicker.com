@@ -1,0 +1,61 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "One Simple Way To Maintain A Normal Hearing",
+ "claim": "Serenity Prime is a capsule sold to support normal hearing, presented in a letter from 'Adam B. Davis' of Boston and his wife.",
+ "story": "Its ingredients (melatonin, chamomile, lemon balm, passionflower, hops, skullcap, ashwagandha, magnesium and St. John's Wort) are a typical sleep and relaxation formula, not a hearing one.",
+ "ingredients": [
+  "melatonin",
+  "chamomile",
+  "lemon balm",
+  "passionflower",
+  "hops",
+  "skullcap",
+  "ashwagandha",
+  "st. john's wort",
+  "magnesium",
+  "taurine",
+  "goji",
+  "calcium",
+  "vitamin b6"
+ ],
+ "ing_note": "The letter names these 'such as'; amounts aren't disclosed.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free shipping"
+  ],
+  [
+   3,
+   177,
+   "Free shipping"
+  ],
+  [
+   6,
+   294,
+   "Free shipping"
+  ]
+ ],
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is used up.",
+ "checks": [
+  "None of the ingredients has evidence for hearing.",
+  "A calming formula might help people sleep despite tinnitus, which is a different benefit from 'normal hearing'.",
+  "Melatonin can cause next-day drowsiness, so be careful with driving.",
+  "St. John's Wort interacts with many common medicines."
+ ],
+ "pros": [
+  "May help relaxation and sleep",
+  "Clear package prices",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Sleep formula sold for hearing",
+  "St. John's Wort interactions",
+  "Melatonin in a daily capsule",
+  "Template sales letter"
+ ],
+ "verdict": "Serenity Prime is a sleep blend marketed for hearing. If tinnitus keeps you awake, sound therapy and tinnitus-focused CBT help, and an audiologist can check your hearing. Avoid this formula if you take antidepressants, birth control or blood thinners."
+}

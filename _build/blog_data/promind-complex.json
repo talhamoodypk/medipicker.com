@@ -1,0 +1,43 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "6 Simple Memory Techniques Anyone Can Try Today",
+ "claim": "ProMind Complex is a memory capsule sold through a letter from 'Carl Henderson', introduced as a professor of psychology in Austin, Texas, who shares six memory techniques before introducing the formula.",
+ "story": "Its five named ingredients (huperzine A, ginkgo, vinpocetine, St. John's Wort and bacopa) are exactly the same as SharpEar's, which is sold for hearing.",
+ "ingredients": [
+  "huperzine a",
+  "ginkgo biloba",
+  "vinpocetine",
+  "st. john's wort",
+  "bacopa"
+ ],
+ "ing_note": "The letter names these 'and many others'; amounts aren't disclosed.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free shipping"
+  ]
+ ],
+ "price_note": "3- and 6-month packages bring the cost down to about $1.63 a day ($49 a bottle), according to the letter.",
+ "guarantee_days": 60,
+ "refund_note": "The seller offers an empty-bottle guarantee: a refund within 60 days even if all bottles are used.",
+ "checks": [
+  "Some of the memory techniques (using several senses, staying hydrated, avoiding alcohol) are reasonable.",
+  "Bacopa has modest trial evidence for memory; ginkgo didn't prevent dementia in the large GEM trial.",
+  "Vinpocetine carries an FDA warning about pregnancy, and huperzine A acts like a prescription drug.",
+  "St. John's Wort interacts with many common medicines."
+ ],
+ "pros": [
+  "Sensible memory tips",
+  "Includes bacopa",
+  "Empty-bottle guarantee"
+ ],
+ "cons": [
+  "Several ingredients with safety concerns",
+  "Same formula sold for hearing",
+  "Unverifiable professor",
+  "Amounts not disclosed"
+ ],
+ "verdict": "ProMind Complex combines one modestly useful herb (bacopa) with several that raise safety and interaction concerns. If you take antidepressants, blood thinners or birth control, or could become pregnant, avoid it. A doctor can check for treatable causes of memory problems."
+}
