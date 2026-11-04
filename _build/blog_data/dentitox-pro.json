@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "liquid drops",
+ "hook": "One Simple Way To Maintain Your Perfect Smile!",
+ "claim": "Dentitox Pro is a liquid oral-health supplement with vitamins, minerals and xylitol. Its sales letter is written by 'Marc Hall', a 54-year-old from near Charlotte, North Carolina.",
+ "ingredients": [
+  "vitamin a",
+  "vitamin c",
+  "vitamin d",
+  "vitamin k2",
+  "zinc",
+  "calcium",
+  "xylitol",
+  "collagen",
+  "msm",
+  "peppermint"
+ ],
+ "ing_note": "The letter also lists phosphorus, potassium and spearmint. Calcium is described as 'micro-encapsulated calcium (MEC)'. Amounts aren't disclosed.",
+ "packages": [],
+ "price_note": "The letter is inconsistent: it mentions '$49 per bottle' and also 'a 180-day supply for $49 per bottle'. Packages are 2 bottles (+$9.99 shipping), 2+1 bottles and 3+3 bottles with free US shipping; check the actual total at checkout.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "checks": [
+  "Vitamins C and D and calcium matter for teeth and gums, but supplements only help if you're deficient.",
+  "Xylitol helps reduce cavity bacteria when used several times a day; a daily drop may not deliver much.",
+  "The formula lacks fluoride or hydroxyapatite, the best-supported ingredients for enamel.",
+  "No study of Dentitox Pro is cited."
+ ],
+ "pros": [
+  "Reasonable nutrient choices for oral health",
+  "Contains xylitol",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Confusing pricing in the sales letter",
+  "Unlikely to help without a deficiency",
+  "No fluoride or hydroxyapatite",
+  "Amounts not disclosed"
+ ],
+ "verdict": "Dentitox Pro is essentially a vitamin drop. It won't hurt most people, but it won't replace fluoride toothpaste, flossing and dental check-ups. If your gums bleed or your teeth are sensitive, see a dentist."
+}

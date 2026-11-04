@@ -1,0 +1,44 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "NASA: This Is What We Do So Astronauts Don't Get Toenail Fungus (Do This Immediately!)",
+ "claim": "Keravita Pro is a capsule sold for toenail fungus and healthy nails and hair, with a headline linking it to NASA. The sales letter describes 'over 95,000 customers'.",
+ "story": "The Keravita Pro sales letter is word-for-word the same as the Keragenis letter, with the same '17 years of research' author and the same ingredient list (curcumin, cat's claw, garlic, quercetin, pomegranate and olive). NASA has no connection to the product.",
+ "ingredients": [
+  "turmeric",
+  "cat's claw",
+  "garlic",
+  "quercetin",
+  "pomegranate",
+  "olive leaf"
+ ],
+ "ing_note": "The letter names these ingredients 'such as'; the full label and amounts aren't shown.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free US shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller promises a full refund within 60 days even if the bottle is used up.",
+ "checks": [
+  "The NASA headline is a curiosity hook; NASA hasn't endorsed or studied this product.",
+  "None of the ingredients is an antifungal with evidence against nail fungus.",
+  "The '95,000 customers' figure can't be verified.",
+  "The same letter and formula are sold under another name (Keragenis)."
+ ],
+ "pros": [
+  "One-time price with free US shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "No antifungal ingredient",
+  "Misleading NASA headline",
+  "Duplicate of another product",
+  "Full label not shown"
+ ],
+ "verdict": "Keravita Pro is the Keragenis formula with a NASA headline. Neither will treat nail fungus. A doctor or podiatrist can confirm the diagnosis and prescribe antifungal treatments with proven cure rates."
+}

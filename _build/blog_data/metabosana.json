@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "currency": "EUR",
+ "hook": "Was wäre, wenn deutsche Forscher einen Weg gefunden haben, Ihre körpereigene GLP-1-Produktion zu aktivieren? (What if German researchers found a way to activate your own GLP-1 production?)",
+ "claim": "MetaboSana is a German-language metabolism and weight capsule that claims to activate the body's own GLP-1 production, positioning itself against weight-loss injections. It's part of the same '-Sana' product family as CleanseSana.",
+ "ingredients": [
+  "alpha lipoic acid",
+  "green tea",
+  "berberine",
+  "chromium",
+  "banaba",
+  "zinc",
+  "milk thistle",
+  "resveratrol",
+  "ginseng",
+  "cayenne"
+ ],
+ "ing_note": "MetaboSana publishes its doses per capsule: alpha-lipoic acid 75 mg, green tea EGCG 75 mg, berberine HCl 50 mg, chromium picolinate 50 mcg, banaba leaf 1 mg, zinc gluconate 5.5 mg, milk thistle 50 mg, resveratrol 20 mg, Korean ginseng 2.5 mg and cayenne 2.5 mg. Studies of berberine used 1,000–1,500 mg a day, 20–30 times more than one capsule provides.",
+ "use": "One capsule a day, according to the page.",
+ "packages": [],
+ "price_note": "MetaboSana is sold in euro packages (1, 3 or 6 units) with lower per-bottle prices on larger packages; totals appear on the order page.",
+ "guarantee_days": 60,
+ "checks": [
+  "No supplement has been shown to raise GLP-1 to anything like the levels produced by semaglutide or tirzepatide injections.",
+  "Berberine at 50 mg is far below studied doses, and banaba at 1 mg and ginseng at 2.5 mg are token amounts.",
+  "The page claims cayenne and EGCG give '340% stronger thermogenesis', which isn't a figure from human research.",
+  "Publishing doses is good practice, and it lets readers see how small they are."
+ ],
+ "pros": [
+  "Publishes exact doses",
+  "One capsule a day",
+  "Vegetarian capsule (hypromellose)"
+ ],
+ "cons": [
+  "Misleading comparison with GLP-1 injections",
+  "Most doses far below studied amounts",
+  "Exaggerated thermogenesis claims"
+ ],
+ "verdict": "MetaboSana deserves credit for transparency, but the doses it publishes show it can't do what it promises. Anyone interested in GLP-1 medicines should discuss them with a doctor, and anyone wanting berberine should know that studied doses are much higher (and interact with diabetes medicine)."
+}

@@ -1,0 +1,32 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Military Doctor Shares \"Marine Tribal Secret\"",
+ "claim": "MarineFlex Ultra is a joint supplement presented by a 'military doctor' as a 'marine tribal secret'. It's built around green-lipped mussel, a New Zealand shellfish rich in omega-3s, with boswellia, hyaluronic acid and glucosamine.",
+ "ingredients": [
+  "green lipped mussel",
+  "boswellia",
+  "hyaluronic acid",
+  "glucosamine"
+ ],
+ "ing_note": "Amounts aren't given in text. The page argues fish oil carries a risk of mercury poisoning; purified fish oil supplements are tested and generally low in mercury.",
+ "packages": [],
+ "price_note": "The page says MarineFlex Ultra 'normally retails for $149 per bottle' and then offers lower package prices on the order page. The seller recommends at least 3 bottles.",
+ "checks": [
+  "Green-lipped mussel extract has small trials suggesting modest reductions in osteoarthritis pain; quality is mixed.",
+  "Glucosamine sulfate showed small benefits in some European trials, but the large US GAIT trial found no clear benefit over placebo.",
+  "Boswellia has small trials for knee osteoarthritis pain.",
+  "'$149 per bottle' is a price anchor, not a real retail price."
+ ],
+ "pros": [
+  "Ingredients with some joint research",
+  "Combines several popular joint ingredients"
+ ],
+ "cons": [
+  "Price anchoring and scarcity tactics",
+  "Overstated fish oil scare",
+  "Shellfish source, so not for people with shellfish allergy",
+  "Amounts not disclosed"
+ ],
+ "verdict": "MarineFlex Ultra combines joint ingredients with modest evidence, wrapped in dramatic marketing. People with shellfish allergies must avoid it. Exercise, weight loss and physical therapy are the most effective long-term treatments for joint pain."
+}

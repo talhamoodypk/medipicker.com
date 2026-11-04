@@ -1,0 +1,38 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "currency": "EUR",
+ "hook": "Diabetespräparate zur Unterstützung (support for diabetes)",
+ "claim": "GlucoSana is a German-language blood sugar capsule from the '-Sana' product family. It's built around chromium picolinate, which the page says is a missing 'key' for insulin receptors, plus berberine, curcumin, gymnema, alpha-lipoic acid, magnesium and vitamin D.",
+ "story": "The page's own header refers to 'NerveSana' in places, a sign that the page was adapted from a sister product.",
+ "ingredients": [
+  "chromium",
+  "berberine",
+  "turmeric",
+  "gymnema",
+  "alpha lipoic acid",
+  "magnesium",
+  "vitamin d"
+ ],
+ "ing_note": "The page describes a 10-ingredient formula and mentions a chromium dose of 100 mcg; other amounts aren't shown in text.",
+ "packages": [],
+ "price_note": "GlucoSana is sold in euro packages at roughly €47–67 per bottle depending on the package size; totals and shipping appear on the order page.",
+ "refund_note": "The page refers to both 60- and 90-day guarantees; check which applies at checkout.",
+ "checks": [
+  "Chromium deficiency is rare, and chromium supplements have small, inconsistent effects on blood sugar.",
+  "The historical figures about German chromium intake since 1876 aren't sourced.",
+  "Berberine has real blood sugar evidence, but its dose here isn't stated.",
+  "The FAQ asks whether you can reduce or stop diabetes medication; never do that without your doctor."
+ ],
+ "pros": [
+  "Includes berberine and alpha-lipoic acid",
+  "Explains its reasoning in detail"
+ ],
+ "cons": [
+  "Overstated chromium story",
+  "Dose of key ingredients not shown",
+  "Copy-paste errors from a sister product",
+  "Unclear guarantee length"
+ ],
+ "verdict": "GlucoSana combines a few ingredients with some evidence and a lot of marketing. It can add to the effect of diabetes medicine, so monitor your blood sugar and involve your doctor. It isn't a replacement for treatment."
+}

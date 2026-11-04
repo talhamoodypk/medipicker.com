@@ -1,0 +1,35 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "currency": "EUR",
+ "hook": "Was kein Neurologe sagt: 3 Enzyme & Ihr Nervenbrennen (What no neurologist tells you: 3 enzymes and your burning nerves)",
+ "claim": "NerveSana is a German-language nerve-pain capsule from the '-Sana' product family, with alpha-lipoic acid, magnesium bisglycinate, curcuminoids and CoQ10. The page criticizes prescription nerve-pain drugs (gabapentin and pregabalin) as 'numbing you like a zombie'.",
+ "story": "It cites Ikaria research by a 'Dr. Elena Papadakis, neurologist at the University of Athens', whom we couldn't verify. It also quotes a symptom-score result (63.5% vs 38.4% placebo) that resembles published alpha-lipoic acid trials rather than a study of NerveSana.",
+ "ingredients": [
+  "alpha lipoic acid",
+  "magnesium",
+  "turmeric",
+  "coq10"
+ ],
+ "ing_note": "Magnesium is in the bisglycinate form. Amounts aren't shown in text.",
+ "packages": [],
+ "price_note": "NerveSana is sold in euro packages at roughly €47–69 per bottle depending on the package; a 3-bottle package is shown at €177. Totals appear on the order page.",
+ "refund_note": "The page refers to both 60- and 90-day guarantees; check which applies at checkout.",
+ "checks": [
+  "Alpha-lipoic acid at 600 mg a day has genuine evidence for diabetic nerve pain (the SYDNEY and ALADIN trials).",
+  "Whether NerveSana provides 600 mg isn't stated.",
+  "Discouraging prescribed medicines like gabapentin and pregabalin is risky; stopping them suddenly can cause withdrawal and seizures.",
+  "The 'raw material shortage' and 'waiting list of 247 people' are pressure tactics."
+ ],
+ "pros": [
+  "Contains alpha-lipoic acid, the best-studied supplement for nerve pain",
+  "Magnesium in a well-absorbed form"
+ ],
+ "cons": [
+  "Dose of ALA not stated",
+  "Unverifiable expert",
+  "Discourages prescribed medication",
+  "Scarcity tactics"
+ ],
+ "verdict": "NerveSana's main ingredient is a sensible choice, but its marketing is not. Don't stop prescribed nerve-pain medicines without your doctor. If you want to try alpha-lipoic acid, ask your doctor about a standard 600 mg product, especially if you have diabetes, since it can lower blood sugar."
+}

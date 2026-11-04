@@ -1,0 +1,35 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "This Deep Sea Hearing Formula Supports The Health Of Your Ears",
+ "claim": "AquaPeace is a once-a-day 'deep sea hearing formula' made from marine nutrients: algae, seaweed and astaxanthin. It's sold to support ear health and, according to testimonials, better sleep.",
+ "ingredients": [
+  "chlorella",
+  "spirulina",
+  "nori",
+  "astaxanthin"
+ ],
+ "ing_note": "The page also mentions omega oils and seaweed compounds such as fucoxanthin, fucoidan and phlorotannins in its references. Amounts aren't disclosed.",
+ "use": "One capsule a day, morning or bedtime, with or without food.",
+ "packages": [],
+ "price_note": "AquaPeace is sold as 1, 3 or 6 bottles with free shipping on every order; totals appear on the order page.",
+ "guarantee_days": 60,
+ "checks": [
+  "The hearing references are animal studies (for example a seaweed compound protecting hearing in mice); there are no human trials.",
+  "Astaxanthin and algae have small human studies for other uses (eye strain, cholesterol), not hearing.",
+  "Seaweed adds iodine, which matters for people with thyroid disease.",
+  "'Supply chains are affected' is used to push larger orders."
+ ],
+ "pros": [
+  "Simple once-daily capsule",
+  "Free shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "No human evidence for hearing",
+  "Iodine from seaweed",
+  "Amounts not disclosed",
+  "Prices hidden until checkout"
+ ],
+ "verdict": "AquaPeace is a marine-algae supplement with only mouse studies behind its hearing claims. If you have hearing loss or tinnitus, an audiologist can test your hearing and recommend proven options such as hearing aids and sound therapy."
+}
