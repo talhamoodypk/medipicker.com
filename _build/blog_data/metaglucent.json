@@ -1,0 +1,43 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Try Metaglucent with a 60-Day Money-Back Guarantee",
+ "claim": "Metaglucent is sold as a daily wellness supplement for blood sugar and metabolic support. Its order page focuses on discount packages and the guarantee rather than on the formula.",
+ "ingredients": [],
+ "ing_note": "Neither the Metaglucent order page nor the website lists the ingredients in text, so we couldn't check the formula. Ask for the supplement facts label before buying, especially if you take metformin, insulin or other glucose-lowering medicine.",
+ "packages": [
+  [
+   2,
+   158,
+   "Shipping extra"
+  ],
+  [
+   3,
+   207,
+   "Free US shipping"
+  ],
+  [
+   6,
+   294,
+   "Free shipping"
+  ]
+ ],
+ "guarantee_days": 60,
+ "refund_note": "Order support is run by a fulfilment company in Ogden, Utah (support@metaglucent.com).",
+ "checks": [
+  "No ingredients are published, so there is nothing to compare with blood sugar research.",
+  "The 'You save $780' figures are based on a list price of $179 per bottle that the product is not sold at.",
+  "No study of the product is cited."
+ ],
+ "pros": [
+  "Clear prices per package",
+  "Free shipping on 3- and 6-bottle orders",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Ingredients not disclosed",
+  "Inflated 'savings' figures",
+  "No evidence for the formula"
+ ],
+ "verdict": "With no published ingredients, Metaglucent can't be judged on its merits, and blood sugar supplements can interact with diabetes medicine. Proven steps such as diet changes, activity, weight loss and prescribed treatment matter far more. If you want a blood sugar supplement, choose one that publishes its full label."
+}

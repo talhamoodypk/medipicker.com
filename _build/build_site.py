@@ -8,12 +8,14 @@
 Run:  py -X utf8 _build/build_site.py
 Inputs: products.tsv (name<TAB>link), facts.json (from sales pages), content.py (category copy).
 """
-import html, io, json, os, re, sys
+import datetime, html, io, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from build_home import CATEGORY, CAT_ORDER, CAT_ICON, DEFAULT_CAT, load, slug  # noqa: E402
 from content import CATEGORY_COPY, OVERRIDES, FULL_REVIEWS, DISABLED  # noqa: E402
+from ingredients import ING  # noqa: E402
+BLOG_DATA = os.path.join(HERE, "blog_data")
 
 SITE = os.path.join(os.path.dirname(HERE), "medipicker.com")
 DOMAIN = "https://medipicker.com"
@@ -51,6 +53,19 @@ def products():
         p["facts"] = f
         p["slug"] = slug(p["name"].replace("(", "").replace(")", ""))
         p["full_review"] = FULL_REVIEWS.get(p["key"])
+        bd_path = os.path.join(BLOG_DATA, p["slug"] + ".json")
+        p["bd"] = json.load(io.open(bd_path, encoding="utf-8")) if os.path.exists(bd_path) else None
+        p["updated"] = (p["bd"] or {}).get("checked", TODAY)
+        if p["bd"]:
+            # hand-checked sales-page facts replace the automatic extraction
+            if p["bd"].get("packages"):
+                f["prices"] = sorted({round(t / b) for b, t, _ in p["bd"]["packages"]})
+            for k in ("guarantee_days", "form"):
+                if p["bd"].get(k):
+                    f[k] = p["bd"][k]
+            f["one_time"] = p["bd"].get("one_time", False)
+            f["free_shipping"] = (any("free" in sh.lower() for _, _, sh in p["bd"].get("packages", []))
+                                  or "free" in p["bd"].get("price_note", "").lower())
         items.append(p)
     return items
 
@@ -86,9 +101,8 @@ HEAD = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content="{desc}">
-  <meta name="keywords" content="{kws}">
   <link rel="canonical" href="{url}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="robots" content="{robots}">
   <meta property="og:type" content="{ogtype}">
   <meta property="og:site_name" content="MediPicker">
   <meta property="og:title" content="{title}">
@@ -157,7 +171,9 @@ def buy(p, label="Buy Now", cls="btn btn-buy"):
 
 def faq_items(p):
     n, c, f = p["name"], CATEGORY_COPY[p["cat"]], p["facts"]
-    qa = [(f"What is {n}?", f"{n} is a {c['noun']} designed to {c['purpose']}. It is sold through its official website.")]
+    what = (p["bd"]["claim"] if p.get("bd") else
+            f"{n} is a {c['noun']} designed to {c['purpose']}. It is sold through its official website.")
+    qa = [(f"What is {n}?", what)]
     if f.get("prices"):
         lo, hi = min(f["prices"]), max(f["prices"])
         price = (f"On the official website {n} costs ${lo} per bottle." if lo == hi else
@@ -175,19 +191,141 @@ def faq_items(p):
     return qa
 
 
+def nice_date(iso):
+    dt = datetime.date.fromisoformat(iso)
+    return f"{dt:%B} {dt.day}, {dt.year}"
+
+
+INDEX = "index, follow, max-image-preview:large, max-snippet:-1"
+
+
+def robots(p):
+    """Only product-specific (hand-checked) reviews are indexed; template pages stay out of Google until rewritten."""
+    return INDEX if p.get("bd") else "noindex, follow"
+
+
+def money(x):
+    return f"${x:,.2f}".replace(".00", "")
+
+
+def per_bottle(q):
+    """Lowest verified price per bottle for comparison tables, or None."""
+    if q.get("bd") and q["bd"].get("packages"):
+        return min(t / b for b, t, _ in q["bd"]["packages"])
+    return min(q["facts"]["prices"]) if q["facts"].get("prices") else None
+
+
+def rich(p, by_cat):
+    """Product-specific sections built from hand-checked sales-page facts (blog_data/<slug>.json)."""
+    n, d, c = e(p["name"]), p["bd"], CATEGORY_COPY[p["cat"]]
+    days = d.get("days_per_bottle", 30)
+    out = {}
+    claim = f'      <h2>What Is {n}?</h2>\n      <p>{e(d["claim"])}</p>\n'
+    if d.get("story"):
+        claim += f'      <p>{e(d["story"])}</p>\n'
+    out["what"] = claim
+
+    checks = "\n".join(f"          <li>{e(x)}</li>" for x in d.get("checks", []))
+    out["claims"] = (f'      <h2>{n} Claims vs. Evidence</h2>\n'
+                     + (f'      <p>The official website leads with this headline:</p>\n      <blockquote class="hook">&ldquo;{e(d["hook"])}&rdquo;</blockquote>\n' if d.get("hook") else "")
+                     + f'      <p>Here is how the main claims hold up against published research and the information the seller actually provides:</p>\n'
+                     + f'      <ul class="check-list">\n{checks}\n      </ul>\n') if checks else ""
+
+    ings = [i for i in d.get("ingredients", [])]
+    if ings:
+        parts = [f'      <h2>{n} Ingredients</h2>',
+                 f'      <p>The official website names {len(ings)} key ingredient{"s" if len(ings) != 1 else ""} in {n}. Here is what each one is and what research says about it.</p>']
+        for k in ings:
+            info = ING.get(k.lower())
+            name = info["name"] if info else k[:1].upper() + k[1:]
+            parts.append(f'      <h3>{e(name)}</h3>')
+            if info:
+                parts.append(f'      <p>{e(info["what"])} {e(info["evidence"])}</p>')
+        if d.get("ing_note"):
+            parts.append(f'      <p>{e(d["ing_note"])}</p>')
+        out["ingredients"] = "\n".join(parts) + "\n"
+    else:
+        out["ingredients"] = (f'      <h2>{n} Ingredients</h2>\n      <p>{e(d.get("ing_note") or "The official website does not list the ingredients in text form. Ask the seller for the supplement facts label before you buy, especially if you have allergies or take medication.")}</p>\n')
+
+    if d.get("use"):
+        out["use"] = f'      <h2>How to Take {n}</h2>\n      <p>{e(d["use"])}</p>\n'
+
+    rows = []
+    for b, t, ship in sorted(d.get("packages", []), key=lambda r: r[0]):
+        rows.append(f"            <tr><td>{b} bottle{'s' if b > 1 else ''}</td><td>{b * days} days</td><td>{money(t)}</td>"
+                    f"<td>{money(t / b)}</td><td>{money(t / (b * days))}</td><td>{e(ship)}</td></tr>")
+    price = [f'      <h2>{n} Price &amp; Money-Back Guarantee</h2>']
+    if rows:
+        price.append(f'      <p>These are the packages shown on the official {n} order page when we checked it. The cost per day assumes one bottle lasts {days} days, as the seller states.</p>')
+        price.append('      <div class="table-wrap"><table class="price-table">\n          <thead><tr><th>Package</th><th>Supply</th><th>Total</th><th>Per bottle</th><th>Per day</th><th>Shipping</th></tr></thead>\n          <tbody>\n'
+                     + "\n".join(rows) + '\n          </tbody>\n        </table></div>')
+    if d.get("price_note"):
+        price.append(f'      <p>{e(d["price_note"])}</p>')
+    elif not rows:
+        price.append(f'      <p>The official website doesn\'t show {n} prices until you reach the order page, so check the current packages there before you buy.</p>')
+    g = d.get("guarantee_days")
+    if g:
+        price.append(f'      <p>Orders from the official website come with a <strong>{g}-day money-back guarantee</strong>. {e(d.get("refund_note", ""))}</p>')
+    if d.get("one_time"):
+        price.append('      <p>Billing is a one-time payment &mdash; the seller states there is no subscription or automatic rebilling.</p>')
+    if d.get("bonuses"):
+        price.append(f'      <p>Larger packages come with these free bonus guides:</p>\n      <ul>\n' + "\n".join(f"        <li>{e(x)}</li>" for x in d["bonuses"]) + "\n      </ul>")
+    out["price"] = "\n".join(price) + "\n"
+
+    if d.get("pros") or d.get("cons"):
+        out["proscons"] = (f'      <h2>{n} Pros and Cons</h2>\n      <div class="pros-cons">\n        <div><h3>Pros</h3>\n        <ul class="check-list">\n'
+                           + "\n".join(f"          <li>{e(x)}</li>" for x in d.get("pros", []))
+                           + '\n        </ul></div>\n        <div><h3>Cons</h3>\n        <ul class="check-list warn">\n'
+                           + "\n".join(f"          <li>{e(x)}</li>" for x in d.get("cons", []))
+                           + "\n        </ul></div>\n      </div>\n")
+
+    extra_safety = []
+    for k in ings:
+        info = ING.get(k.lower())
+        if info and info.get("safety") and info["safety"] not in extra_safety:
+            extra_safety.append(info["safety"])
+    out["safety_extra"] = extra_safety
+
+    peers = [q for q in by_cat[p["cat"]] if q is not p and per_bottle(q)]
+    peers = sorted(peers, key=lambda q: (q.get("bd") is None, q["name"]))[:4]
+    if peers and per_bottle(p):
+        def row(q, me=False):
+            g2 = (q.get("bd") or {}).get("guarantee_days") or q["facts"].get("guarantee_days")
+            name = e(q["name"]) if me else f'<a href="../{q["slug"]}/">{e(q["name"])}</a>'
+            return f"            <tr{' class=\"me\"' if me else ''}><td>{name}</td><td>From {money(per_bottle(q))}</td><td>{str(g2) + ' days' if g2 else '&ndash;'}</td></tr>"
+        out["compare"] = (f'      <h2>{n} vs. Similar {e(p["cat"])} Products</h2>\n'
+                          f'      <p>How {n} compares on price and refund window with other {e(c["noun"])}s we have reviewed:</p>\n'
+                          '      <div class="table-wrap"><table class="price-table">\n          <thead><tr><th>Product</th><th>Price per bottle</th><th>Guarantee</th></tr></thead>\n          <tbody>\n'
+                          + row(p, True) + "\n" + "\n".join(row(q) for q in peers) + '\n          </tbody>\n        </table></div>\n')
+    out["verdict"] = f'      <h2>Our Verdict on {n}</h2>\n      <p>{e(d["verdict"])}</p>\n' if d.get("verdict") else ""
+    return out
+
+
 def product_page(p, by_cat):
     n, c, f = p["name"], CATEGORY_COPY[p["cat"]], p["facts"]
     root = "../../"
     url = f"{DOMAIN}/blog/{p['slug']}/"
     title, desc, kws = seo(p)
     faqs = faq_items(p)
+    R = rich(p, by_cat) if p["bd"] else {}
+    if p["bd"]:
+        d = p["bd"]
+        if d.get("use"):
+            faqs.insert(1, (f"How do you take {n}?", d["use"]))
+        if d.get("packages"):
+            days = d.get("days_per_bottle", 30)
+            six = any(b == 6 for b, _, _ in d["packages"])
+            faqs.insert(2, (f"How long does one bottle of {n} last?",
+                            f"According to the official website, one bottle is a {days}-day supply"
+                            + (f", so the 6-bottle package lasts about {6 * days // 30} months." if six else ".")))
+        faqs += [tuple(x) for x in d.get("faqs", [])]
     lo = min(f["prices"]) if f.get("prices") else None
     hi = max(f["prices"]) if f.get("prices") else None
     g = f.get("guarantee_days")
 
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": f"{n} Review 2026: Ingredients, Price & Where to Buy", "description": desc,
-         "datePublished": TODAY, "dateModified": TODAY, "mainEntityOfPage": url,
+         "datePublished": TODAY, "dateModified": p["updated"], "mainEntityOfPage": url,
          "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": DOMAIN + "/about"},
          "publisher": {"@type": "Organization", "name": "MediPicker", "url": DOMAIN + "/"}, "inLanguage": "en-US"},
         {"@type": "BreadcrumbList", "itemListElement": [
@@ -245,7 +383,7 @@ def product_page(p, by_cat):
                         + "\n".join(f'          <li><a href="../{q["slug"]}/">{e(q["name"])} Review</a></li>' for q in related)
                         + "\n        </ul>\n      </section>\n")
 
-    safety_html = "\n".join(f"          <li>{e(s)}</li>" for s in c["safety"])
+    safety_html = "\n".join(f"          <li>{e(s)}</li>" for s in list(c["safety"]) + R.get("safety_extra", []))
     fit_html = "\n".join(f"          <li>{e(s)}</li>" for s in c["fit"])
     faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faqs)
 
@@ -253,6 +391,30 @@ def product_page(p, by_cat):
       <h2>{e(n)} Ingredients</h2>
 {ing_html}
 '''
+    if R:
+        ing_section = R["ingredients"] + R.get("use", "")
+    what_default = f'''      <h2>What Is {e(n)}?</h2>
+      <p>{e(n)} is a {e(c["noun"])} sold through its official website. {e(c["intro"])}</p>
+'''
+    price_default = f'''      <h2>{e(n)} Price &amp; Money-Back Guarantee</h2>
+      <p>{price_p}</p>
+      <p>{guar_p}</p>
+'''
+    how_default = f'''      <h2>How Does {e(n)} Work?</h2>
+      <p>{e(c["how"])} As with any {e(c["noun"])}, results vary from person to person.</p>
+'''
+    fit_default = f'''      <h2>Who Is {e(n)} For?</h2>
+      <ul class="check-list">
+{fit_html}
+      </ul>
+
+'''
+    if R:
+        lede = (f'{e(p["bd"]["claim"].split(". ")[0].rstrip("."))}. We checked the official {e(n)} website for the ingredients, dosage, '
+                f'prices and refund terms, compared the claims with published research and list the safety points to know before you buy.')
+    else:
+        lede = (f'<strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named '
+                f'on its official website, the current price, the money-back guarantee and how to buy it safely.')
     safety_title = "Things to Know Before You Buy" if p["cat"] == "Home & Lifestyle" else f"Is {e(n)} Safe? Side Effects to Know"
 
     body = f'''<main id="main" class="post">
@@ -261,8 +423,8 @@ def product_page(p, by_cat):
     <article>
       <span class="rc-tag">{e(p["cat"])}</span>
       <h1>{e(n)} Review 2026: Ingredients, Price &amp; Where to Buy</h1>
-      <p class="byline">By <a href="{root}about"><strong>MediPicker Editorial Team</strong></a> &middot; <a href="{root}how-we-review">How we review</a> &middot; Updated <time datetime="{TODAY}">{TODAY_TXT}</time></p>
-      <p class="lede"><strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named on its official website, the current price, the money-back guarantee and how to buy it safely.</p>
+      <p class="byline">By <a href="{root}about"><strong>MediPicker Editorial Team</strong></a> &middot; <a href="{root}how-we-review">How we review</a> &middot; Updated <time datetime="{p['updated']}">{nice_date(p['updated'])}</time></p>
+      <p class="lede">{lede}</p>
       <p>{buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg")}</p>
 
       <div class="facts-box">
@@ -272,28 +434,16 @@ def product_page(p, by_cat):
         </dl>
       </div>
 
-{review_callout}      <h2>What Is {e(n)}?</h2>
-      <p>{e(n)} is a {e(c["noun"])} sold through its official website. {e(c["intro"])}</p>
-
-      <h2>How Does {e(n)} Work?</h2>
-      <p>{e(c["how"])} As with any {e(c["noun"])}, results vary from person to person.</p>
+{review_callout}{R.get("what") or what_default}{R.get("claims") or how_default}
 {ing_section}
-      <h2>{e(n)} Price &amp; Money-Back Guarantee</h2>
-      <p>{price_p}</p>
-      <p>{guar_p}</p>
-      <p>{buy(p, "Check the Current Price")}</p>
-
+{R.get("price") or price_default}      <p>{buy(p, "Check the Current Price")}</p>
+{R.get("proscons", "")}
       <h2>{safety_title}</h2>
       <ul class="check-list warn">
 {safety_html}
       </ul>
 
-      <h2>Who Is {e(n)} For?</h2>
-      <ul class="check-list">
-{fit_html}
-      </ul>
-
-      <h2>Where to Buy {e(n)}</h2>
+{"" if R else fit_default}{R.get("compare", "")}{R.get("verdict", "")}      <h2>Where to Buy {e(n)}</h2>
       <p>The best place to buy {e(n)} is the official website. Ordering there means you get the genuine product, the current package prices and the maker's money-back guarantee. Be careful with look-alike websites and third-party marketplace listings, which may not offer the same protection.</p>
       <div class="buy-box">
         <div>
@@ -313,7 +463,7 @@ def product_page(p, by_cat):
 </main>
 '''
     ld_txt = json.dumps(ld, ensure_ascii=False, indent=2)
-    return (HEAD.format(title=e(title), desc=e(desc), kws=e(kws), url=url, ogtype="article", root=root, ld=ld_txt)
+    return (HEAD.format(title=e(title), desc=e(desc), url=url, ogtype="article", root=root, ld=ld_txt, robots=robots(p))
             + body + FOOT.format(root=root, year=YEAR))
 
 
@@ -349,7 +499,7 @@ def blog_index(items, cats):
 '''
     return (HEAD.format(title="Health Product Reviews: Ingredients, Prices &amp; Where to Buy | MediPicker",
                         desc=e(f"Read {len(items)} health supplement reviews: ingredients, prices, money-back guarantees and where to buy each product from its official website."),
-                        kws="supplement reviews, health product reviews, weight loss supplement reviews, blood sugar supplement reviews",
+                        robots=INDEX,
                         url=url, ogtype="website", root=root, ld=json.dumps(ld, ensure_ascii=False, indent=2))
             + body + FOOT.format(root=root, year=YEAR))
 
@@ -417,10 +567,12 @@ def main():
     for p in items:
         write(os.path.join(SITE, "blog", p["slug"], "index.html"), product_page(p, by_cat))
 
-    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items] + ["/about", "/how-we-review", "/privacy-policy", "/terms", "/disclaimer"]
+    lastmod = {f"/blog/{p['slug']}/": p["updated"] for p in items}
+    lastmod["/"] = lastmod["/blog/"] = max(lastmod.values())
+    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX] + ["/about", "/how-we-review", "/privacy-policy", "/terms", "/disclaimer"]
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-          + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
+          + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{lastmod.get(u, TODAY)}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
     write(os.path.join(SITE, "robots.txt"), f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n")
 
     titles = [seo(p) for p in items]

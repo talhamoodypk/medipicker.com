@@ -1,0 +1,62 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "The Ancient \"Underwater\" Solution For Incredible Gut Health & Digestive Wellness",
+ "claim": "VivoGut is marketed as a '14-in-1 gut health essential formula' that promotes smooth digestion, nutrient absorption and long-lasting gut balance. The 'underwater' theme refers to its seaweed ingredients.",
+ "ingredients": [
+  "bladderwrack",
+  "kelp",
+  "ashwagandha",
+  "cayenne",
+  "l-tyrosine",
+  "selenium",
+  "copper",
+  "magnesium",
+  "vitamin b12"
+ ],
+ "ing_note": "The page says there are 14 ingredients but only names these. Notably, this list (seaweed iodine, L-tyrosine, selenium and copper) is the classic make-up of a thyroid-support formula rather than a digestive one: it contains no fiber, no probiotics and no digestive enzymes.",
+ "use": "The sales page does not state the daily dose in text; follow the label.",
+ "packages": [
+  [
+   2,
+   158,
+   "Small shipping fee"
+  ],
+  [
+   3,
+   177,
+   "Free US shipping"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "guarantee_days": 60,
+ "refund_note": "To get a refund you must ship the bottles back to the fulfilment address in Aurora, Colorado, at your own cost.",
+ "bonuses": [
+  "The Digestive Biohacker's Guide",
+  "A guide to natural remedies for reflux",
+  "An immune and detox protocol guide",
+  "A fourth bonus e-book (listed at $157)"
+ ],
+ "checks": [
+  "None of the named ingredients has good clinical evidence for improving digestion or gut balance.",
+  "Kelp and bladderwrack add iodine, which is useful only if you are low and potentially harmful for people with thyroid disease.",
+  "L-tyrosine is described as 'boosting dopamine to encourage bowel movement'; there is no research supporting that claim.",
+  "Testimonials on the page are not verifiable and the seller states results 'will vary'."
+ ],
+ "pros": [
+  "Clear package prices",
+  "Vegan, gluten-free formula",
+  "60-day refund window"
+ ],
+ "cons": [
+  "Ingredient list looks like a thyroid formula, not a gut formula",
+  "Only 9 of the claimed 14 ingredients are named, with no amounts",
+  "Iodine content is a concern for thyroid patients",
+  "Refunds require returning bottles at your own cost"
+ ],
+ "verdict": "VivoGut's ingredient list doesn't match its gut-health promise: it is mostly iodine-rich seaweed, minerals and an amino acid used to make thyroid hormone. People with digestive complaints are likely to get more from fiber, a studied probiotic or a doctor's check-up. Anyone with a thyroid condition should avoid it unless their doctor approves."
+}

@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Support the health of your digestive system with 100% natural ingredients, to enjoy a smooth gastric transit, no matter if you are 40 or 80 years old.",
+ "claim": "SynoGut is a capsule fiber-and-probiotic blend sold as support for regular bowel movements and comfortable digestion. Its sales page is written as a personal letter from the creator, who says he spent years researching plants for digestive health.",
+ "ingredients": [
+  "psyllium",
+  "bentonite clay",
+  "black walnut",
+  "oat",
+  "flaxseed",
+  "prune",
+  "aloe vera",
+  "lactobacillus acidophilus",
+  "apple pectin",
+  "glucomannan"
+ ],
+ "ing_note": "The sales page names these ten ingredients but does not publish the amount of each one. Most of them (psyllium, oat, flax, prune, pectin, glucomannan) are fibers that work at gram-level doses, while a typical capsule holds well under one gram, so a few capsules can only supply a small fraction of a standard fiber serving.",
+ "use": "The sales page does not give the dose in text; check the label on the bottle. Because SynoGut is fiber-based, take each dose with a full glass of water.",
+ "packages": [],
+ "price_note": "A single bottle (30-day supply) costs $69 as a one-time payment with free US shipping. Multi-bottle packages (2 bottles, 2+1 and 3+3 free) are offered at a lower price per bottle; the order page shows the totals.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller calls it an 'ironclad' 60-day money-back guarantee; international orders pay shipping.",
+ "bonuses": [
+  "Heart Health Secrets: Simple Nighttime Habits to Lower Blood Pressure and Boost Vitality",
+  "The Star-Body Blueprint: Lazy Weight Loss Hacks From VIP Trainers",
+  "A recipe guide of 'gut-friendly' treats"
+ ],
+ "checks": [
+  "Fiber for constipation is well supported, but the proven doses of psyllium (5–10 g) and glucomannan (3 g) are far more than capsules usually contain.",
+  "Bentonite clay and black walnut are 'cleanse' ingredients with no solid human evidence for digestion.",
+  "Only one probiotic (L. acidophilus) is listed, with no strain or CFU count, so it can't be compared with studied probiotics.",
+  "The sales page cites no clinical study of the SynoGut formula itself."
+ ],
+ "pros": [
+  "Uses well-known fiber ingredients rather than stimulant laxatives",
+  "One-time payment, no subscription",
+  "60-day money-back guarantee",
+  "Free US shipping on every package"
+ ],
+ "cons": [
+  "No ingredient amounts published",
+  "Fiber in capsule form is likely under-dosed compared with a fiber powder",
+  "Contains bentonite clay, which can bind medicines",
+  "Only sold through its own website"
+ ],
+ "verdict": "SynoGut combines sensible fiber ingredients with less convincing 'cleanse' herbs, and it doesn't say how much of each is inside. If your goal is regular digestion, a plain psyllium powder gives a proven dose for a few dollars a month. SynoGut may suit people who prefer capsules and want a 60-day refund window, but check the label first and keep it two hours apart from any medication."
+}
