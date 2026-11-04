@@ -1,0 +1,53 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "5 Easy Tips & Tricks That Will Help You Achieve A Normal Skin Balance",
+ "claim": "Derma Prime Plus is a capsule sold for 'normal skin balance' and clearer skin. Its sales page is written by a 'Dr. Ally Ray', introduced as a hepatologist (liver specialist) from Cleveland, Ohio, whose formula focuses on liver-support herbs.",
+ "story": "The page mixes reasonable skin-care tips (use sunscreen of SPF 30 or above, clean your phone screen) with a pitch for a liver-cleanse formula. We could not find any public record of a hepatologist by that name.",
+ "ingredients": [
+  "chanca piedra",
+  "ginger",
+  "burdock",
+  "beetroot",
+  "artichoke"
+ ],
+ "ing_note": "The sales letter names these herbs 'such as' and doesn't publish a full label or amounts.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ],
+  [
+   3,
+   177,
+   "Free US shipping"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is empty.",
+ "checks": [
+  "There's no clinical evidence that liver-cleanse herbs improve acne, dryness or other skin problems.",
+  "Chanca piedra is studied mainly for kidney stones; artichoke for digestion and cholesterol.",
+  "The 'doctor' behind the product can't be verified.",
+  "The page claims restocking would take '8 months' to push larger orders, a common pressure tactic."
+ ],
+ "pros": [
+  "Sensible general skin advice on the sales page",
+  "One-time payment with free US shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Liver herbs have no proven skin benefit",
+  "Unverifiable doctor persona",
+  "No full label or amounts",
+  "Scarcity pressure tactics"
+ ],
+ "verdict": "Derma Prime Plus pairs good basic skin advice with a liver-herb capsule that has no evidence for skin. The tips themselves (daily sunscreen, gentle cleansing, a clean phone screen) are free and genuinely helpful. For persistent acne, eczema or rosacea, a dermatologist can offer treatments that are proven to work."
+}

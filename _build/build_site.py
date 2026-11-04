@@ -143,6 +143,7 @@ FOOT = """<footer class="site-footer">
         <a href="{root}#products">All Products</a>
         <a href="{root}about">About</a>
         <a href="{root}how-we-review">How We Review</a>
+        <a href="{root}contact">Contact</a>
         <a href="{root}privacy-policy">Privacy Policy</a>
         <a href="{root}terms">Terms</a>
         <a href="{root}disclaimer">Disclaimer</a>
@@ -550,7 +551,8 @@ def home(items, cats):
                  "numberOfItems": len(items),
                  "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"], "url": f"{DOMAIN}/blog/{p['slug']}/"} for i, p in enumerate(items)]}
     site_ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "MediPicker", "url": DOMAIN + "/", "logo": DOMAIN + "/favicon.svg"},
+        {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "MediPicker", "url": DOMAIN + "/", "logo": DOMAIN + "/favicon.svg", "email": "info@medipicker.com",
+         "contactPoint": {"@type": "ContactPoint", "contactType": "editorial", "email": "info@medipicker.com", "url": DOMAIN + "/contact"}},
         {"@type": "WebSite", "@id": DOMAIN + "/#website", "url": DOMAIN + "/", "name": "MediPicker",
          "publisher": {"@id": DOMAIN + "/#org"}, "inLanguage": "en-US"}]}
     tpl = io.open(os.path.join(HERE, "home_template.html"), encoding="utf-8").read()
@@ -577,7 +579,7 @@ def main():
 
     lastmod = {f"/blog/{p['slug']}/": p["updated"] for p in items}
     lastmod["/"] = lastmod["/blog/"] = max(lastmod.values())
-    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX] + ["/about", "/how-we-review", "/privacy-policy", "/terms", "/disclaimer"]
+    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX] + ["/about", "/how-we-review", "/contact", "/privacy-policy", "/terms", "/disclaimer"]
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{lastmod.get(u, TODAY)}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
