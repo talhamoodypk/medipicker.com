@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "A Breakthrough Solution That Supports A Sharper & Clearer Vision Well Into Old Age",
+ "claim": "OptiPlax is a once-a-day vision capsule with a proprietary blend that includes astaxanthin and several seaweeds and algae.",
+ "ingredients": [
+  "astaxanthin",
+  "wakame",
+  "kelp",
+  "ecklonia cava",
+  "chlorella"
+ ],
+ "ing_note": "The website lists these as part of the blend 'including' them; amounts aren't disclosed.",
+ "use": "One capsule a day with 6–8 oz of water or another drink.",
+ "packages": [],
+ "price_note": "OptiPlax is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping; totals appear on the order page.",
+ "guarantee_days": 60,
+ "refund_note": "For a refund you must return all bottles, empty or not, with the packing slip.",
+ "bonuses": [
+  "10 printable vision templates and a 30-second daily eye workout",
+  "A guide to exotic fruits for eyesight"
+ ],
+ "checks": [
+  "Astaxanthin is the one ingredient with some eye research: small trials suggest it may reduce eye strain and fatigue at 6–12 mg a day.",
+  "It doesn't contain lutein or zeaxanthin, the nutrients proven (in AREDS2) to slow advanced macular degeneration.",
+  "Three seaweeds add iodine, which can affect thyroid function.",
+  "Eye workouts don't improve refractive errors like short-sightedness."
+ ],
+ "pros": [
+  "Contains astaxanthin",
+  "One capsule a day",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Missing the proven AREDS2 nutrients",
+  "Iodine from multiple seaweeds",
+  "Proprietary amounts",
+  "Refund requires returning all bottles"
+ ],
+ "verdict": "OptiPlax has one plausible ingredient (astaxanthin, for eye fatigue) but lacks the nutrients with the strongest eye evidence. If your vision is changing, get an eye exam; glasses, cataract surgery and treatments for macular degeneration and glaucoma make a real difference."
+}

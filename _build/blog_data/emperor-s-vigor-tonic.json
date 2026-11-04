@@ -1,0 +1,46 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Supports Men's Virility And Libido",
+ "claim": "Emperor's Vigor Tonic is a once-a-day capsule sold to boost men's energy, virility and libido, using a proprietary formula of 11 plant extracts inspired by Chinese imperial medicine.",
+ "story": "Its 11 ingredients are exactly the same as those of DigestiStart, which is sold for digestion. The formula itself is a traditional Chinese 'kidney yang' tonic, and in TCM that is closer to Emperor's Vigor Tonic's purpose than to DigestiStart's.",
+ "ingredients": [
+  "rehmannia",
+  "cornus",
+  "wild yam",
+  "poria",
+  "cistanche",
+  "dodder seed",
+  "eucommia",
+  "achyranthes",
+  "polygala",
+  "schisandra",
+  "cnidium"
+ ],
+ "ing_note": "All ingredients are in a proprietary blend without amounts.",
+ "use": "One capsule a day with plenty of water.",
+ "packages": [],
+ "price_note": "Emperor's Vigor Tonic is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping; totals appear on the order page.",
+ "guarantee_days": 60,
+ "bonuses": [
+  "A bedroom-tips guide"
+ ],
+ "checks": [
+  "Cnidium and cistanche are used for libido in TCM, but human trials are almost non-existent.",
+  "The same formula is sold elsewhere for digestion, which shows how loosely these products are marketed.",
+  "The claim that all ingredients are 'proven to be safe in clinical trials' isn't backed by cited trials.",
+  "Imported TCM herbs have sometimes been found contaminated with heavy metals or undeclared drugs."
+ ],
+ "pros": [
+  "Traditional formula with a long history in Chinese medicine",
+  "One capsule a day",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Almost no clinical evidence for libido",
+  "Identical formula sold for an unrelated purpose",
+  "Proprietary amounts",
+  "Prices hidden until checkout"
+ ],
+ "verdict": "Emperor's Vigor Tonic is a classic Chinese tonic with little modern evidence. It's unlikely to do much for erections or libido. Low libido and erection problems can be linked to low testosterone, diabetes, heart disease or medications, so see a doctor; effective treatments exist."
+}

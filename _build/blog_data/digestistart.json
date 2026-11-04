@@ -1,0 +1,47 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "A Natural Breakthrough Solution That Supports A Smooth Digestion And A Healthy Gastrointestinal Tract",
+ "claim": "DigestiStart is a once-a-day capsule sold for smooth digestion. The sales page says it helps 'flush out all the lead that has been coating your gut muscles for years' and restart digestion.",
+ "story": "Its 11 ingredients are a traditional Chinese 'kidney tonic' formula (rehmannia, cornus, dioscorea/wild yam, poria, cistanche, dodder seed, eucommia and others), more often used in TCM for fatigue, low back pain and libido than for digestion.",
+ "ingredients": [
+  "rehmannia",
+  "cornus",
+  "wild yam",
+  "poria",
+  "cistanche",
+  "dodder seed",
+  "eucommia",
+  "achyranthes",
+  "polygala",
+  "schisandra",
+  "cnidium"
+ ],
+ "ing_note": "The label lists these ingredients in a proprietary blend without amounts.",
+ "use": "One capsule a day in the morning with a glass of water.",
+ "packages": [],
+ "price_note": "DigestiStart is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping; totals appear on the order page.",
+ "guarantee_days": 60,
+ "refund_note": "For a refund you must return all bottles, empty or not, with the packing slip.",
+ "bonuses": [
+  "A bonus guide based on an 'ancient Mediterranean olive oil ritual'"
+ ],
+ "checks": [
+  "Lead doesn't 'coat gut muscles'; lead poisoning is a serious medical condition diagnosed with a blood test and treated by doctors.",
+  "None of the 11 herbs has clinical evidence for digestion in this combination.",
+  "The '341,760 Americans' figure can't be verified.",
+  "Imported TCM herbs have sometimes been contaminated with heavy metals, ironically including lead."
+ ],
+ "pros": [
+  "Traditional herbs with a long history of use",
+  "One capsule a day",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "False 'lead in your gut' story",
+  "Kidney-tonic formula, not a digestive one",
+  "Proprietary amounts",
+  "Refund requires returning all bottles"
+ ],
+ "verdict": "DigestiStart sells a traditional Chinese tonic with an invented explanation for digestive problems. If you have ongoing bloating, pain or changes in bowel habits, see a doctor; common causes like IBS, reflux, celiac disease and food intolerances are diagnosable and treatable. If you're worried about lead exposure, ask for a blood test."
+}
