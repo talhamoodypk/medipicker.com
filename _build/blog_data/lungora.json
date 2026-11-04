@@ -1,0 +1,53 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "What Adults Over 50 Should Know Before Choosing a Lung Health Supplement",
+ "claim": "Lungora is sold as a once-daily capsule for respiratory support and healthy lung function in adults over 50. Its main sales page is styled as an 'advertorial' (an advert written to look like an independent review).",
+ "story": "The ingredients it names (magnesium glycinate, alpha-lipoic acid, butcher's broom, L-carnitine, turmeric and CoQ10) are, in the page's own words, aimed at 'nerve health pathways' and circulation. This is a typical neuropathy formula, not a lung formula.",
+ "ingredients": [
+  "magnesium",
+  "alpha lipoic acid",
+  "butcher's broom",
+  "l-carnitine",
+  "turmeric",
+  "coq10"
+ ],
+ "ing_note": "Amounts are not disclosed.",
+ "use": "One capsule a day, according to the page.",
+ "packages": [
+  [
+   2,
+   178,
+   "Shipping extra"
+  ],
+  [
+   3,
+   216,
+   "See order page"
+  ],
+  [
+   6,
+   294,
+   "Shipping included"
+  ]
+ ],
+ "guarantee_days": 60,
+ "checks": [
+  "None of the named ingredients has evidence for lung function or breathing.",
+  "The page itself describes the ingredients as supporting nerve signaling and circulation, which doesn't match the lung-health promise.",
+  "Advertorial pages present marketing as an independent review; treat their conclusions with caution.",
+  "'Save up to $780' compares against a list price the product isn't sold at."
+ ],
+ "pros": [
+  "Ingredients with some research in other areas (ALA for nerve pain, CoQ10 for statin muscle aches)",
+  "60-day guarantee",
+  "Once-daily capsule"
+ ],
+ "cons": [
+  "No lung-health ingredients",
+  "Disguised advertorial marketing",
+  "Inflated savings claims",
+  "Amounts not disclosed"
+ ],
+ "verdict": "Lungora doesn't contain anything known to support the lungs. If you have breathlessness, a persistent cough or wheezing, see a doctor; conditions like COPD and asthma are very treatable. Stopping smoking, staying active and getting vaccinated (flu, pneumococcal, RSV for older adults) are the proven ways to protect lung health."
+}

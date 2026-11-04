@@ -1,0 +1,63 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Regain Your Confidence And Take Control Of Your Life!",
+ "claim": "Fluxactive Complete is a prostate and bladder supplement with a proprietary formula of 14 'prostate and bladder antioxidants, minerals, vitamins and herbs'.",
+ "ingredients": [
+  "saw palmetto",
+  "ginseng",
+  "damiana",
+  "epimedium",
+  "ginkgo biloba",
+  "oat straw",
+  "muira puama",
+  "inosine",
+  "cayenne",
+  "vitamin e",
+  "niacin"
+ ],
+ "ing_note": "The page names these ingredients among the 14 in the blend; amounts are not given.",
+ "packages": [
+  [
+   1,
+   79,
+   "Shipping extra"
+  ],
+  [
+   3,
+   177,
+   "See order page"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "guarantee_days": 60,
+ "refund_note": "The refund policy requires returning the product within 60 days of receiving it.",
+ "bonuses": [
+  "Biohacking Secrets",
+  "Supercharge Your Body",
+  "1-Day Detox Guide",
+  "Turbocharge Your Testosterone"
+ ],
+ "checks": [
+  "Saw palmetto worked no better than placebo for urinary symptoms in the largest trials.",
+  "The claim that damiana works better 'combined with saw palmetto' isn't supported by any clinical study.",
+  "Ginkgo is described as promoting 'normal functioning of the urethra', which isn't based on research.",
+  "Many ingredients (damiana, epimedium, muira puama, ginseng) are libido herbs rather than prostate ingredients."
+ ],
+ "pros": [
+  "Ingredient list published",
+  "Clear package prices",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Weak evidence for every key ingredient",
+  "Mix of libido herbs sold as prostate support",
+  "Proprietary amounts",
+  "Returns required for refunds"
+ ],
+ "verdict": "Fluxactive Complete combines a failed prostate herb (saw palmetto) with libido herbs and vitamins. It's unlikely to help urinary symptoms meaningfully. See a doctor about frequent or urgent urination: prescription BPH medicines work, and checking PSA helps rule out more serious problems."
+}

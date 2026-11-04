@@ -1,0 +1,53 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Sciaticyl - Advanced Sciatic Nerve Support",
+ "claim": "Sciaticyl is a capsule sold to support the sciatic nerve and relieve leg pain from sciatica. Its formula combines B vitamins and magnesium with antioxidants studied for nerve pain, such as alpha-lipoic acid and acetyl-L-carnitine.",
+ "ingredients": [
+  "alpha lipoic acid",
+  "acetyl-l-carnitine",
+  "nac",
+  "thiamine",
+  "vitamin b6",
+  "vitamin b12",
+  "magnesium",
+  "bacopa",
+  "blueberry",
+  "ginger"
+ ],
+ "ing_note": "The label is described on the website, but amounts aren't given in text. The page lists 'N-Acetyl L-Carnitine', which appears to mean acetyl-L-carnitine.",
+ "packages": [
+  [
+   1,
+   69,
+   "Shipping extra"
+  ],
+  [
+   6,
+   234,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "A 3-bottle package is also offered with free US shipping; its total appears on the order page.",
+ "guarantee_days": 90,
+ "refund_note": "Contact customer service within 90 days of purchase for a full refund.",
+ "made": "Made in the US in a GMP-certified facility (seller's claim).",
+ "checks": [
+  "Alpha-lipoic acid has the best evidence here, mainly for diabetic nerve pain at 600 mg a day; evidence for sciatica specifically is limited.",
+  "Acetyl-L-carnitine has small trials for neuropathy and one Italian study in sciatica-related pain.",
+  "B vitamins help nerve pain only if you are deficient (B12 deficiency is common in older adults and people on metformin).",
+  "Claims that it can 'eliminate the need' for chiropractic care or prescription medicine aren't supported."
+ ],
+ "pros": [
+  "Ingredients with genuine nerve-pain research (ALA, ALC)",
+  "Long 90-day guarantee",
+  "Clear single-bottle and 6-bottle prices",
+  "Made in a GMP-certified facility"
+ ],
+ "cons": [
+  "Doses not stated in text, so ALA may be under the studied 600 mg",
+  "Sciatica usually improves with movement and time, making results hard to judge",
+  "Overstated claims about replacing treatment"
+ ],
+ "verdict": "Sciaticyl is one of the more sensible nerve formulas we've reviewed, because alpha-lipoic acid and acetyl-L-carnitine have real research behind them. Most sciatica settles within weeks with activity and physical therapy. See a doctor urgently if you have leg weakness, numbness in the groin area or bladder changes."
+}

@@ -1,0 +1,55 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "It's like I have a totally new prostate",
+ "claim": "Protoflow is a prostate supplement that leads with a customer testimonial. It's sold by the same marketer as Fluxactive Complete, with the same bonus e-books, and uses a similar blend of prostate and libido herbs.",
+ "ingredients": [
+  "saw palmetto",
+  "ginseng",
+  "cayenne",
+  "damiana",
+  "muira puama",
+  "epimedium",
+  "hawthorn",
+  "catuaba"
+ ],
+ "ing_note": "Amounts are not disclosed.",
+ "packages": [
+  [
+   2,
+   158,
+   "Small shipping fee"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "A 3-bottle package is also offered; its total is shown on the order page.",
+ "guarantee_days": 60,
+ "refund_note": "The refund policy requires returning the product within 60 days of receiving it.",
+ "bonuses": [
+  "Supercharge Your Body",
+  "Biohacking Secrets",
+  "10 Ways To Turbocharge Your Testosterone",
+  "1-Day Detox Guide"
+ ],
+ "checks": [
+  "Saw palmetto did no better than placebo for urinary symptoms in the STEP and CAMUS trials.",
+  "Catuaba, damiana, muira puama and epimedium are traditional aphrodisiacs with little human evidence and none for the prostate.",
+  "'A totally new prostate' is a testimonial, not a measurable result.",
+  "The page says some effects appear 'in fewer than two minutes', which isn't plausible for any prostate supplement."
+ ],
+ "pros": [
+  "Clear 2- and 6-bottle prices",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Mostly libido herbs, not prostate ingredients",
+  "Weak evidence for every ingredient",
+  "Exaggerated testimonials",
+  "Returns required for refund"
+ ],
+ "verdict": "Protoflow is a near-twin of Fluxactive Complete and has the same weaknesses: little evidence for any ingredient and promises no prostate supplement can keep. Men with urinary symptoms should see a doctor, since effective BPH medicines exist and a PSA test helps rule out cancer."
+}

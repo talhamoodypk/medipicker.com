@@ -1,0 +1,44 @@
+{
+ "checked": "2026-11-05",
+ "form": "topical serum",
+ "hook": "Natural Skin Renewal Method Leaves Dermatologists Speechless",
+ "claim": "Hydracellum is a skin serum sold for 'flawless, wrinkle-free skin'. Its sales letter is written by 'Emma Smith', introduced as a 38-year-old biochemist specializing in water retention.",
+ "story": "The sales letter follows the same template as several other products we've reviewed (a one-time $69 price, an 'FDA approved and GMP certified facility' and a warning that restocking 'rare ingredients' takes 8 months). We couldn't verify the author.",
+ "ingredients": [
+  "witch hazel",
+  "aloe vera",
+  "jojoba",
+  "gotu kola",
+  "green tea"
+ ],
+ "ing_note": "The letter names these plant extracts 'and more'; the full ingredient list and concentrations aren't shown in text.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free US shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is used up.",
+ "checks": [
+  "'Leaves dermatologists speechless' is a headline device; no dermatologist is quoted.",
+  "Witch hazel, aloe and jojoba are soothing and moisturizing, but won't remove wrinkles.",
+  "Gotu kola (centella) has some evidence for skin repair and is common in mainstream skincare.",
+  "The proven anti-wrinkle ingredients (retinoids, daily sunscreen) aren't included."
+ ],
+ "pros": [
+  "Gentle, soothing plant ingredients",
+  "One-time payment with free US shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Unverifiable author persona",
+  "Full ingredient list not shown",
+  "Over-promising headline",
+  "Scarcity pressure tactics"
+ ],
+ "verdict": "Hydracellum is a gentle botanical serum with an exaggerated sales pitch. It may help hydration, but it isn't a wrinkle treatment. Daily broad-spectrum sunscreen and a retinoid have the strongest evidence for smoother skin; a dermatologist can advise on more."
+}
