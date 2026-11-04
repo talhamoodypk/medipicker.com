@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-05",
+ "form": "chewable tablets",
+ "hook": "Order 6 Bottles and Get 3 FREE Bonuses",
+ "claim": "Synadentix is a chewable tablet for teeth and gums, taken at night. The seller says each chewable contains 'NASA-grade microcrystalline hydroxyapatite complex', 'clinical lactoferrin' and marine enzymes.",
+ "ingredients": [
+  "hydroxyapatite",
+  "lactoferrin",
+  "beta-glucanase"
+ ],
+ "ing_note": "The website names these key ingredients in a proprietary mix of 'enzymes, plants and minerals' but doesn't give amounts. 'NASA-grade' is a marketing term; hydroxyapatite was studied by NASA decades ago for astronaut bone loss, which doesn't make a particular supplement 'NASA-grade'.",
+ "use": "Let one tablet melt under the tongue or chew it slowly at night before bed.",
+ "packages": [],
+ "price_note": "Synadentix is sold as 2 bottles (+$9.99 shipping), 2+1 bottles and 3+3 bottles with free shipping; totals are shown on the order page.",
+ "guarantee_days": 90,
+ "bonuses": [
+  "Three bonus guides with the 6-bottle package (listed at $147, $157 and $197)"
+ ],
+ "checks": [
+  "Hydroxyapatite is a real, well-studied ingredient: in toothpaste it can remineralize early enamel lesions about as well as fluoride in some trials.",
+  "That benefit comes from direct contact with the teeth; a chewable may give brief contact, but swallowing it does nothing for enamel.",
+  "Lactoferrin has lab activity against gum bacteria, with only small human studies.",
+  "The claim that ingredients go 'directly into your bloodstream, cleansing and repairing' gums and teeth isn't supported."
+ ],
+ "pros": [
+  "Contains hydroxyapatite, a genuine tooth-remineralizing ingredient",
+  "90-day money-back guarantee",
+  "Easy nightly routine"
+ ],
+ "cons": [
+  "Doses not disclosed",
+  "'Repair through the bloodstream' claim is unfounded",
+  "'NASA-grade' is marketing language",
+  "Prices hidden until checkout"
+ ],
+ "verdict": "Synadentix is more plausible than most 'dental supplements' because it includes hydroxyapatite, which helps enamel when it's in contact with teeth. But a hydroxyapatite toothpaste delivers it twice a day for a fraction of the price. Bleeding or receding gums need a dentist's assessment, because gum disease is treatable and causes tooth loss if ignored."
+}

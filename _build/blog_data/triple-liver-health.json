@@ -1,0 +1,39 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "SPECIAL DISCOUNT APPLIED - 55% OFF",
+ "claim": "Triple Liver Health, from Triple Naturals, is a liver-support capsule combining milk thistle with other traditional 'liver' herbs and choline. The seller calls it 'the absolute #1 best liver health product on the planet'.",
+ "ingredients": [
+  "milk thistle",
+  "choline",
+  "artichoke",
+  "beetroot",
+  "chanca piedra",
+  "dandelion",
+  "chicory",
+  "yarrow",
+  "jujube seed"
+ ],
+ "ing_note": "The website names these ingredients 'and a lot of more natural' ones, without amounts.",
+ "packages": [],
+ "price_note": "Prices appear only after choosing a package, under a '55% off' banner and a warning that supply can't be guaranteed due to 'recent media coverage'.",
+ "refund_note": "The seller promises a no-questions-asked refund by email or phone; the length of the guarantee isn't stated in text.",
+ "checks": [
+  "Milk thistle (silymarin) is the best-studied liver herb, but trials in fatty liver and hepatitis show small or inconsistent benefits.",
+  "Choline deficiency can cause fat to build up in the liver, which is true, but most people with fatty liver aren't choline-deficient.",
+  "Fatty liver disease is reversed mainly by weight loss (7–10% of body weight), less alcohol and managing blood sugar.",
+  "'Due to high demand from recent media coverage' is a stock urgency message with no named source."
+ ],
+ "pros": [
+  "Includes milk thistle and choline",
+  "No-questions-asked refund promise",
+  "Made by an established US supplement brand"
+ ],
+ "cons": [
+  "No amounts for any ingredient",
+  "Guarantee length not stated",
+  "Urgency and 'media coverage' claims without sources",
+  "Liver supplements can't replace weight loss and alcohol reduction"
+ ],
+ "verdict": "Triple Liver Health contains the usual liver-herb line-up, led by milk thistle, which has some but limited evidence. If you've been told you have fatty liver, the proven treatment is gradual weight loss, cutting alcohol and controlling blood sugar and cholesterol; discuss any supplement with your doctor, since several 'liver' herbs can interact with medicines."
+}

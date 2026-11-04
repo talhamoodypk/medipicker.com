@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "liquid drops (taken by mouth)",
+ "hook": "The Natural Ultra Absorbable Dropper That Supports Strong Vision",
+ "claim": "EyeFortin is a liquid supplement taken by mouth with a dropper, sold to support strong vision. The seller describes 'a proprietary formula of 10 eye health supporting plant extracts'.",
+ "story": "Several of the named ingredients (huperzine A, L-tyrosine, niacin and forskolin) are brain or metabolism ingredients rather than the nutrients studied for eye health, such as lutein, zeaxanthin and omega-3s.",
+ "ingredients": [
+  "eyebright",
+  "taurine",
+  "forskolin",
+  "huperzine a",
+  "l-tyrosine",
+  "niacin"
+ ],
+ "ing_note": "The website names six of the ten ingredients, with no amounts.",
+ "use": "Two full droppers in the morning, according to the website.",
+ "packages": [],
+ "price_note": "EyeFortin is sold as 1, 3 or 6 bottles with free shipping on every order in the US; totals appear on the order page.",
+ "guarantee_days": 60,
+ "bonuses": [
+  "Two bonus guides, including 'Pindrop Hearing'"
+ ],
+ "checks": [
+  "The AREDS2 trials showed a specific formula (vitamins C and E, zinc, copper, lutein and zeaxanthin) slows advanced macular degeneration; EyeFortin contains none of the lutein/zeaxanthin component.",
+  "Forskolin has been tested as an eye drop for glaucoma pressure, not as an oral vision supplement.",
+  "Eyebright is a traditional eyewash herb with no clinical evidence for vision.",
+  "High-dose niacin can, rarely, cause swelling in the retina (niacin maculopathy)."
+ ],
+ "pros": [
+  "Liquid format",
+  "60-day money-back guarantee",
+  "Free US shipping"
+ ],
+ "cons": [
+  "Lacks the nutrients with proven eye benefits",
+  "Contains huperzine A, a drug-like compound",
+  "No ingredient amounts",
+  "Claims all ingredients 'proven safe in clinical trials' without evidence"
+ ],
+ "verdict": "EyeFortin's formula doesn't match the research on eye health. If you're worried about your vision, get a full eye exam; if you have macular degeneration, ask whether an AREDS2 supplement is right for you. Sudden vision changes need urgent care."
+}

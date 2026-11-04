@@ -1,0 +1,32 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Is the key to eliminating neuropathy hidden within on a remote Greek Island?",
+ "claim": "Nerve Soothe is a capsule sold for 'natural neuropathy relief'. Its story links nerve pain to diet and the long-lived people of the Greek island of Ikaria, and it calls itself 'the only product scientifically proven to stabilize' nerve symptoms.",
+ "ingredients": [
+  "mulberry leaf"
+ ],
+ "ing_note": "The sales page doesn't list a full ingredient panel in text; its references include a study of white mulberry (Morus alba) leaf extract, and the page refers to 'diabetes busting ingredients'. Check the label before ordering.",
+ "use": "One capsule in the morning before breakfast and one in the afternoon, according to the sales page.",
+ "packages": [],
+ "price_note": "Prices are shown on the order page; the sales page claims it would cost $200 a bottle in stores and recommends ordering six bottles.",
+ "guarantee_days": 60,
+ "refund_note": "The seller says you'll get a full refund even if the bottles are used.",
+ "checks": [
+  "No supplement is 'scientifically proven' to stabilize neuropathy; that claim isn't backed by a published trial of the product.",
+  "Most neuropathy in developed countries is caused by diabetes, so tight blood sugar control is the proven way to slow it.",
+  "Supplements with some evidence for diabetic nerve pain (alpha-lipoic acid, vitamin B12 if deficient) aren't named on the sales page.",
+  "The Ikaria story describes a lifestyle (diet, activity, community), not a supplement."
+ ],
+ "pros": [
+  "60-day money-back guarantee",
+  "Encourages attention to blood sugar"
+ ],
+ "cons": [
+  "Full ingredient list not shown in text",
+  "False 'only product scientifically proven' claim",
+  "Story-driven marketing",
+  "Recommends a 6-bottle order"
+ ],
+ "verdict": "Nerve Soothe makes a claim no supplement can honestly make and doesn't show its full formula on the sales page. If you have numbness, burning or tingling, see a doctor to find the cause (diabetes, B12 deficiency, thyroid problems, alcohol or medication); there are effective prescription treatments for nerve pain."
+}

@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "gummies",
+ "hook": "Find Your Ideal PrimeBiome Formula",
+ "claim": "PrimeBiome is a once-a-day 'probiotic gummy' sold for gut health, with promised knock-on benefits for skin and weight. Its sales funnel starts with a quiz that leads to the same product.",
+ "ingredients": [
+  "inulin",
+  "dandelion",
+  "fennel",
+  "fenugreek",
+  "lemon balm",
+  "ginger",
+  "lion's mane",
+  "slippery elm"
+ ],
+ "ing_note": "Although it's called a probiotic gummy, the ingredients named on the website are prebiotic fiber (inulin) and herbs; no probiotic bacterial strain or CFU count is listed. Amounts are not disclosed.",
+ "use": "One gummy a day, according to the website.",
+ "packages": [],
+ "price_note": "PrimeBiome is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping. The order page shows crossed-out totals of $358, $537 and $1,074; the actual price appears at checkout.",
+ "bonuses": [
+  "Three bonus e-books with the 6-bottle package, including a cellulite guide"
+ ],
+ "checks": [
+  "A 'probiotic' product should name its bacterial strains and CFU count; PrimeBiome's ingredient list doesn't.",
+  "The gut-skin link is an active research area, but there's no evidence these herbs improve skin or cause weight loss.",
+  "Lion's mane is a mushroom studied (weakly) for memory, not digestion.",
+  "Testimonials such as 'friends think I've had work done' aren't typical results."
+ ],
+ "pros": [
+  "Gummy format is easy to take",
+  "Contains inulin, a real prebiotic fiber",
+  "Money-back guarantee"
+ ],
+ "cons": [
+  "Called 'probiotic' without listing any probiotic strain",
+  "Skin and weight claims unsupported",
+  "Gummies usually contain added sugar",
+  "Inflated crossed-out prices"
+ ],
+ "verdict": "PrimeBiome is a herbal-and-fiber gummy with a misleading 'probiotic' label. If you want a probiotic, choose one that lists specific strains (for example Lactobacillus rhamnosus GG) with evidence for your symptom. For skin and weight, the basics of sleep, diet, sun protection and activity matter far more."
+}

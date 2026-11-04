@@ -1,0 +1,61 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "currency": "EUR",
+ "hook": "Entdecken Sie „Das GlucoTrust Geheimnis“ (Discover 'The GlucoTrust Secret')",
+ "claim": "GlucoTrust is a blood sugar capsule sold here through a German-language page. It's marketed with a '30-second secret before bed' that supports healthy blood sugar, sleep and cravings.",
+ "ingredients": [
+  "gymnema",
+  "chromium",
+  "biotin",
+  "cinnamon",
+  "zinc",
+  "manganese",
+  "licorice",
+  "juniper",
+  "guggul",
+  "turmeric",
+  "vitamin d"
+ ],
+ "ing_note": "Amounts are not given in text. The German page lists these nutrients and cites general research on each (for example a 2003 cinnamon study in Diabetes Care).",
+ "packages": [
+  [
+   1,
+   69,
+   "Shipping extra"
+  ],
+  [
+   3,
+   177,
+   "See order page"
+  ],
+  [
+   6,
+   294,
+   "See order page"
+  ]
+ ],
+ "guarantee_days": 60,
+ "refund_note": "The seller describes it as a no-questions-asked 60-day guarantee.",
+ "bonuses": [
+  "Digital bonus guides (each listed at $49.95)"
+ ],
+ "checks": [
+  "The 2003 cinnamon study cited found large effects, but later and larger trials found much smaller or no effect on HbA1c.",
+  "Chromium and gymnema have small, inconsistent effects on blood sugar.",
+  "Licorice root can raise blood pressure, which is a concern for people with diabetes.",
+  "No study of GlucoTrust itself is cited."
+ ],
+ "pros": [
+  "Full ingredient list on the website",
+  "Clear prices in euros",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Ingredients with weak or inconsistent evidence",
+  "Contains licorice (blood pressure risk)",
+  "Amounts not disclosed",
+  "'Secret before bed' marketing"
+ ],
+ "verdict": "GlucoTrust combines common blood sugar ingredients that, at best, have small effects. It isn't a substitute for diabetes care, and the herbs can add to the effect of glucose-lowering medicine. If you use it, monitor your blood sugar and tell your doctor."
+}

@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "liquid drops",
+ "hook": "This Cold Drink Might Trigger Your Prostate",
+ "claim": "Prostadine is a liquid dropper supplement sold to support a healthy prostate, kidneys and urinary tract. It contains nine ingredients, most of them seaweeds.",
+ "story": "Four of the nine ingredients are iodine-rich seaweeds (nori, wakame, kelp and bladderwrack), with iodine added separately as well. The sales page cites studies on iodine and prostate cancer, but iodine supplements are not a recognized prostate treatment.",
+ "ingredients": [
+  "saw palmetto",
+  "pomegranate",
+  "shilajit",
+  "kelp",
+  "bladderwrack",
+  "wakame",
+  "nori",
+  "iodine",
+  "neem"
+ ],
+ "ing_note": "Amounts aren't disclosed, so the total iodine dose from four seaweeds plus added iodine is unknown.",
+ "use": "Two full droppers (2 ml) a day, preferably in the morning, according to the website.",
+ "packages": [],
+ "price_note": "Prostadine is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping; totals appear on the order page.",
+ "guarantee_days": 60,
+ "bonuses": [
+  "Kidney Restore: 2-Day Flash",
+  "Rockstar Libido in 7 Days"
+ ],
+ "checks": [
+  "Saw palmetto did no better than placebo for urinary symptoms in the largest trials (STEP, CAMUS).",
+  "Large amounts of iodine can trigger thyroid problems, especially in older adults with existing thyroid nodules.",
+  "Shilajit products have been found contaminated with heavy metals when not purified.",
+  "The 'cold drink' headline is a curiosity hook; there's no evidence a cold drink 'triggers' the prostate."
+ ],
+ "pros": [
+  "Liquid format",
+  "60-day guarantee",
+  "Cites some real research"
+ ],
+ "cons": [
+  "Unknown, potentially high iodine content",
+  "Main prostate ingredient failed in large trials",
+  "Shilajit contamination risk",
+  "Prices hidden until checkout"
+ ],
+ "verdict": "Prostadine is essentially a seaweed and iodine tonic with saw palmetto. The iodine is a real concern for anyone with thyroid disease, and the prostate evidence is weak. Men with urinary symptoms should see a doctor; BPH has effective, well-tested treatments, and a PSA test helps rule out cancer."
+}
