@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Joint Genesis, from BioDynamix",
+ "claim": "Joint Genesis (sold by BioDynamix) is a joint supplement built around Mobilee, a branded hyaluronic acid matrix from rooster comb, combined with French maritime pine bark and ginger. It's presented by a 'Dr. Weis, M.D.'.",
+ "ingredients": [
+  "mobilee",
+  "pine bark",
+  "ginger"
+ ],
+ "ing_note": "The page states an 80 mg dose of Mobilee, the amount used in its trials. Other amounts aren't given in text.",
+ "packages": [
+  [
+   2,
+   158,
+   "$9.95 US shipping"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "A single bottle is offered at a 'special one-time price' of $59, and a 3-bottle package is also available.",
+ "guarantee_days": 180,
+ "refund_note": "The seller offers a 180-day 'empty bottle' guarantee: a full refund even if you've used the whole supply.",
+ "checks": [
+  "Mobilee is one of the few branded joint ingredients with its own placebo-controlled trials, which showed modest improvements in knee pain and function.",
+  "The '14 randomized trials' claim includes small and manufacturer-funded studies; independent evidence is more limited.",
+  "Pine bark extract (Pycnogenol) has small trials showing reduced knee arthritis pain.",
+  "Ginger has modest evidence for arthritis pain."
+ ],
+ "pros": [
+  "Uses a branded ingredient at its studied dose",
+  "Supporting ingredients have some trial evidence",
+  "Generous 180-day empty-bottle guarantee",
+  "Clear package prices"
+ ],
+ "cons": [
+  "Effects are modest, not 'sprint down the stairs'",
+  "Much of the evidence is manufacturer-funded",
+  "Not suitable for people with chicken or egg allergies (rooster comb source)"
+ ],
+ "verdict": "Joint Genesis is one of the better-evidenced joint supplements we've reviewed, thanks to Mobilee at its trial dose. Expect gradual, modest relief. Exercise, weight loss and physical therapy remain the most effective treatments for knee and hip arthritis, and the long guarantee makes it a low-risk trial."
+}

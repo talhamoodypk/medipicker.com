@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-05",
+ "form": "loose tea (UK)",
+ "currency": "GBP",
+ "hook": "Hidden Costa Rican Slimming Tea Recipe Exposed...",
+ "claim": "All Day Slimming Tea is a two-part tea system (a morning tea and an evening tea) sold in the UK in pounds sterling for weight loss, based on a 'hidden Costa Rican recipe'.",
+ "ingredients": [
+  "green tea",
+  "oolong",
+  "ginseng",
+  "garcinia",
+  "ginger",
+  "dandelion"
+ ],
+ "ing_note": "The page names these ingredients for the teas; the full blend and amounts aren't given in text. Its references also cite berberine, chromium, hesperidin and rutin studies, though those aren't in the tea ingredient list shown.",
+ "packages": [],
+ "price_note": "All Day Slimming Tea is sold as 1-, 3- and 6-month supplies, with free shipping on 3 and 6 months. The page says the 6-month supply works out at £1.63 a day; totals appear on the order page.",
+ "guarantee_days": 60,
+ "checks": [
+  "Green and oolong tea provide caffeine and catechins with small effects on metabolism.",
+  "Garcinia cambogia (HCA) didn't produce meaningful weight loss in a well-run trial published in JAMA.",
+  "'Losing 4 stone' testimonials and rapid loss 'in the first 2 days' (mostly water) aren't typical.",
+  "Some references are blogs (Healthline, Dr Axe) rather than research."
+ ],
+ "pros": [
+  "Tea is a pleasant, low-calorie drink",
+  "60-day guarantee",
+  "Free shipping on larger packages"
+ ],
+ "cons": [
+  "Weight-loss claims far exceed the evidence",
+  "Garcinia has failed in good trials",
+  "Caffeine from three cups a day adds up",
+  "Full blend not disclosed"
+ ],
+ "verdict": "All Day Slimming Tea is ordinary green and oolong tea with a dramatic story. Swapping sugary drinks for tea can help a little, but it won't melt fat. In the UK, the NHS offers free weight management support, and your GP can discuss options."
+}

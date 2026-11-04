@@ -1,0 +1,44 @@
+{
+ "checked": "2026-11-05",
+ "form": "gummies",
+ "hook": "Skin Cell Turnover: The Key To Understanding And Reversing Skin Aging",
+ "claim": "Neotonics is a 'probiotic gummy' sold for radiant skin and smooth digestion. The seller says each gummy contains 500 million units of bacteria and nine natural ingredients that target 'the root cause of skin and gut aging'.",
+ "story": "Its nine ingredients are almost identical to PrimeBiome's (inulin, dandelion, fenugreek, lemon balm, ginger, slippery elm, lion's mane and fennel), with babchi added for skin.",
+ "ingredients": [
+  "inulin",
+  "dandelion",
+  "fenugreek",
+  "lemon balm",
+  "ginger",
+  "slippery elm",
+  "lion's mane",
+  "fennel",
+  "babchi"
+ ],
+ "ing_note": "The bacteria are described as '500 million units' without naming a strain. That is a low dose compared with most studied probiotics (often 1–10 billion CFU).",
+ "use": "One gummy a day.",
+ "packages": [],
+ "price_note": "Neotonics is sold as 1, 3 or 6 bottles with free shipping on 6 bottles; totals appear on the order page.",
+ "refund_note": "For a refund you must send back all bottles, even empty ones.",
+ "bonuses": [
+  "A cellulite guide"
+ ],
+ "checks": [
+  "The probiotic strain isn't named and the dose is low.",
+  "Babchi (psoralea) contains bakuchiol, used in skincare as a gentle retinol alternative when applied to the skin, but there's little evidence it works when eaten.",
+  "Weight-loss testimonials ('dropped 3 dress sizes') aren't typical results.",
+  "There's no evidence these herbs speed up 'skin cell turnover'."
+ ],
+ "pros": [
+  "Gummy format",
+  "Contains prebiotic inulin",
+  "Names its ingredients"
+ ],
+ "cons": [
+  "Unnamed, low-dose probiotic",
+  "Skin and weight claims unsupported",
+  "Gummies typically contain sugar",
+  "Refund requires returning bottles"
+ ],
+ "verdict": "Neotonics is close to a copy of PrimeBiome with a skin angle. If you want healthier skin, daily sunscreen, a retinoid and not smoking have the best evidence; for digestion, a probiotic with a named, studied strain is a better choice."
+}

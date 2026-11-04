@@ -1,0 +1,39 @@
+{
+ "checked": "2026-11-05",
+ "form": "dog supplement (drops)",
+ "hook": "The Natural Formula That Supports Your Dog's Health",
+ "claim": "Pawbiotix is a probiotic supplement for dogs combining gut bacteria with a mix of greens, fiber, liver and collagen. The seller says it suits all breeds, ages and medical conditions.",
+ "ingredients": [
+  "kelp",
+  "chlorella",
+  "turmeric",
+  "fennel",
+  "l-glutamine",
+  "chicory",
+  "flaxseed",
+  "beef liver",
+  "collagen",
+  "sodium copper chlorophyllin"
+ ],
+ "ing_note": "The probiotic strains and CFU count aren't listed in text, and there's no dosing guide by body weight.",
+ "packages": [],
+ "price_note": "Pawbiotix is sold as 2 bottles (+$9.99 shipping) or 3+3 bottles with free shipping; the order page shows crossed-out totals of $358 and $1,074, with the actual price at checkout.",
+ "refund_note": "For a refund you must send back all bottles, even empty ones.",
+ "checks": [
+  "Dog probiotics with named strains have some evidence for acute diarrhea; Pawbiotix doesn't name its strains.",
+  "Kelp adds iodine, which can affect thyroid function in dogs as in people.",
+  "The claim that it suits dogs with any medical condition isn't something any supplement can promise.",
+  "The claim that all ingredients are 'proven safe in clinical trials' isn't supported by cited trials."
+ ],
+ "pros": [
+  "Includes prebiotic fiber and palatable liver",
+  "Money-back guarantee"
+ ],
+ "cons": [
+  "Probiotic strains and dose not stated",
+  "No weight-based dosing",
+  "Kelp iodine for dogs with thyroid issues",
+  "Inflated crossed-out prices"
+ ],
+ "verdict": "Pawbiotix is a general dog-wellness topper with an unnamed probiotic. If your dog has ongoing digestive problems, see a vet, who can recommend a veterinary probiotic with proven strains, or check for parasites and food intolerance."
+}

@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "5 Steps To Support Good Nails and Hair",
+ "claim": "Keragenis is a capsule sold for healthy nails and hair, including toenail problems. The sales letter is written by 'Benjamin Jones', who says he has researched nail and hair health for 17 years.",
+ "story": "The letter uses the same template we've seen on several other products: a $69 one-time price, an 'FDA approved and GMP certified facility', and a warning that restocking 'rare ingredients' takes months.",
+ "ingredients": [
+  "turmeric",
+  "cat's claw",
+  "garlic",
+  "quercetin",
+  "pomegranate",
+  "olive leaf"
+ ],
+ "ing_note": "The letter names these ingredients 'such as'; the full label and amounts aren't shown.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free shipping on every order; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller promises a full refund within 60 days even if the bottle is used up.",
+ "checks": [
+  "None of the named ingredients has evidence for nail fungus, brittle nails or hair growth.",
+  "Biotin, the most common nail supplement, helps only in deficiency and isn't named.",
+  "Nail fungus needs an antifungal treatment; hair loss has several causes (thyroid, iron, hormones) that a doctor can test for.",
+  "The author can't be verified."
+ ],
+ "pros": [
+  "One-time price with free shipping",
+  "60-day guarantee",
+  "Antioxidant ingredients generally well tolerated"
+ ],
+ "cons": [
+  "Ingredients don't match nail or hair goals",
+  "Full label not shown",
+  "Unverifiable author",
+  "Scarcity tactics"
+ ],
+ "verdict": "Keragenis uses general antioxidant herbs that have nothing specific to do with nails or hair. For brittle nails, fungal nails or thinning hair, a doctor or dermatologist can find the cause and offer treatments that work."
+}
