@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "One Simple Way To Maintain The Health Of Your Prostate",
+ "claim": "VitalFlow is a prostate capsule sold through a personal sales letter from a 45-year-old author who says he has researched prostate health for a couple of years.",
+ "story": "The letter follows the same template as several other products we've reviewed ($69 one-time, 'FDA approved and GMP certified facility', 8-month restocking warning), and its formula closely resembles ProstaStream's.",
+ "ingredients": [
+  "saw palmetto",
+  "graviola",
+  "cat's claw",
+  "lycopene",
+  "pygeum",
+  "stinging nettle"
+ ],
+ "ing_note": "The letter names these 'and many more'; the full label and amounts aren't shown.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free US shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is used up.",
+ "checks": [
+  "Saw palmetto worked no better than placebo for urinary symptoms in the largest trials.",
+  "Pygeum and nettle root have modest supporting evidence.",
+  "Graviola has been linked to nerve damage with regular use.",
+  "The author's credentials can't be verified."
+ ],
+ "pros": [
+  "Includes pygeum and nettle",
+  "One-time price with free US shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Main ingredient failed large trials",
+  "Graviola safety concern",
+  "Full label not shown",
+  "Template sales letter"
+ ],
+ "verdict": "VitalFlow is a standard prostate blend with the same weaknesses as many others, plus graviola. A urologist can offer proven BPH treatments; if you want a supplement, choose one built on beta-sitosterol or pumpkin seed with a disclosed label."
+}

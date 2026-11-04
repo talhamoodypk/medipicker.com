@@ -1,0 +1,50 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "I'll Unveil An Ancient Indian Secret For Stabilizing Blood Sugar That Will Show DRASTIC Results In Just 24 Hours!",
+ "claim": "GlucoGuard Pro is a blood sugar capsule promoted with an 'ancient Indian secret' and a promise of drastic results within 24 hours. The sales page is styled as a news report (its web address includes 'msn-reports') and features a named customer story.",
+ "story": "The page also contains a testimonial that refers to a different product name, 'SlimCentric', which suggests the sales copy was reused from another product.",
+ "ingredients": [
+  "mulberry leaf",
+  "cinnamon"
+ ],
+ "ing_note": "The page names white mulberry extract and cinnamon (Cinnamomum verum, Ceylon cinnamon) as key ingredients; the full label and amounts aren't shown in text.",
+ "packages": [
+  [
+   1,
+   59,
+   "Free shipping"
+  ],
+  [
+   3,
+   147,
+   "Free shipping"
+  ],
+  [
+   6,
+   234,
+   "Free shipping"
+  ]
+ ],
+ "guarantee_days": 180,
+ "refund_note": "The seller offers a 6-month (180-day) money-back guarantee.",
+ "checks": [
+  "No supplement produces 'drastic' blood sugar results in 24 hours; diabetes medicines themselves take weeks to show their full effect on HbA1c.",
+  "White mulberry can blunt blood sugar spikes after carbohydrate meals in small studies.",
+  "Ceylon cinnamon contains less coumarin than cassia, but its effect on blood sugar is small and inconsistent.",
+  "News-style pages ('MSN reports') are advertising, not journalism."
+ ],
+ "pros": [
+  "Low per-bottle prices compared with similar products",
+  "Free shipping on every package",
+  "Long 180-day guarantee",
+  "Mulberry has some after-meal evidence"
+ ],
+ "cons": [
+  "Unrealistic 24-hour claim",
+  "Fake news-style presentation",
+  "Copied testimonial naming another product",
+  "Full ingredient list not shown"
+ ],
+ "verdict": "GlucoGuard Pro contains mulberry and cinnamon, which have small effects at best, and its marketing is misleading. If you have diabetes or prediabetes, rely on your doctor's plan, and check your blood sugar if you add any supplement, since mulberry can lower it after meals."
+}

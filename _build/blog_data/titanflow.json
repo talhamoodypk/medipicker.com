@@ -1,0 +1,47 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "TitanFlow from Zenith Labs, presented by Dr. Ryan Shelton",
+ "claim": "TitanFlow, from Zenith Labs, is a urinary-flow supplement for men built around pumpkin seed oil, beta-sitosterol, lycopene, broccoli sprout extract and pygeum. It is presented by Dr. Ryan Shelton, Zenith Labs' medical director.",
+ "ingredients": [
+  "pumpkin seed",
+  "plant sterols",
+  "lycopene",
+  "broccoli",
+  "pygeum"
+ ],
+ "ing_note": "The page explains the role of each ingredient; amounts per capsule aren't given in text.",
+ "packages": [
+  [
+   1,
+   59,
+   "Shipping extra"
+  ],
+  [
+   6,
+   234,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "A 3-bottle package is also offered at a discount.",
+ "guarantee_days": 180,
+ "refund_note": "Zenith Labs offers a 180-day 'empty bottle' guarantee, refunding even if you've used the whole supply.",
+ "checks": [
+  "Pumpkin seed oil, beta-sitosterol and pygeum are among the better-supported herbal options for urinary symptoms of BPH, with modest benefits in trials.",
+  "The page claims flow improved 'by over 20%'; trial improvements are real but small compared with prescription drugs.",
+  "The claim that 'deep sea divers' eat pumpkin seeds every day is an odd marketing line with no relevance.",
+  "Lycopene and broccoli sprouts have no direct evidence for urinary flow."
+ ],
+ "pros": [
+  "Includes several of the best-studied herbal BPH ingredients",
+  "Low price per bottle on larger packages",
+  "180-day empty-bottle guarantee",
+  "Established brand with named medical director"
+ ],
+ "cons": [
+  "Modest benefits at best",
+  "Amounts not shown in text",
+  "Some marketing claims overstate results"
+ ],
+ "verdict": "TitanFlow is one of the more reasonable prostate supplements, because it skips saw palmetto and leans on pumpkin seed oil, beta-sitosterol and pygeum. It may modestly help mild urinary symptoms. Get a PSA test and a doctor's check before relying on it, and see a doctor promptly for blood in the urine, pain or difficulty passing urine."
+}

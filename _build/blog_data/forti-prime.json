@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Support an outbreak-free life",
+ "claim": "Forti Prime is sold to support 'an outbreak-free life', aimed at people with recurring cold sores or herpes outbreaks. Its letter is written by a 35-year-old 'clinical researcher' and a colleague.",
+ "ingredients": [
+  "graviola",
+  "green tea",
+  "ginseng",
+  "vitamin c",
+  "vitamin e",
+  "selenium",
+  "olive leaf",
+  "essiac"
+ ],
+ "ing_note": "The letter names these ingredients 'and more'. It refers to the product both as a dropper and as capsules, so check which form you'll receive.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free US shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says refunds are given within 60 days even if the bottle is used up.",
+ "checks": [
+  "None of the ingredients has been shown to prevent herpes outbreaks in clinical trials.",
+  "Essiac tea is a herbal cancer remedy that has failed in studies.",
+  "Graviola (soursop) has been linked to nerve damage resembling atypical Parkinson's disease with regular use.",
+  "Antiviral medicines (aciclovir, valaciclovir) are proven to reduce outbreaks and transmission."
+ ],
+ "pros": [
+  "One-time price with free US shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "No evidence for preventing outbreaks",
+  "Graviola safety concern",
+  "Unverifiable author",
+  "Unclear product form"
+ ],
+ "verdict": "Forti Prime's ingredients have no proven effect on herpes outbreaks, and graviola carries a neurological safety concern. If you get frequent outbreaks, ask a doctor about suppressive antiviral therapy, which is safe, effective and inexpensive."
+}

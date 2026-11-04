@@ -1,0 +1,45 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Take Control of Your Joint Wellness with a Daily Support Formula Designed for Mobility and Comfort",
+ "claim": "Artivorin is a daily joint supplement for comfort, flexibility and mobility. Its main page is an advertorial titled like a consumer review ('Reviews, Consumer Reports, Complaints').",
+ "story": "Its key ingredients (turmeric, CoQ10, butcher's broom and alpha-lipoic acid) are the same core formula used by Lungora, which is sold for lung health.",
+ "ingredients": [
+  "turmeric",
+  "coq10",
+  "butcher's broom",
+  "alpha lipoic acid"
+ ],
+ "ing_note": "Turmeric is standardized to 95% curcuminoids, a common, studied extract. Amounts per capsule aren't disclosed.",
+ "packages": [
+  [
+   2,
+   178,
+   "Shipping extra"
+  ],
+  [
+   6,
+   294,
+   "Free shipping"
+  ]
+ ],
+ "price_note": "A 3-bottle package is also offered; its total is shown on the order page.",
+ "guarantee_days": 60,
+ "checks": [
+  "Curcumin (95% extract) has the best evidence here, with modest pain relief in knee osteoarthritis trials.",
+  "CoQ10, butcher's broom and alpha-lipoic acid have no meaningful evidence for joint pain.",
+  "The same formula is marketed for an unrelated organ under another name.",
+  "'Consumer Reports' in the page title has nothing to do with the independent Consumer Reports organization."
+ ],
+ "pros": [
+  "Contains standardized curcumin",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Only one ingredient relevant to joints",
+  "Disguised advertorial",
+  "Same formula sold for lungs",
+  "Amounts not disclosed"
+ ],
+ "verdict": "Artivorin's curcumin might ease joint pain modestly; the rest of the formula is filler for this purpose. A standalone curcumin supplement with absorption support, plus regular exercise and weight management, is a more focused and cheaper approach."
+}

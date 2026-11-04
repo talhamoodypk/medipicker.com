@@ -1,0 +1,47 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "My Mom \"Came Back\" From Total Memory Loss, And This Is How She Did It",
+ "claim": "MemoDefend is a memory supplement sold with the story of a mother who 'came back from total memory loss'. The sales letter is written by a researcher 'near the end of his career' who shares memory tips.",
+ "story": "Its named ingredients (hawthorn, garlic, olive leaf, hibiscus, buchu, juniper and green tea) are a typical blood pressure formula. Controlling blood pressure does help protect the brain over time, but that's done with lifestyle changes and medication, not this blend.",
+ "ingredients": [
+  "hawthorn",
+  "garlic",
+  "olive leaf",
+  "hibiscus",
+  "buchu",
+  "juniper",
+  "green tea",
+  "vitamin c",
+  "niacin"
+ ],
+ "ing_note": "The letter names these 'and many more'; the full label and amounts aren't shown.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free shipping"
+  ]
+ ],
+ "price_note": "3- and 6-bottle packages are discounted, with free shipping; totals appear on the order page.",
+ "one_time": true,
+ "guarantee_days": 60,
+ "checks": [
+  "No supplement can reverse 'total memory loss'; dementia can't be reversed, though some causes of memory problems (B12 deficiency, thyroid disease, depression, medication effects) can be treated.",
+  "The letter's tips (stay hydrated, limit alcohol, don't smoke) are sensible.",
+  "Hawthorn, garlic and hibiscus may modestly lower blood pressure, which is relevant to long-term brain health but isn't a memory treatment.",
+  "Juniper and buchu are diuretic herbs not suited to long-term use."
+ ],
+ "pros": [
+  "Sensible lifestyle tips in the letter",
+  "One-time price with free shipping",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Blood pressure herbs sold as a memory cure",
+  "False 'came back from total memory loss' story",
+  "Full label not shown",
+  "Diuretic herbs"
+ ],
+ "verdict": "MemoDefend's headline story is misleading, and its ingredients target blood pressure rather than memory. Anyone with noticeable memory changes should see a doctor to check for treatable causes. Keeping blood pressure, blood sugar and hearing in check, staying active and sleeping well are the proven ways to protect memory."
+}

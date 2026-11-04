@@ -1,0 +1,47 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "This 100% Natural Blend Supports The Health Of Your Ears And A Quiet Mind",
+ "claim": "Quietum Plus is one of the best-known 'ear health' supplements, sold to support hearing and a 'quiet mind' for people bothered by ringing in the ears.",
+ "story": "Its ingredients are a male-libido formula: mucuna, maca, epimedium (horny goat weed), tribulus, muira puama, catuaba, damiana, L-arginine and L-tyrosine, plus ashwagandha, ginger, piperine and vitamins. None is a recognized hearing ingredient.",
+ "ingredients": [
+  "mucuna pruriens",
+  "maca",
+  "epimedium",
+  "tribulus",
+  "muira puama",
+  "catuaba",
+  "damiana",
+  "ashwagandha",
+  "ginger",
+  "piperine",
+  "l-tyrosine",
+  "l-arginine",
+  "zinc"
+ ],
+ "ing_note": "The label also lists vitamins A and B. Amounts aren't disclosed. Several of the cited references are animal or computer-modeling studies (for example tribulus in mice and ginger in a computational drug-design study).",
+ "packages": [],
+ "price_note": "Quietum Plus is sold as 2 bottles (+$9.99 shipping), 2+1 bottles or 3+3 bottles with free shipping; the order page shows crossed-out totals ($358, $1,074) with the actual price at checkout.",
+ "guarantee_days": 60,
+ "bonuses": [
+  "A sleep-tricks guide",
+  "A 7-day life-improvement guide"
+ ],
+ "checks": [
+  "None of the ingredients has clinical evidence for hearing or tinnitus.",
+  "Most are traditional aphrodisiacs; the formula appears designed for men's libido.",
+  "Mucuna contains L-dopa, which interacts with antidepressants and blood pressure medicines.",
+  "The seller warns that restocking 'can take up to 9 months', a common pressure tactic."
+ ],
+ "pros": [
+  "Ingredient list published",
+  "60-day guarantee"
+ ],
+ "cons": [
+  "Libido formula sold for ear health",
+  "No hearing evidence",
+  "Mucuna (L-dopa) interaction risk",
+  "Inflated crossed-out prices"
+ ],
+ "verdict": "Quietum Plus doesn't contain anything that supports hearing. If you have tinnitus or hearing loss, see an audiologist; hearing aids, sound therapy and tinnitus-focused CBT have real evidence. People on antidepressants, Parkinson's or blood pressure medicines should avoid mucuna-based products."
+}
