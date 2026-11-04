@@ -9,7 +9,7 @@ P.update(
     title="Neuro Serge Reviews 2026: Supplement Price, Sale &amp; Neuro Surge Facts",
     h1="Neuro Serge Reviews 2026: Neuro Serge Supplement Price, Discount &amp; Where to Buy",
     desc="Neuro Serge review: what's known about the formula (no full label is published), the Neuro Surge connection, brain-health research, safety, price from $49 and how to buy or order Neuro Serge.",
-    og_title="Neuro Serge Reviews 2026: Supplement Price, Sale & Neuro Surge Facts",
+    og_title="Neuro Serge Reviews 2026: Price, Sale & Neuro Surge Facts",
     og_desc="What's in Neuro Serge, how it relates to Neuro Surge, what research says about brain supplements and where to buy.",
     article_desc="Independent Neuro Serge review covering the ingredients, the Neuro Surge name, brain-health research, side effects, price and how to order.",
     tagline="What we know about the Neuro Serge formula, why it's also searched as Neuro Surge, and how to buy Neuro Serge at the best price",

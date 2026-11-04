@@ -9,7 +9,7 @@ P.update(
     title="Fast Lean Pro Reviews 2026: Ingredients, Discount &amp; Official Website",
     h1="Fast Lean Pro Reviews 2026: An Honest Look at the &ldquo;Fasting Switch&rdquo; Powder",
     desc="Fast Lean Pro review: what's in the powder (niacin, B12, chromium, Fibersol-2, polyamines), whether it can mimic fasting, safety, discount prices from $49 a jar and how to buy from the official website.",
-    og_title="Fast Lean Pro Reviews 2026: Ingredients, Discount & Official Website",
+    og_title="Fast Lean Pro Reviews 2026: Ingredients, Discount & Official Site",
     og_desc="What's really in Fast Lean Pro, what fasting research says, and how to buy it at the best price.",
     article_desc="Independent Fast Lean Pro review covering the ingredients, fasting and autophagy research, side effects, discount prices and the official website.",
     tagline="What's inside Fast Lean Pro, whether a powder can really &ldquo;switch on&rdquo; fasting, and how to buy Fast Lean Pro at the lowest price",

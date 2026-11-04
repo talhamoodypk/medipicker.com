@@ -9,7 +9,7 @@ P.update(
     title="BioDentex Reviews 2026: Dental Supplements Facts, Price &amp; Official Website",
     h1="BioDentex Reviews 2026: An Honest Look at This Teeth Supplement",
     desc="BioDentex review: the named ingredients (xylitol, cranberry, grape seed and more), whether dental supplements in capsule form work, safety, price from $49 and the BioDentex official website.",
-    og_title="BioDentex Reviews 2026: Dental Supplements Facts, Price & Official Website",
+    og_title="BioDentex Reviews 2026: Ingredients, Price & Official Website",
     og_desc="What's in BioDentex, what dental health supplements can really do for teeth and gums, and where to buy.",
     article_desc="Independent BioDentex review covering the ingredients, dental supplement research, side effects, price and how to order.",
     tagline="What's inside BioDentex, what dental supplements can and can't do for your teeth and gums, and how to buy safely",

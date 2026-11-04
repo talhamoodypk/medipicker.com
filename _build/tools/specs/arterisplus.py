@@ -9,7 +9,7 @@ P.update(
     title="Arteris Plus Reviews 2026: Ingredients, Price &amp; Blood Pressure Facts",
     h1="Arteris Plus Reviews 2026: An Honest Look at This Blood Pressure Supplement",
     desc="Arteris Plus review: the passion flower, corydalis, California poppy, prickly pear and marshmallow formula, what it can and can't do for blood pressure, safety warnings, price from $49 and how to order.",
-    og_title="Arteris Plus Reviews 2026: Ingredients, Price & Blood Pressure Facts",
+    og_title="Arteris Plus Reviews 2026: Ingredients, Price & Blood Pressure",
     og_desc="What's in Arteris Plus, what the research says, who should avoid it and where to buy.",
     article_desc="Independent Arteris Plus review covering the ingredients, blood pressure research, side effects, price and how to order.",
     tagline="What's inside Arteris Plus, what calming herbs can and can't do for blood pressure, and how to buy safely",

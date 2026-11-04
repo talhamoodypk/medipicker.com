@@ -15,6 +15,25 @@ sys.path.insert(0, HERE)
 from build_home import CATEGORY, CAT_ORDER, CAT_ICON, DEFAULT_CAT, load, slug  # noqa: E402
 from content import CATEGORY_COPY, OVERRIDES, FULL_REVIEWS, DISABLED  # noqa: E402
 from ingredients import ING  # noqa: E402
+from ratings import BLOG as BLOG_RATINGS, label as rating_label  # noqa: E402
+
+
+def rating_box(score, root):
+    """Visible editorial rating; must match the Review markup."""
+    stars = (f'<span class="rating-stars" aria-hidden="true"><span class="rs-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
+             f'<span class="rs-fg" style="width:{score / 5 * 100:.0f}%">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span>')
+    return (f'      <div class="rating-box">{stars}'
+            f'<span><strong>MediPicker rating: {score:.1f} / 5</strong> &middot; {rating_label(score)}</span>'
+            f'<a href="{root}how-we-review#ratings">How we rate</a></div>\n')
+
+
+def review_ld(p):
+    d = p["bd"]
+    return {"@type": "Review", "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": DOMAIN + "/about"},
+            "publisher": {"@type": "Organization", "name": "MediPicker", "url": DOMAIN + "/"},
+            "datePublished": p["updated"], "name": f"{p['name']} review",
+            "reviewBody": d["verdict"],
+            "reviewRating": {"@type": "Rating", "ratingValue": f"{BLOG_RATINGS[p['slug']]:.1f}", "bestRating": "5", "worstRating": "1"}}
 BLOG_DATA = os.path.join(HERE, "blog_data")
 
 SITE = os.path.join(os.path.dirname(HERE), "medipicker.com")
@@ -74,8 +93,10 @@ def products():
 def seo(p):
     n, c = p["name"], CATEGORY_COPY[p["cat"]]
     f = p["facts"]
-    title = f"{n} Review 2026: Ingredients, Price & Where to Buy"
-    if len(title) + len(" | MediPicker") <= 72:
+    # Bing flags titles over ~65 characters, so fall back to shorter patterns for long product names.
+    title = next(t for t in (f"{n} Review 2026: Ingredients, Price & Where to Buy", f"{n} Review 2026: Ingredients, Price & Safety",
+                             f"{n} Review 2026: Ingredients & Price", f"{n} Review 2026") if len(t) <= 60 or t.endswith("2026"))
+    if len(title) + len(" | MediPicker") <= 65:
         title += " | MediPicker"
     parts = [f"{n} review: what this {c['noun']} contains"]
     if f.get("prices"):
@@ -306,7 +327,8 @@ def rich(p, by_cat):
                           f'      <p>How {n} compares on price and refund window with other {e(c["noun"])}s we have reviewed:</p>\n'
                           '      <div class="table-wrap"><table class="price-table">\n          <thead><tr><th>Product</th><th>Price per bottle</th><th>Guarantee</th></tr></thead>\n          <tbody>\n'
                           + row(p, True) + "\n" + "\n".join(row(q) for q in peers) + '\n          </tbody>\n        </table></div>\n')
-    out["verdict"] = f'      <h2>Our Verdict on {n}</h2>\n      <p>{e(d["verdict"])}</p>\n' if d.get("verdict") else ""
+    out["verdict"] = (f'      <h2>Our Verdict on {n}</h2>\n{rating_box(BLOG_RATINGS[p["slug"]], "../../")}      <p>{e(d["verdict"])}</p>\n'
+                      if d.get("verdict") else "")
     return out
 
 
@@ -343,13 +365,15 @@ def product_page(p, by_cat):
             {"@type": "ListItem", "position": 3, "name": f"{n} Review", "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]},
     ]}
-    # Google rejects Product markup that has no offers/review/rating, so only emit it when we know real prices.
-    if p["cat"] != "Home & Lifestyle" and lo:
+    # Product markup only on rated, indexable reviews with verified prices; it carries our editorial Review so
+    # Google's product snippet has the review it asks for. No aggregateRating: we don't have genuine reader ratings.
+    if p["cat"] != "Home & Lifestyle" and lo and p["bd"]:
         ld["@graph"].append({
             "@type": "Product", "name": n, "category": "Dietary Supplement" if p["cat"] != "Pets" else "Pet Supplement",
-            "description": f"{n} is a {c['noun']} designed to {c['purpose']}.",
+            "description": p["bd"]["claim"].split(". ")[0].rstrip(".") + ".",
             "offers": {"@type": "AggregateOffer", "priceCurrency": f.get("currency", "USD"), "lowPrice": str(lo), "highPrice": str(hi),
-                       "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url}})
+                       "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url},
+            "review": review_ld(p)})
 
     facts_rows = [("Category", e(p["cat"]))]
     if f.get("form"):
@@ -506,7 +530,7 @@ def blog_index(items, cats):
   </div>
 </main>
 '''
-    return (HEAD.format(title="Health Product Reviews: Ingredients, Prices &amp; Where to Buy | MediPicker",
+    return (HEAD.format(title="Supplement Reviews: Ingredients, Prices &amp; Safety | MediPicker",
                         desc=e(f"Read {len(items)} health supplement reviews: ingredients, prices, money-back guarantees and where to buy each product from its official website."),
                         robots=INDEX,
                         url=url, ogtype="website", root=root, ld=json.dumps(ld, ensure_ascii=False, indent=2))

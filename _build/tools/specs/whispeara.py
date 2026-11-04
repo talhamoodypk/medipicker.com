@@ -9,7 +9,7 @@ P.update(
     title="Whispeara Reviews 2026: Supplement Price, Discount &amp; Official Website",
     h1="Whispeara Reviews 2026: Whispeara Supplement Price, Discount &amp; Official Website",
     desc="Whispeara review: the real Whispeara label (200 mg blend in 1 ml drops), what it can and can't do for hearing and tinnitus, safety, price from $49 and how to order from the official website.",
-    og_title="Whispeara Reviews 2026: Supplement Price, Discount & Official Website",
+    og_title="Whispeara Reviews 2026: Price, Discount & Official Website",
     og_desc="What's really in Whispeara hearing drops, what the research says, safety and where to buy.",
     article_desc="Independent Whispeara review covering the label, hearing research, side effects, price and how to order.",
     tagline="What the Whispeara label really contains, what it can do for your ears, and how to buy Whispeara safely at the best price",
