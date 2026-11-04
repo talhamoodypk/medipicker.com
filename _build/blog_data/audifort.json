@@ -1,0 +1,38 @@
+{
+ "checked": "2026-11-05",
+ "form": "liquid drops",
+ "hook": "Take care of your hearing starting today",
+ "claim": "Audifort is a liquid supplement sold to support and 'shield' hearing health. It is taken as a dropper under the tongue or in a drink.",
+ "ingredients": [
+  "maca",
+  "grape seed",
+  "green tea",
+  "capsicum",
+  "gymnema",
+  "gaba"
+ ],
+ "ing_note": "The website lists these as the main ingredients and offers a label image; amounts are not given in text. Several of them (gymnema, green tea and capsicum) are more typical of blood sugar or weight formulas than hearing products.",
+ "use": "One full dropper a day, under the tongue or mixed into water or juice, according to the website. The seller recommends at least four months of use.",
+ "packages": [],
+ "price_note": "Audifort is sold in 1-, 3- and 6-bottle packages, with free shipping on 6 bottles; totals appear on the order page.",
+ "guarantee_days": 90,
+ "refund_note": "The seller calls it a 'No Questions Asked' 90-day guarantee.",
+ "checks": [
+  "None of Audifort's ingredients has clinical evidence for improving hearing or tinnitus.",
+  "Hearing loss from age or noise damage involves loss of inner-ear hair cells, which no supplement has been shown to restore.",
+  "Grape seed and green tea antioxidants have been studied for ear protection only in animals.",
+  "The references cited are general reviews (such as B vitamins and the brain), not studies of the product."
+ ],
+ "pros": [
+  "90-day refund window, longer than most",
+  "Liquid form for people who dislike capsules",
+  "Label image is available"
+ ],
+ "cons": [
+  "No ingredient with evidence for hearing",
+  "Blood sugar herbs (gymnema) in a hearing product",
+  "Recommends four months of use before judging",
+  "Amounts not given in text"
+ ],
+ "verdict": "Audifort's ingredients don't match its hearing promise, and no supplement has been shown to reverse hearing loss. If you notice hearing changes or ringing in the ears, see a doctor or audiologist; earwax, infections and medication side effects are treatable, and hearing aids help a great deal. If you try Audifort, the 90-day guarantee gives you time to ask for a refund."
+}

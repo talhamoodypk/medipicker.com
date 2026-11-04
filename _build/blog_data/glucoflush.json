@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-05",
+ "form": "liquid drops",
+ "hook": "This Mayan Cleanse Supports Healthy Blood Sugar Levels",
+ "claim": "GlucoFlush is a liquid 'Mayan cleanse' sold to support healthy blood sugar. The sales page blames 'gut-invaders' for blood sugar problems and weight gain and recommends three to six months of use.",
+ "story": "Its ingredients (fennel, marshmallow root, pumpkin seed, slippery elm, clove, garlic, oregano oil, peppermint oil and papaya seed) are the classic make-up of a herbal 'parasite cleanse', not a blood sugar formula.",
+ "ingredients": [
+  "fennel",
+  "marshmallow root",
+  "pumpkin seed",
+  "slippery elm",
+  "clove oil",
+  "garlic",
+  "oregano oil",
+  "peppermint",
+  "papaya seed"
+ ],
+ "ing_note": "Amounts are not disclosed.",
+ "use": "The bottle comes with a dropper; the seller describes taking it as a quick daily dose and recommends using it for at least three to six months.",
+ "packages": [],
+ "price_note": "GlucoFlush is sold as 2, 3 or 6 bottles with free shipping on every order; totals appear on the order page. Crossed-out 'retail prices' of $97 and $79 are shown.",
+ "guarantee_days": 60,
+ "checks": [
+  "Intestinal parasites don't cause type 2 diabetes or common blood sugar problems in developed countries.",
+  "None of the ingredients has meaningful clinical evidence for lowering blood sugar.",
+  "Garlic and oregano oil kill microbes in lab tests; human evidence for 'cleansing' is lacking.",
+  "Recommending three to six months before judging results makes it hard to use the 60-day guarantee."
+ ],
+ "pros": [
+  "Gentle digestive herbs that most people tolerate",
+  "Free shipping",
+  "60-day money-back guarantee"
+ ],
+ "cons": [
+  "Parasite-cleanse formula sold for blood sugar",
+  "'Gut invader' story isn't supported",
+  "No amounts",
+  "Suggested use outlasts the refund window"
+ ],
+ "verdict": "GlucoFlush is a herbal parasite cleanse rebranded as a blood sugar product. It won't lower blood sugar in any meaningful way. If your blood sugar is high, get an HbA1c test and work with your doctor; diet, activity, weight loss and medicines like metformin have strong evidence."
+}
