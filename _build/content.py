@@ -211,4 +211,5 @@ DISABLED = {
   "bio fungus nuker": "link goes to a domain-for-sale page",
   "vivotonic": "tracking link returns 403 Forbidden",
   "restolin": "link lands on a 404 page",
+  "valiora": "tracking link shows 'Tracking Redirect Error' (checked 5 Nov 2026)",
 }

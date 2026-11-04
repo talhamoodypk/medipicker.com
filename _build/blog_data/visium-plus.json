@@ -1,0 +1,59 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "One Simple Way To Maintain A Healthy Vision",
+ "claim": "Visium Plus is sold as a natural formula to support the health of your eyes 'no matter if you are 40 or 80 years old'. The sales page is written as a letter from a creator who says he has researched plants for years.",
+ "story": "When we read the ingredient list, it turned out to be a prostate and urinary formula: saw palmetto, pygeum, plant sterols, stinging nettle, uva ursi, buchu, gravel root, pumpkin seed and juniper. It contains none of the nutrients studied for eye health, such as lutein, zeaxanthin or the AREDS2 vitamin blend.",
+ "ingredients": [
+  "saw palmetto",
+  "pygeum",
+  "plant sterols",
+  "stinging nettle",
+  "uva ursi",
+  "quercetin",
+  "green tea",
+  "lycopene",
+  "goldenseal",
+  "vitamin e",
+  "zinc"
+ ],
+ "ing_note": "The full list on the website also includes vitamin B6, copper, selenium, red raspberry, Annona muricata (graviola), cat's claw, broccoli leaf, maitake, reishi, shiitake, juniper, buchu, calcium D-glucarate, pumpkin, burdock, cayenne pepper, gravel root and marshmallow root, 29 ingredients in all, with no amounts.",
+ "packages": [
+  [
+   1,
+   69,
+   "Free US shipping"
+  ],
+  [
+   3,
+   177,
+   "Free US shipping"
+  ],
+  [
+   6,
+   294,
+   "Free US shipping"
+  ]
+ ],
+ "one_time": true,
+ "guarantee_days": 60,
+ "refund_note": "The seller says you can get a refund within 60 days even if you have used the whole bottle.",
+ "checks": [
+  "The ingredient list matches a prostate supplement, not an eye supplement; we found no ingredient with evidence for vision.",
+  "The nutrients proven to slow age-related macular degeneration (the AREDS2 formula of vitamins C and E, zinc, copper, lutein and zeaxanthin) are not provided at studied doses.",
+  "Uva ursi is meant for short-term use only because of its hydroquinone content.",
+  "No study of Visium Plus is cited."
+ ],
+ "pros": [
+  "Ingredient list is published",
+  "One-time payment with free US shipping",
+  "60-day guarantee even on empty bottles"
+ ],
+ "cons": [
+  "Formula doesn't match its eye-health purpose",
+  "29 ingredients with no amounts",
+  "Contains uva ursi and goldenseal, which aren't suited to long-term daily use",
+  "Only sold on its own website"
+ ],
+ "verdict": "Visium Plus is one of the clearest mismatches we've reviewed: an eye-health product whose ingredients are a prostate formula. If you want to protect your eyes, get a dilated eye exam and ask your optometrist whether an AREDS2 supplement suits you. We don't recommend Visium Plus for vision."
+}

@@ -1,0 +1,36 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "hook": "Over 1,000,000 Bottles Sold!",
+ "claim": "Triple Blood Balance Formula, made by Triple Naturals, is sold to support healthy blood pressure, blood sugar and cholesterol in one product, with possible help for weight management. The company says it is formulated in Salt Lake City, Utah.",
+ "ingredients": [
+  "berberine",
+  "cinnamon",
+  "mulberry leaf",
+  "chromium",
+  "juniper",
+  "biotin"
+ ],
+ "ing_note": "The website names these ingredients but does not show the amounts in text.",
+ "packages": [],
+ "price_note": "The order page advertises a '55% off' discount and shows package prices only after you choose a package. Two bonus e-books ('20 Health Foods You Should Never Eat' and '8 Healthy Foods That Cause Flab') are included as digital downloads.",
+ "made": "Formulated in Salt Lake City, Utah in a GMP-verified facility (seller's claim).",
+ "checks": [
+  "Berberine has the strongest evidence here: meta-analyses show it lowers fasting blood sugar, HbA1c and LDL cholesterol, at 900–1,500 mg a day.",
+  "Cinnamon and mulberry leaf have small, inconsistent effects on blood sugar.",
+  "None of the listed ingredients has good evidence for lowering blood pressure, despite that being a headline claim.",
+  "The page suggests it works 'without the nasty side effects you see with statins', which is not a fair comparison: statins prevent heart attacks in trials, and no supplement has shown that."
+ ],
+ "pros": [
+  "Includes berberine, a genuinely studied blood sugar ingredient",
+  "Made in a US facility",
+  "Free bonus e-books"
+ ],
+ "cons": [
+  "No amounts, so the berberine dose is unknown",
+  "Blood pressure claim not supported by its ingredients",
+  "Statin comparison is misleading",
+  "Prices hidden behind '55% off' banners"
+ ],
+ "verdict": "Triple Blood Balance contains one ingredient with real evidence (berberine) plus several weaker ones, but without amounts you can't tell whether the berberine dose is meaningful. Berberine also interacts with diabetes medicine and other drugs, so check with your doctor first, and never use it in place of blood pressure, cholesterol or diabetes medication."
+}

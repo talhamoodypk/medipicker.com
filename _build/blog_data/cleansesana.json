@@ -1,0 +1,63 @@
+{
+ "checked": "2026-11-05",
+ "form": "capsules",
+ "currency": "EUR",
+ "hook": "Die 300-Euro-Abnehmspritzen als 69-Euro-Kapsel (the €300 weight-loss injections as a €69 capsule)",
+ "claim": "CleanseSana is a German-language gut-health and weight supplement that claims to activate the body's own GLP-1 production, positioning itself as a natural alternative to weight-loss injections. It is a one-capsule-a-day fiber and probiotic blend.",
+ "story": "Its formula is almost the same as SynoGut's (psyllium, oat bran, flaxseed, glucomannan, apple pectin, black walnut, prune and L. acidophilus), but unlike SynoGut, CleanseSana publishes the amount of each ingredient.",
+ "ingredients": [
+  "psyllium",
+  "oat",
+  "flaxseed",
+  "glucomannan",
+  "apple pectin",
+  "black walnut",
+  "prune",
+  "lactobacillus acidophilus"
+ ],
+ "ing_note": "Amounts per capsule from the official page: psyllium husk 103 mg, oat bran 430 mg, flaxseed powder 130 mg, glucomannan 8.5 mg, apple pectin 8.5 mg, black walnut hull 5 mg, prune 5 mg and L. acidophilus 1.5 billion CFU. That adds up to well under 1 g of fiber a day, while the glucomannan studies the page cites used about 3,000 mg a day, roughly 350 times more.",
+ "use": "One capsule a day, according to the official page. After 90 days the seller suggests 1–2 capsules a week for 'maintenance'.",
+ "packages": [
+  [
+   1,
+   69,
+   "€9 shipping"
+  ],
+  [
+   3,
+   147,
+   "See order page"
+  ],
+  [
+   6,
+   234,
+   "See order page"
+  ]
+ ],
+ "guarantee_days": 60,
+ "bonuses": [
+  "21-Tage Turbo-Reinigung Protokoll",
+  "Darm-Gesundheit Ernährungsplan",
+  "Destruktives Rückstau-Phänomen Elimination Guide",
+  "Lebenslange Darm-Reinheit Maintenance"
+ ],
+ "checks": [
+  "There is no evidence that fiber capsules raise GLP-1 to anything like the levels produced by injections such as semaglutide.",
+  "The cited meta-analysis found glucomannan helped people lose only about 0.8 kg on average, and at doses hundreds of times higher than in CleanseSana.",
+  "1.5 billion CFU of L. acidophilus is a reasonable probiotic amount, but no strain is named.",
+  "The black walnut (5 mg) and prune (5 mg) amounts are too small to have any effect."
+ ],
+ "pros": [
+  "Publishes exact amounts for every ingredient",
+  "Vegetarian capsule, no gelatine",
+  "One capsule a day",
+  "60-day money-back guarantee"
+ ],
+ "cons": [
+  "Comparison with weight-loss injections is misleading",
+  "Fiber doses are far below what studies use",
+  "Expensive for under 1 g of fiber a day",
+  "Bonus guides use alarmist language"
+ ],
+ "verdict": "CleanseSana deserves credit for publishing its amounts, but those amounts show the problem: less than a gram of fiber a day can't replicate the studies it cites, let alone a GLP-1 injection. A spoonful of psyllium or oat bran costs a fraction of the price and gives a proven dose. Anyone considering weight-loss injections should talk to their doctor rather than look for a capsule substitute."
+}

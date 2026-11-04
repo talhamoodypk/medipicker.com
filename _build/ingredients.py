@@ -119,3 +119,11 @@ ING = {
     "what": "Sage (Salvia officinalis or lavandulaefolia) is a culinary herb.",
     "evidence": "Small short-term trials found single doses of sage extract improved memory and mood scores in healthy adults; longer studies are lacking."},
 }
+
+# Later batches live in ing_extra_*.py files (each defines EXTRA = {...}); merge them in.
+import glob as _glob, importlib.util as _ilu, os as _os
+for _f in sorted(_glob.glob(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "ing_extra_*.py"))):
+    _spec = _ilu.spec_from_file_location(_os.path.basename(_f)[:-3], _f)
+    _mod = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_mod)
+    ING.update(_mod.EXTRA)

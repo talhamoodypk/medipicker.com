@@ -64,6 +64,7 @@ def products():
                 if p["bd"].get(k):
                     f[k] = p["bd"][k]
             f["one_time"] = p["bd"].get("one_time", False)
+            f["currency"] = p["bd"].get("currency", "USD")
             f["free_shipping"] = (any("free" in sh.lower() for _, _, sh in p["bd"].get("packages", []))
                                   or "free" in p["bd"].get("price_note", "").lower())
         items.append(p)
@@ -176,8 +177,8 @@ def faq_items(p):
     qa = [(f"What is {n}?", what)]
     if f.get("prices"):
         lo, hi = min(f["prices"]), max(f["prices"])
-        price = (f"On the official website {n} costs ${lo} per bottle." if lo == hi else
-                 f"On the official website {n} costs between ${lo} and ${hi} per bottle, depending on how many bottles you buy. Larger packages have the lowest price per bottle.")
+        price = (f"On the official website {n} costs {sym(p)}{lo} per bottle." if lo == hi else
+                 f"On the official website {n} costs between {sym(p)}{lo} and {sym(p)}{hi} per bottle, depending on how many bottles you buy. Larger packages have the lowest price per bottle.")
     else:
         price = f"Prices for {n} are listed on its official website and usually drop when you buy more than one unit."
     qa.append((f"How much does {n} cost?", price))
@@ -204,8 +205,15 @@ def robots(p):
     return INDEX if p.get("bd") else "noindex, follow"
 
 
-def money(x):
-    return f"${x:,.2f}".replace(".00", "")
+SYM = {"USD": "$", "EUR": "\u20ac", "GBP": "\u00a3"}
+
+
+def sym(p):
+    return SYM[p["facts"].get("currency", "USD")]
+
+
+def money(x, s="$"):
+    return f"{s}{x:,.2f}".replace(".00", "")
 
 
 def per_bottle(q):
@@ -252,8 +260,8 @@ def rich(p, by_cat):
 
     rows = []
     for b, t, ship in sorted(d.get("packages", []), key=lambda r: r[0]):
-        rows.append(f"            <tr><td>{b} bottle{'s' if b > 1 else ''}</td><td>{b * days} days</td><td>{money(t)}</td>"
-                    f"<td>{money(t / b)}</td><td>{money(t / (b * days))}</td><td>{e(ship)}</td></tr>")
+        rows.append(f"            <tr><td>{b} bottle{'s' if b > 1 else ''}</td><td>{b * days} days</td><td>{money(t, sym(p))}</td>"
+                    f"<td>{money(t / b, sym(p))}</td><td>{money(t / (b * days), sym(p))}</td><td>{e(ship)}</td></tr>")
     price = [f'      <h2>{n} Price &amp; Money-Back Guarantee</h2>']
     if rows:
         price.append(f'      <p>These are the packages shown on the official {n} order page when we checked it. The cost per day assumes one bottle lasts {days} days, as the seller states.</p>')
@@ -292,7 +300,7 @@ def rich(p, by_cat):
         def row(q, me=False):
             g2 = (q.get("bd") or {}).get("guarantee_days") or q["facts"].get("guarantee_days")
             name = e(q["name"]) if me else f'<a href="../{q["slug"]}/">{e(q["name"])}</a>'
-            return f"            <tr{' class=\"me\"' if me else ''}><td>{name}</td><td>From {money(per_bottle(q))}</td><td>{str(g2) + ' days' if g2 else '&ndash;'}</td></tr>"
+            return f"            <tr{' class=\"me\"' if me else ''}><td>{name}</td><td>From {money(per_bottle(q), sym(q))}</td><td>{str(g2) + ' days' if g2 else '&ndash;'}</td></tr>"
         out["compare"] = (f'      <h2>{n} vs. Similar {e(p["cat"])} Products</h2>\n'
                           f'      <p>How {n} compares on price and refund window with other {e(c["noun"])}s we have reviewed:</p>\n'
                           '      <div class="table-wrap"><table class="price-table">\n          <thead><tr><th>Product</th><th>Price per bottle</th><th>Guarantee</th></tr></thead>\n          <tbody>\n'
@@ -339,13 +347,13 @@ def product_page(p, by_cat):
         ld["@graph"].append({
             "@type": "Product", "name": n, "category": "Dietary Supplement" if p["cat"] != "Pets" else "Pet Supplement",
             "description": f"{n} is a {c['noun']} designed to {c['purpose']}.",
-            "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": str(lo), "highPrice": str(hi),
+            "offers": {"@type": "AggregateOffer", "priceCurrency": f.get("currency", "USD"), "lowPrice": str(lo), "highPrice": str(hi),
                        "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url}})
 
     facts_rows = [("Category", e(p["cat"]))]
     if f.get("form"):
         facts_rows.append(("Form", e(f["form"].capitalize())))
-    facts_rows.append(("Price", f"From ${lo} per bottle" if lo else "See official website"))
+    facts_rows.append(("Price", f"From {sym(p)}{lo} per bottle" if lo else "See official website"))
     facts_rows.append(("Guarantee", f"{g}-day money-back guarantee" if g else "See official website"))
     if f.get("one_time"):
         facts_rows.append(("Billing", "One-time payment"))
@@ -362,8 +370,8 @@ def product_page(p, by_cat):
         ing_html = (f"        <p>The official website doesn't list its full ingredients in text form. Check the product label or the official website for the complete formula and amounts before you buy, especially if you have allergies or take medication.</p>")
 
     if lo:
-        price_p = (f"On the official website, {e(n)} costs <strong>${lo} per bottle</strong>." if lo == hi else
-                   f"On the official website, {e(n)} costs between <strong>${lo} and ${hi} per bottle</strong>, depending on the package. Buying more bottles at once lowers the price per bottle, which is why multi-bottle packages are the most popular.")
+        price_p = (f"On the official website, {e(n)} costs <strong>{sym(p)}{lo} per bottle</strong>." if lo == hi else
+                   f"On the official website, {e(n)} costs between <strong>{sym(p)}{lo} and {sym(p)}{hi} per bottle</strong>, depending on the package. Buying more bottles at once lowers the price per bottle, which is why multi-bottle packages are the most popular.")
     else:
         price_p = f"Current prices and package options are shown on the official website. Like most products in this category, the price per unit usually drops when you buy a larger package."
     guar_p = (f"Every order from the official website is covered by a <strong>{g}-day money-back guarantee</strong>, so you have time to try it and request a refund if it isn't right for you." if g else
@@ -448,7 +456,7 @@ def product_page(p, by_cat):
       <div class="buy-box">
         <div>
           <strong>{e(n)}</strong>
-          <span>{("From $" + str(lo) + " per bottle") if lo else "See current prices"}{(" &middot; " + str(g) + "-day guarantee") if g else ""}</span>
+          <span>{("From " + sym(p) + str(lo) + " per bottle") if lo else "See current prices"}{(" &middot; " + str(g) + "-day guarantee") if g else ""}</span>
         </div>
         {buy(p, "Buy " + e(n) + " from the Official Website", "btn btn-buy")}
       </div>
