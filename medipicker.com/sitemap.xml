@@ -2,11 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://medipicker.com/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://medipicker.com/blog/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/alphafuelpro/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/arterisplus/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/biodentex/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/cellucare/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/dentavive/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/fastleanpro/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/flashburn/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/gelatinesculpt/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/glucoarmor/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/glucoextend/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/glycomute/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/nervealive/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/neuroserge/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/prostapeak/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/seroburn/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/slimboosttea/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/sonovive/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/sugarmute/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/titantransform/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/trimology/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/vigorsana/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/visiflora/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://medipicker.com/reviews/whispeara/</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://medipicker.com/blog/all-day-slimming-tea-uk/</loc>
@@ -350,11 +442,11 @@
   </url>
   <url>
     <loc>https://medipicker.com/about</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://medipicker.com/how-we-review</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://medipicker.com/contact</loc>
@@ -370,6 +462,6 @@
   </url>
   <url>
     <loc>https://medipicker.com/disclaimer</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
 </urlset>

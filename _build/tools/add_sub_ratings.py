@@ -32,7 +32,7 @@ def box(score):
 
 
 for sub, score in SUB.items():
-    folder = os.path.join(ROOT, f"{sub}.medipicker.com")
+    folder = os.path.join(ROOT, "medipicker.com", "reviews", sub)  # moved from <sub>.medipicker.com on 10 Nov 2026
     path = os.path.join(folder, "index.html")
     s = io.open(path, encoding="utf-8").read()
     if 'class="rating-box"' in s:

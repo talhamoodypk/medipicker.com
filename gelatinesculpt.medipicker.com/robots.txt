@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://gelatinesculpt.medipicker.com/sitemap.xml

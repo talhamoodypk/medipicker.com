@@ -1,0 +1,9 @@
+# This review moved to medipicker.com/reviews/ on 10 Nov 2026.
+/privacy-policy https://medipicker.com/privacy-policy 301
+/privacy-policy.html https://medipicker.com/privacy-policy 301
+/terms https://medipicker.com/terms 301
+/terms.html https://medipicker.com/terms 301
+/disclaimer https://medipicker.com/disclaimer 301
+/disclaimer.html https://medipicker.com/disclaimer 301
+/images/* https://medipicker.com/reviews/glucoextend/images/:splat 301
+/* https://medipicker.com/reviews/glucoextend/ 301

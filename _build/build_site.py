@@ -8,7 +8,7 @@
 Run:  py -X utf8 _build/build_site.py
 Inputs: products.tsv (name<TAB>link), facts.json (from sales pages), content.py (category copy).
 """
-import datetime, html, io, json, os, re, sys
+import datetime, html, io, json, os, re, shutil, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -40,6 +40,7 @@ SITE = os.path.join(os.path.dirname(HERE), "medipicker.com")
 DOMAIN = "https://medipicker.com"
 TODAY = "2026-10-15"
 TODAY_TXT = "October 15, 2026"
+MOVED = "2026-11-10"  # in-depth reviews moved from sub-domains to /reviews/<sub>/
 YEAR = "2026"
 e = html.escape
 
@@ -190,6 +191,21 @@ FOOT = """<footer class="site-footer">
 
 def buy(p, label="Buy Now", cls="btn btn-buy"):
     return f'<a class="{cls}" href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">{label}</a>'
+
+
+def page_url(q, root=""):
+    """Where a product's review lives: its in-depth /reviews/<sub>/ page when there is one, otherwise its blog page."""
+    return q["full_review"] if q.get("full_review") else f"{root}blog/{q['slug']}/"
+
+
+def low_rated(p):
+    """Rated 2/5 or lower: no buy buttons, one plain link to the official website (decided 10 Nov 2026)."""
+    return bool(p.get("bd")) and BLOG_RATINGS.get(p["slug"], 5) <= 2.0
+
+
+def disclosure(root):
+    return (f'      <p class="disclosure">MediPicker may earn money when you buy through links on this page. Sellers can&rsquo;t pay for a review '
+            f'or a better rating. <a href="{root}how-we-review#money">How we make money</a></p>\n')
 
 
 def faq_items(p):
@@ -384,7 +400,9 @@ def product_page(p, by_cat):
         facts_rows.append(("Billing", "One-time payment"))
     if f.get("free_shipping"):
         facts_rows.append(("Shipping", "Free shipping on some packages"))
-    facts_rows.append(("Where to buy", f'<a href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">Official {e(n)} website</a>'))
+    low = low_rated(p)
+    facts_rows.append(("Where to buy", f'<a href="#where-to-buy">Official website only</a>' if low else
+                       f'<a href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">Official {e(n)} website</a>'))
     facts_html = "\n".join(f"          <div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in facts_rows)
 
     if f.get("ingredients"):
@@ -409,12 +427,23 @@ def product_page(p, by_cat):
       </aside>
 '''
 
-    related = [q for q in by_cat[p["cat"]] if q is not p][:4]
-    related_html = ""
-    if related:
-        related_html = ('      <section class="related" aria-labelledby="rel-h">\n        <h2 id="rel-h">More ' + e(p["cat"]) + ' Reviews</h2>\n        <ul>\n'
-                        + "\n".join(f'          <li><a href="../{q["slug"]}/">{e(q["name"])} Review</a></li>' for q in related)
-                        + "\n        </ul>\n      </section>\n")
+    # In-depth reviews in the same category first, then the next blog reviews in the list (rotating, so every
+    # page gets links from its neighbours rather than every page linking to the same first four).
+    group = by_cat[p["cat"]]
+    deep = [q for q in group if q.get("full_review") and q is not p]
+    i = group.index(p)
+    others = [q for q in group[i + 1:] + group[:i] if not q.get("full_review")]
+    deep_html = ""
+    if deep:
+        deep_html = ('      <section class="related" aria-labelledby="deep-h">\n        <h2 id="deep-h">In-Depth ' + e(p["cat"]) + ' Reviews</h2>\n'
+                     '        <p>Full label analysis, research on each ingredient, side effects and verified prices:</p>\n        <ul>\n'
+                     + "\n".join(f'          <li><a href="{e(q["full_review"])}">{e(q["name"])} Review</a></li>' for q in deep[:6])
+                     + "\n        </ul>\n      </section>\n")
+    related_html = deep_html
+    if others[:4]:
+        related_html += ('      <section class="related" aria-labelledby="rel-h">\n        <h2 id="rel-h">More ' + e(p["cat"]) + ' Reviews</h2>\n        <ul>\n'
+                         + "\n".join(f'          <li><a href="../{q["slug"]}/">{e(q["name"])} Review</a></li>' for q in others[:4])
+                         + "\n        </ul>\n      </section>\n")
 
     safety_html = "\n".join(f"          <li>{e(s)}</li>" for s in list(c["safety"]) + R.get("safety_extra", []))
     fit_html = "\n".join(f"          <li>{e(s)}</li>" for s in c["fit"])
@@ -449,6 +478,21 @@ def product_page(p, by_cat):
         lede = (f'<strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named '
                 f'on its official website, the current price, the money-back guarantee and how to buy it safely.')
     safety_title = "Things to Know Before You Buy" if p["cat"] == "Home & Lifestyle" else f"Is {e(n)} Safe? Side Effects to Know"
+    if low:
+        where_html = (f'      <p>Given our rating, we don&rsquo;t recommend {e(n)} for most people{"; the options in our comparison above have better evidence or clearer labels" if R.get("compare") else ""}. '
+                      f'If you still want to try it, buy only from the official website: it is the only seller that honours the '
+                      f'{str(g) + "-day " if g else ""}money-back guarantee, and look-alike sites and marketplace listings may not. Keep your order confirmation for any refund.</p>\n'
+                      f'      <p><a class="official-link" href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">Official {e(n)} website</a></p>\n')
+    else:
+        where_html = f'''      <p>The best place to buy {e(n)} is the official website. Ordering there means you get the genuine product, the current package prices and the maker's money-back guarantee. Be careful with look-alike websites and third-party marketplace listings, which may not offer the same protection.</p>
+      <div class="buy-box">
+        <div>
+          <strong>{e(n)}</strong>
+          <span>{("From " + sym(p) + str(lo) + " per bottle") if lo else "See current prices"}{(" &middot; " + str(g) + "-day guarantee") if g else ""}</span>
+        </div>
+        {buy(p, "Buy " + e(n) + " from the Official Website", "btn btn-buy")}
+      </div>
+'''
 
     body = f'''<main id="main" class="post">
   <div class="container post-wrap">
@@ -457,9 +501,8 @@ def product_page(p, by_cat):
       <span class="rc-tag">{e(p["cat"])}</span>
       <h1>{e(n)} Review 2026: Ingredients, Price &amp; Where to Buy</h1>
       <p class="byline">By <a href="{root}about"><strong>MediPicker Editorial Team</strong></a> &middot; <a href="{root}how-we-review">How we review</a> &middot; Updated <time datetime="{p['updated']}">{nice_date(p['updated'])}</time></p>
-      <p class="lede">{lede}</p>
-      <p>{buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg")}</p>
-
+{disclosure(root)}      <p class="lede">{lede}</p>
+{"" if low else "      <p>" + buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg") + "</p>" + chr(10)}
       <div class="facts-box">
         <h2 class="facts-title">{e(n)} Quick Facts</h2>
         <dl>
@@ -469,23 +512,14 @@ def product_page(p, by_cat):
 
 {review_callout}{R.get("what") or what_default}{R.get("claims") or how_default}
 {ing_section}
-{R.get("price") or price_default}      <p>{buy(p, "Check the Current Price")}</p>
-{R.get("proscons", "")}
+{R.get("price") or price_default}{"" if low else "      <p>" + buy(p, "Check the Current Price") + "</p>" + chr(10)}{R.get("proscons", "")}
       <h2>{safety_title}</h2>
       <ul class="check-list warn">
 {safety_html}
       </ul>
 
-{"" if R else fit_default}{R.get("compare", "")}{R.get("verdict", "")}      <h2>Where to Buy {e(n)}</h2>
-      <p>The best place to buy {e(n)} is the official website. Ordering there means you get the genuine product, the current package prices and the maker's money-back guarantee. Be careful with look-alike websites and third-party marketplace listings, which may not offer the same protection.</p>
-      <div class="buy-box">
-        <div>
-          <strong>{e(n)}</strong>
-          <span>{("From " + sym(p) + str(lo) + " per bottle") if lo else "See current prices"}{(" &middot; " + str(g) + "-day guarantee") if g else ""}</span>
-        </div>
-        {buy(p, "Buy " + e(n) + " from the Official Website", "btn btn-buy")}
-      </div>
-
+{"" if R else fit_default}{R.get("compare", "")}{R.get("verdict", "")}      <h2 id="where-to-buy">Where to Buy {e(n)}</h2>
+{where_html}
       <h2>{e(n)} FAQ</h2>
       <div class="faq">
 {faq_html}
@@ -514,10 +548,11 @@ def blog_index(items, cats):
     root = "../"
     url = f"{DOMAIN}/blog/"
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Health Product Reviews", "url": url,
-          "hasPart": [{"@type": "Article", "headline": f"{p['name']} Review", "url": f"{DOMAIN}/blog/{p['slug']}/"} for p in items]}
+          "hasPart": [{"@type": "Article", "headline": f"{p['name']} Review", "url": DOMAIN + page_url(p, "/")} for p in items]}
     groups = []
     for c in cats:
-        lis = "\n".join(f'        <li><a href="{p["slug"]}/">{e(p["name"])} Review</a></li>' for p in items if p["cat"] == c)
+        lis = "\n".join(f'        <li><a href="{e(p["full_review"]) if p.get("full_review") else p["slug"] + "/"}">{e(p["name"])} Review</a>'
+                        f'{" <span class=\"deep-tag\">In-depth</span>" if p.get("full_review") else ""}</li>' for p in items if p["cat"] == c)
         groups.append(f'    <section class="blog-group" id="{slug(c)}">\n      <h2>{e(c)}</h2>\n      <ul>\n{lis}\n      </ul>\n    </section>')
     body = f'''<main id="main" class="post">
   <div class="container">
@@ -547,7 +582,7 @@ def home(items, cats):
         <div class="p-top">
           <span class="p-badge" aria-hidden="true">{e(initials)}</span>
           <div>
-            <h3><a href="blog/{p["slug"]}/">{e(p["name"])}</a></h3>
+            <h3><a href="{e(page_url(p))}">{e(p["name"])}</a></h3>
             <span class="p-cat">{e(p["cat"])}</span>
           </div>
         </div>
@@ -573,7 +608,7 @@ def home(items, cats):
 
     item_list = {"@context": "https://schema.org", "@type": "ItemList", "name": "MediPicker Health Product Directory",
                  "numberOfItems": len(items),
-                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"], "url": f"{DOMAIN}/blog/{p['slug']}/"} for i, p in enumerate(items)]}
+                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"], "url": DOMAIN + page_url(p, "/")} for i, p in enumerate(items)]}
     site_ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "MediPicker", "url": DOMAIN + "/", "logo": DOMAIN + "/favicon.svg", "email": "info@medipicker.com",
          "contactPoint": {"@type": "ContactPoint", "contactType": "editorial", "email": "info@medipicker.com", "url": DOMAIN + "/contact"}},
@@ -598,12 +633,25 @@ def main():
 
     write(os.path.join(SITE, "index.html"), home(items, cats))
     write(os.path.join(SITE, "blog", "index.html"), blog_index(items, cats))
+    redirects = ["# Short blog pages of products with an in-depth review now redirect to it (10 Nov 2026)."]
     for p in items:
+        if p.get("full_review"):
+            old = os.path.join(SITE, "blog", p["slug"])
+            if os.path.isdir(old):
+                shutil.rmtree(old)
+            redirects += [f"/blog/{p['slug']}/ {p['full_review']} 301", f"/blog/{p['slug']} {p['full_review']} 301"]
+            continue
         write(os.path.join(SITE, "blog", p["slug"], "index.html"), product_page(p, by_cat))
+    write(os.path.join(SITE, "_redirects"), "\n".join(redirects) + "\n")
 
-    lastmod = {f"/blog/{p['slug']}/": p["updated"] for p in items}
+    lastmod = {f"/blog/{p['slug']}/": p["updated"] for p in items if not p.get("full_review")}
     lastmod["/"] = lastmod["/blog/"] = max(lastmod.values())
-    urls = ["/", "/blog/"] + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX] + ["/about", "/how-we-review", "/contact", "/privacy-policy", "/terms", "/disclaimer"]
+    reviews = sorted(p["full_review"] for p in items if p.get("full_review"))
+    lastmod.update({u: MOVED for u in reviews})
+    for u in ("/", "/blog/", "/about", "/how-we-review", "/disclaimer"):
+        lastmod[u] = MOVED
+    urls = (["/", "/blog/"] + reviews + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX and not p.get("full_review")]
+            + ["/about", "/how-we-review", "/contact", "/privacy-policy", "/terms", "/disclaimer"])
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{lastmod.get(u, TODAY)}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")

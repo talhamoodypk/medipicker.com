@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://biodentex.medipicker.com/sitemap.xml

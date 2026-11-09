@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cellucare.medipicker.com/sitemap.xml

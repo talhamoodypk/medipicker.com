@@ -240,3 +240,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .rating-stars { position: relative; display: inline-block; font-size: 22px; line-height: 1; letter-spacing: 2px; }
 .rating-stars .rs-bg { color: #cfd5ca; }
 .rating-stars .rs-fg { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; color: var(--buy-dark); }
+
+/* Money disclosure, plain official-site link on low-rated reviews, in-depth tag (10 Nov 2026) */
+.disclosure { margin: 6px 0 14px; padding: 8px 12px; border-radius: 8px; background: #f6f7f4; color: var(--muted); font-size: 14px; }
+.disclosure a { color: inherit; text-decoration: underline; }
+.official-link { font-weight: 600; text-decoration: underline; }
+.deep-tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 600; vertical-align: middle; }

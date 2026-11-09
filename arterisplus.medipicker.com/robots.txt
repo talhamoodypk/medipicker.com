@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://arterisplus.medipicker.com/sitemap.xml

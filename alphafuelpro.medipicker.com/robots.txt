@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://alphafuelpro.medipicker.com/sitemap.xml
