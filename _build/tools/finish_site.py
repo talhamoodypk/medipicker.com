@@ -19,6 +19,7 @@ for f in ("disclaimer.html", "privacy-policy.html", "terms.html"):
     s = io.open(p, encoding="utf-8").read()
     s = re.sub(r'class="logo">.*?</span>', logo, s, count=1)
     s = re.sub(r'family=Jost:wght@[0-9;]+', "family=" + font, s)
+    s = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex, follow">', s, count=1)
     io.open(p, "w", encoding="utf-8", newline="\n").write(s)
 
 for old in glob.glob(os.path.join(folder, "*.txt")):
@@ -37,7 +38,7 @@ io.open(os.path.join(folder, "_headers"), "w", newline="\n").write(
     "https://:project.pages.dev/*\n  X-Robots-Tag: noindex\n")
 io.open(os.path.join(folder, "robots.txt"), "w", newline="\n").write(
     f"User-agent: *\nAllow: /\n\nSitemap: https://{host}/sitemap.xml\n")
-urls = [("", "weekly", "1.0"), ("privacy-policy", None, "0.3"), ("disclaimer", None, "0.3"), ("terms", None, "0.3")]
+urls = [("", "weekly", "1.0")]  # legal pages are noindex: near-identical on every sub-site
 io.open(os.path.join(folder, "sitemap.xml"), "w", newline="\n").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f"  <url><loc>https://{host}/{u}</loc><lastmod>{date}</lastmod>"
