@@ -204,6 +204,7 @@ FULL_REVIEWS = {
   "gluco extend": "/reviews/glucoextend/",
   "vigorsana": "/reviews/vigorsana/",
   "arteris plus": "/reviews/arterisplus/",
+  "titanflow": "/reviews/titanflow/",
 }
 
 # Links that were broken when checked on 15 Oct 2026 — kept off the site until fixed

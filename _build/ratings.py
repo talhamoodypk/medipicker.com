@@ -38,7 +38,7 @@ SUB = {
   "glycomute": 2.5, "glucoextend": 2.5, "visiflora": 2.5, "vigorsana": 2.5, "seroburn": 2.5, "nervealive": 2.5,
   "cellucare": 2.5, "biodentex": 2.0, "fastleanpro": 2.0, "flashburn": 2.0, "gelatinesculpt": 2.0, "prostapeak": 2.0,
   "neuroserge": 2.0, "sugarmute": 2.0, "whispeara": 1.5, "sonovive": 1.5, "slimboosttea": 1.5, "arterisplus": 1.5,
-  "titantransform": 1.0,
+  "titantransform": 1.0, "titanflow": 3.5,
 }
 
 # Written verdicts for the three oldest sub-sites that had pros/cons but no verdict paragraph.

@@ -6,7 +6,7 @@ The spec module defines P (dict) and S (list of sections built with the helpers 
 import html, io, json, os, re, runpy, shutil, sys
 
 ROOT = r"D:\Medicne Bing"
-TEMPLATE = os.path.join(ROOT, "sugarmute.medipicker.com")
+TEMPLATE = os.path.join(ROOT, "medipicker.com", "reviews", "sugarmute")  # reviews live in folders since 10 Nov 2026
 import datetime as _dt
 DATE = _dt.date.today().isoformat()
 DATE_TXT = _dt.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -152,11 +152,10 @@ def build(spec_path):
     P.clear()  # specs fill the shared P with P.update(...) before building sections
     g = runpy.run_path(spec_path, init_globals={k: v for k, v in globals().items() if not k.startswith("__")})
     S = g["S"]
-    host = f'{P["sub"]}.medipicker.com'
+    host = f'medipicker.com/reviews/{P["sub"]}'
     url = f"https://{host}/"
-    out = os.path.join(ROOT, host)
+    out = os.path.join(ROOT, "medipicker.com", "reviews", P["sub"])
     os.makedirs(os.path.join(out, "images"), exist_ok=True)
-    os.makedirs(os.path.join(out, "functions"), exist_ok=True)
     name, slug = P["name"], P["slug"]
     c = P["colors"]
     font_css = P["font_css"]
@@ -175,8 +174,6 @@ def build(spec_path):
     io.open(os.path.join(out, "styles.css"), "w", encoding="utf-8", newline="\n").write(css)
     shutil.copy(os.path.join(TEMPLATE, "script.js"), os.path.join(out, "script.js"))
     io.open(os.path.join(out, "favicon.svg"), "w", encoding="utf-8", newline="\n").write(P["favicon"])
-    mw = io.open(os.path.join(TEMPLATE, "functions", "_middleware.js"), encoding="utf-8").read().replace("sugarmute.medipicker.com", host)
-    io.open(os.path.join(out, "functions", "_middleware.js"), "w", encoding="utf-8", newline="\n").write(mw)
 
     # FAQ (single source for schema + page)
     faq = P["faq"]
@@ -203,7 +200,7 @@ def build(spec_path):
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top">
   <div class="container nav">
-    <a href="/" class="logo">{name} <span>Reviews</span></a>
+    <a href="./" class="logo">{name} <span>Reviews</span></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
     <nav id="nav-menu" class="nav-menu" aria-label="Main">
       {nav}
@@ -211,13 +208,14 @@ def build(spec_path):
     </nav>
   </div>
 </header>
+<p class="mp-disclosure">MediPicker may earn money when you buy through links on this page. Sellers can&rsquo;t pay for a review or a better rating. <a href="/how-we-review#money">How we make money</a></p>
 
 <main id="main">
 <section class="hero">
   <div class="container">
     <h1>{P["h1"]}</h1>
     <p class="tagline">{P["tagline"]}</p>
-    <p class="byline">By <strong>{name} Review Team</strong> · Updated <time datetime="{DATE}">{DATE_TXT}</time> · READTIME min read</p>
+    <p class="byline">By <a href="/about"><strong>MediPicker Editorial Team</strong></a> · <a href="/how-we-review">How we review</a> · Updated <time datetime="{DATE}">{DATE_TXT}</time> · READTIME min read</p>
     <div class="hero-grid">
       <div class="hero-media reveal"><img class="hero-img" src="images/{slug}-bottle.png" width="800" height="900" fetchpriority="high" alt="{E(P["hero_alt"])}"></div>
       <div class="hero-copy reveal">
@@ -262,8 +260,9 @@ def build(spec_path):
 <footer class="site-footer">
   <div class="container">
     <nav class="footer-links" aria-label="Footer">
-      <a href="/">Home</a>{"".join(f'<a href="#{a}">{b}</a>' for a, b in P["footer_links"])}
-      <a href="privacy-policy">Privacy Policy</a><a href="disclaimer">Disclaimer</a><a href="terms">Terms &amp; Conditions</a>
+      <a href="/">MediPicker Home</a><a href="/blog/">All Reviews</a>{"".join(f'<a href="#{a}">{b}</a>' for a, b in P["footer_links"])}
+      <a href="/privacy-policy">Privacy Policy</a><a href="/disclaimer">Disclaimer</a><a href="/terms">Terms &amp; Conditions</a>
+      <a href="/about">About MediPicker</a><a href="/how-we-review">How We Review</a><a href="/contact">Contact</a>
     </nav>
     <p class="disclaimer"><strong>About this site:</strong> This is an independent review website. It is not the manufacturer or seller of {name}. {name} is a trademark of its respective owner.</p>
     <p class="disclaimer">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. The information on this page is for general education and is not a substitute for advice from a qualified medical professional. Talk to your doctor before using any supplement, especially if you take medication or have a medical condition. Individual results may vary.</p>
@@ -288,7 +287,7 @@ def build(spec_path):
         {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "isPartOf": {"@id": url + "#website"},
          "primaryImageOfPage": f"{url}images/{slug}-bottle.png", "datePublished": DATE, "dateModified": DATE, "inLanguage": "en-US"},
         {"@type": "Article", "@id": url + "#article", "headline": title, "description": P["article_desc"], "image": url + "images/og-image.png",
-         "datePublished": DATE, "dateModified": DATE, "author": {"@type": "Organization", "name": f"{name} Review Team", "url": url},
+         "datePublished": DATE, "dateModified": DATE, "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": "https://medipicker.com/about"},
          "publisher": {"@id": url + "#org"}, "mainEntityOfPage": {"@id": url + "#webpage"}, "about": {"@id": url + "#product"}, "inLanguage": "en-US"},
         {"@type": "Product", "@id": url + "#product", "name": name, "alternateName": P["alt_names"], "image": f"{url}images/{slug}-bottle.png",
          "description": P["product_desc"], "category": "Dietary Supplement",
@@ -302,7 +301,6 @@ def build(spec_path):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="msvalidate.01" content="64C7E7CA4E419E5A46C42493F8ECE607" />
   <title>{P["title"]}</title>
   <meta name="description" content="{E(P["desc"])}">
   <link rel="canonical" href="{url}">
