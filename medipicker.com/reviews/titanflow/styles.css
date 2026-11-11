@@ -315,3 +315,5 @@ a { color: var(--green-dark); }
 .official-link { font-weight: 600; text-decoration: underline; }
 .rating-box, .rating-box strong { color: #1f2a22; }
 .rating-box a { color: #2f6b3a; }
+
+.pack-img { display: block; width: 100%; max-width: 260px; height: auto; margin: 6px auto 10px; }

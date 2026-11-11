@@ -126,8 +126,9 @@ def pricing(lead, cards, fine):
         out += (f'<article class="price-card{" featured" if feat else ""} reveal">'
                 + (f'<span class="ribbon">{c["ribbon"]}</span>' if c.get("ribbon") else "")
                 + f'<h3>{c["title"]}</h3><p class="supply">{c["supply"]}</p>'
-                f'<div class="bottles" aria-hidden="true">{"<i></i>" * c["n"]}</div>'
-                f'<p class="price"><span>{c["price"]}</span>/{c.get("unit", "bottle")}</p><p class="was">{c["was"]}</p>'
+                + (f'<img class="pack-img" src="images/{c["img"]}" width="640" height="430" loading="lazy" alt="{E(c["alt"])}">' if c.get("img")
+                   else f'<div class="bottles" aria-hidden="true">{"<i></i>" * c["n"]}</div>')
+                + f'<p class="price"><span>{c["price"]}</span>/{c.get("unit", "bottle")}</p><p class="was">{c["was"]}</p>'
                 f'{ul(*c["list"])}{BTN(c["btn"], ("btn-green" if feat else "btn-dark") + " btn-block")}</article>')
     return f'<div class="container"><p class="lead">{lead}</p><div class="pricing">{out}</div><p class="fineprint">{fine}</p></div>'
 
@@ -171,6 +172,7 @@ def build(spec_path):
     css = css.replace('font-family: "Jost", system-ui', f"font-family: {font_css}, system-ui")
     css = (css.replace("rgba(255, 225, 69, .40)", c["btn_shadow"]).replace("#453a00", c["btn_ink"])
            .replace("#ffe145", c["gold"]))
+    css += chr(10) + ".pack-img { display: block; width: 100%; max-width: 260px; height: auto; margin: 6px auto 10px; }" + chr(10)
     io.open(os.path.join(out, "styles.css"), "w", encoding="utf-8", newline="\n").write(css)
     shutil.copy(os.path.join(TEMPLATE, "script.js"), os.path.join(out, "script.js"))
     io.open(os.path.join(out, "favicon.svg"), "w", encoding="utf-8", newline="\n").write(P["favicon"])

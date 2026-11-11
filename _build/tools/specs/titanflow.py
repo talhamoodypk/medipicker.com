@@ -186,9 +186,9 @@ S = [
     sec("price", "TitanFlow Price &amp; Packages", pricing(
         "Each TitanFlow bottle is a 30-day supply. Every package is covered by the 180-day money-back guarantee.",
         [
-            dict(title="1 Bottle", supply="30-Day Supply", n=1, price="$69", was="+$9.95 US shipping", list=["Total: $69", "About $2.63 a day with shipping", "180-Day Guarantee"], btn="Buy TitanFlow"),
-            dict(title="6 Bottles", supply="180-Day Supply", n=6, price="$39", was="+ 2 free e-books", list=["Total: $234", "Free US shipping", "About $1.30 a day"], btn="Buy TitanFlow", featured=True, ribbon="Best Value"),
-            dict(title="3 Bottles", supply="90-Day Supply", n=3, price="$59", was="+ 2 free e-books", list=["Total: $177", "+$9.95 US shipping", "180-Day Guarantee"], btn="Buy TitanFlow"),
+            dict(img="titanflow-1-bottle.png", alt="TitanFlow 1 bottle package", title="1 Bottle", supply="30-Day Supply", n=1, price="$69", was="+$9.95 US shipping", list=["Total: $69", "About $2.63 a day with shipping", "180-Day Guarantee"], btn="Buy TitanFlow"),
+            dict(img="titanflow-6-bottles.png", alt="TitanFlow 6 bottles package", title="6 Bottles", supply="180-Day Supply", n=6, price="$39", was="+ 2 free e-books", list=["Total: $234", "Free US shipping", "About $1.30 a day"], btn="Buy TitanFlow", featured=True, ribbon="Best Value"),
+            dict(img="titanflow-3-bottles.png", alt="TitanFlow 3 bottles package", title="3 Bottles", supply="90-Day Supply", n=3, price="$59", was="+ 2 free e-books", list=["Total: $177", "+$9.95 US shipping", "180-Day Guarantee"], btn="Buy TitanFlow"),
         ],
         f"Prices checked on the official order page on {DATE_TXT} and may change. The 3- and 6-bottle packages include two e-books, \"Sleep Well for Urinary Health\" and \"Quick &amp; Easy Meals for Prostate Support\". One-time payment, no subscription."), toc="Price &amp; packages"),
 
