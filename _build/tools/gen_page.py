@@ -298,6 +298,17 @@ def build(spec_path):
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in faq]},
     ]
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
+    # Google Ads tag + "Click to official seller" conversion on clicks of buy links (pages that receive paid traffic only)
+    gads = ""
+    if P.get("gads"):
+        aw, conv = P["gads"]
+        gads = (f'\n  <script async src="https://www.googletagmanager.com/gtag/js?id={aw}"></script>\n'
+                "  <script>\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n"
+                f"    gtag('js', new Date());\n    gtag('config', '{aw}');\n"
+                "    document.addEventListener('click', function (e) {\n"
+                "      var a = e.target.closest && e.target.closest('a[rel~=\"sponsored\"]');\n"
+                f"      if (a) gtag('event', 'conversion', {{'send_to': '{conv}', 'transport_type': 'beacon'}});\n"
+                "    }, true);\n  </script>")
     head = f"""<!doctype html>
 <html lang="en-US">
 <head>
@@ -326,7 +337,7 @@ def build(spec_path):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family={P["font_url"]}&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">{gads}
   <script type="application/ld+json">
 {ld}
   </script>

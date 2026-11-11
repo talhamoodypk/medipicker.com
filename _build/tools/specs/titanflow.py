@@ -1,5 +1,6 @@
 P.update(
     sub="titanflow", name="TitanFlow", slug="titanflow", link="https://mwebtrackwise.com/9559/1903/3/?",
+    gads=("AW-18556458627", "AW-18556458627/yI6MCKjotLYdEIOttJBF"),
     kw_re=r"titan ?flow",
     font_url="Figtree:wght@400;500;600;700;800", font_css='"Figtree"',
     colors=dict(main="#1f3a5a", dark="#2b4a70", deep="#142740", soft="#e9eef5", cream="#f7f5f0", off="#eef1f5",
