@@ -173,7 +173,7 @@ S = [
             ["Saw palmetto alone", "Saw palmetto extract", "Yes", "No better than placebo in large trials"],
             ["Prescription medicine", "Tamsulosin, finasteride and others", "Yes", "Strongest evidence"],
         ],
-        lead="How TitanFlow compares with other prostate options we've reviewed."), toc="Comparison"),
+        lead='How TitanFlow compares with other prostate options we&rsquo;ve reviewed. See our full <a href="/best-prostate-supplements/">best prostate supplements comparison</a>.'), toc="Comparison"),
 
     sec("official", "TitanFlow Official Website: Where to Buy", info([
         ("Use the official order page.", "TitanFlow is sold through Zenith Labs' own page with checkout by ClickBank; our buttons link there."),

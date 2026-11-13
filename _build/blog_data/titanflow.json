@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-05",
+ "checked": "2026-11-11",
  "form": "capsules",
  "hook": "TitanFlow from Zenith Labs, presented by Dr. Ryan Shelton",
  "claim": "TitanFlow, from Zenith Labs, is a urinary-flow supplement for men built around pumpkin seed oil, beta-sitosterol, lycopene, broccoli sprout extract and pygeum. It is presented by Dr. Ryan Shelton, Zenith Labs' medical director.",
@@ -14,8 +14,13 @@
  "packages": [
   [
    1,
-   59,
-   "Shipping extra"
+   69,
+   "$9.95 US shipping"
+  ],
+  [
+   3,
+   177,
+   "$9.95 US shipping"
   ],
   [
    6,
@@ -23,7 +28,7 @@
    "Free US shipping"
   ]
  ],
- "price_note": "A 3-bottle package is also offered at a discount.",
+ "price_note": "Prices checked on the official order page on November 11, 2026.",
  "guarantee_days": 180,
  "refund_note": "Zenith Labs offers a 180-day 'empty bottle' guarantee, refunding even if you've used the whole supply.",
  "checks": [

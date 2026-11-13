@@ -559,6 +559,7 @@ def blog_index(items, cats):
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{root}">MediPicker</a> <span aria-hidden="true">&rsaquo;</span> <span>Reviews</span></nav>
     <h1 class="blog-h1">Health Product Reviews</h1>
     <p class="blog-sub">{len(items)} reviews covering ingredients, prices, guarantees and where to buy — grouped by category.</p>
+    <p class="blog-sub"><strong>Buying guide:</strong> <a href="{root}best-prostate-supplements/">Best Prostate Supplements 2026, compared</a></p>
     <div class="blog-groups">
 {chr(10).join(groups)}
     </div>
@@ -644,14 +645,24 @@ def main():
         write(os.path.join(SITE, "blog", p["slug"], "index.html"), product_page(p, by_cat))
     write(os.path.join(SITE, "_redirects"), "\n".join(redirects) + "\n")
 
+    # Buying guides (comparison pages built from our reviews and ratings)
+    from guides import best_prostate
+    g_body, g_ld, g_tag = best_prostate({p["slug"]: p for p in items}, rating_box, e)
+    g_head = HEAD.format(title="Best Prostate Supplements 2026: 8 Compared | MediPicker",
+                         desc=e("Best prostate supplements 2026: 8 prostate health formulas compared by full label, dose vs. research, saw palmetto, price and refund terms."),
+                         url="https://medipicker.com/best-prostate-supplements/", ogtype="article", root="../", ld=g_ld, robots=INDEX)
+    write(os.path.join(SITE, "best-prostate-supplements", "index.html"),
+          g_head.replace("</head>", g_tag + "</head>", 1) + g_body + FOOT.format(root="../", year=YEAR))
+
     lastmod = {f"/blog/{p['slug']}/": p["updated"] for p in items if not p.get("full_review")}
     lastmod["/"] = lastmod["/blog/"] = max(lastmod.values())
     reviews = sorted(p["full_review"] for p in items if p.get("full_review"))
     lastmod.update({u: MOVED for u in reviews})
     for u in ("/", "/blog/", "/about", "/how-we-review", "/disclaimer"):
         lastmod[u] = MOVED
-    urls = (["/", "/blog/"] + reviews + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX and not p.get("full_review")]
-            + ["/about", "/how-we-review", "/contact", "/privacy-policy", "/terms", "/disclaimer"])
+    lastmod["/best-prostate-supplements/"] = "2026-11-13"
+    urls = (["/", "/blog/", "/best-prostate-supplements/"] + reviews + [f"/blog/{p['slug']}/" for p in items if robots(p) == INDEX and not p.get("full_review")]
+            + ["/about","/how-we-review", "/contact", "/privacy-policy", "/terms", "/disclaimer"])
     write(os.path.join(SITE, "sitemap.xml"),
           '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url>\n    <loc>{DOMAIN}{u}</loc>\n    <lastmod>{lastmod.get(u, TODAY)}</lastmod>\n  </url>\n" for u in urls) + "</urlset>\n")
