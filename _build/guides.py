@@ -91,6 +91,13 @@ FAQ = [
 ]
 
 
+SHOW = 3.0  # scores below this are kept internal (not displayed), same rule as build_site.SHOW_RATING
+
+
+def shown(p):
+    return f'<strong>{p["score"]:.1f}</strong> / 5' if p["score"] >= SHOW else "Not a top pick"
+
+
 def best_prostate(by_slug, rating_box, e):
     """Return the page body + JSON-LD. rating_box and e come from build_site so styling matches."""
     prods = sorted(PRODUCTS, key=lambda p: -p["score"])
@@ -98,7 +105,7 @@ def best_prostate(by_slug, rating_box, e):
     top_link = by_slug["titanflow"]["link"]
 
     rows = "\n".join(
-        f'            <tr><td><a href="{p["review"]}">{e(p["name"])}</a></td><td><strong>{p["score"]:.1f}</strong> / 5</td>'
+        f'            <tr><td><a href="{p["review"]}">{e(p["name"])}</a></td><td>{shown(p)}</td>'
         f'<td>{e(p["key"])}</td><td>{"Yes" if p["saw"] else "No"}</td><td>{e(p["label_txt"])}</td><td>{e(p["price"])}</td><td>{e(p["guarantee"])}</td></tr>'
         for p in prods)
     ing_rows = "\n".join(f"            <tr><td>{e(a)}</td><td>{e(b)}</td><td><strong>{e(c)}</strong></td><td>{e(d)}</td></tr>" for a, b, c, d in INGREDIENTS)
@@ -110,8 +117,10 @@ def best_prostate(by_slug, rating_box, e):
         cta = (f'      <div class="buy-box"><div><strong>{e(p["name"])}</strong><span>{e(p["price"])} per bottle &middot; {e(p["guarantee"])} guarantee</span></div>'
                f'<a class="btn btn-buy" href="{e(top_link)}" rel="sponsored nofollow noopener" target="_blank">Check {e(p["name"])} Price</a></div>\n'
                if p is top else "")
-        cards.append(f'''      <h3 id="{p["slug"]}">{i}. {e(p["name"])}: {p["score"]:.1f}/5 ({label(p["score"])})</h3>
-{rating_box(p["score"], "../")}      <p><strong>Key ingredients:</strong> {e(p["key"])}. <strong>Label:</strong> {e(p["label_txt"])}. <strong>Price:</strong> {e(p["price"])} per bottle. <strong>Guarantee:</strong> {e(p["guarantee"])}.</p>
+        rated = p["score"] >= SHOW
+        head = f'{i}. {e(p["name"])}: {p["score"]:.1f}/5 ({label(p["score"])})' if rated else f'{i}. {e(p["name"])}'
+        cards.append(f'''      <h3 id="{p["slug"]}">{head}</h3>
+{rating_box(p["score"], "../") if rated else ""}      <p><strong>Key ingredients:</strong> {e(p["key"])}. <strong>Label:</strong> {e(p["label_txt"])}. <strong>Price:</strong> {e(p["price"])} per bottle. <strong>Guarantee:</strong> {e(p["guarantee"])}.</p>
       <div class="pros-cons"><div><h4>Good</h4><ul class="check-list">{good}</ul></div><div><h4>Not so good</h4><ul class="check-list warn">{bad}</ul></div></div>
       <p>{e(p["verdict"])} <a href="{p["review"]}">Read our full {e(p["name"])} review</a>.</p>
 {cta}''')

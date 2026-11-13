@@ -15,7 +15,7 @@ sys.path.insert(0, HERE)
 from build_home import CATEGORY, CAT_ORDER, CAT_ICON, DEFAULT_CAT, load, slug  # noqa: E402
 from content import CATEGORY_COPY, OVERRIDES, FULL_REVIEWS, DISABLED  # noqa: E402
 from ingredients import ING  # noqa: E402
-from ratings import BLOG as BLOG_RATINGS, label as rating_label  # noqa: E402
+from ratings import BLOG as BLOG_RATINGS, SUB as SUB_RATINGS, label as rating_label  # noqa: E402
 
 
 def rating_box(score, root):
@@ -41,6 +41,7 @@ DOMAIN = "https://medipicker.com"
 TODAY = "2026-10-15"
 TODAY_TXT = "October 15, 2026"
 MOVED = "2026-11-10"  # in-depth reviews moved from sub-domains to /reviews/<sub>/
+SHOW_RATING = 3.0  # user decision 2026-11-13: star ratings shown (and marked up) only from 3.0/5; lower scores stay internal
 YEAR = "2026"
 e = html.escape
 
@@ -343,7 +344,8 @@ def rich(p, by_cat):
                           f'      <p>How {n} compares on price and refund window with other {e(c["noun"])}s we have reviewed:</p>\n'
                           '      <div class="table-wrap"><table class="price-table">\n          <thead><tr><th>Product</th><th>Price per bottle</th><th>Guarantee</th></tr></thead>\n          <tbody>\n'
                           + row(p, True) + "\n" + "\n".join(row(q) for q in peers) + '\n          </tbody>\n        </table></div>\n')
-    out["verdict"] = (f'      <h2>Our Verdict on {n}</h2>\n{rating_box(BLOG_RATINGS[p["slug"]], "../../")}      <p>{e(d["verdict"])}</p>\n'
+    score = BLOG_RATINGS[p["slug"]]
+    out["verdict"] = (f'      <h2>Our Verdict on {n}</h2>\n{rating_box(score, "../../") if score >= SHOW_RATING else ""}      <p>{e(d["verdict"])}</p>\n'
                       if d.get("verdict") else "")
     return out
 
@@ -384,12 +386,14 @@ def product_page(p, by_cat):
     # Product markup only on rated, indexable reviews with verified prices; it carries our editorial Review so
     # Google's product snippet has the review it asks for. No aggregateRating: we don't have genuine reader ratings.
     if p["cat"] != "Home & Lifestyle" and lo and p["bd"]:
-        ld["@graph"].append({
+        prod = {
             "@type": "Product", "name": n, "category": "Dietary Supplement" if p["cat"] != "Pets" else "Pet Supplement",
             "description": p["bd"]["claim"].split(". ")[0].rstrip(".") + ".",
             "offers": {"@type": "AggregateOffer", "priceCurrency": f.get("currency", "USD"), "lowPrice": str(lo), "highPrice": str(hi),
-                       "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url},
-            "review": review_ld(p)})
+                       "offerCount": str(len(f["prices"])), "availability": "https://schema.org/InStock", "url": url}}
+        if BLOG_RATINGS[p["slug"]] >= SHOW_RATING:  # scores below 3.0 are not shown, so not marked up either
+            prod["review"] = review_ld(p)
+        ld["@graph"].append(prod)
 
     facts_rows = [("Category", e(p["cat"]))]
     if f.get("form"):
@@ -573,6 +577,54 @@ def blog_index(items, cats):
             + body + FOOT.format(root=root, year=YEAR))
 
 
+PICK_BLURB = {  # short descriptions for in-depth reviews without blog data
+    "gluco armor": "A 20-ingredient blood sugar formula with a full published label and a 90-day guarantee.",
+    "dentavive": "A chewable oral probiotic for gum and breath health from a dental-care brand.",
+    "trimology": "Prebiotic fibers plus named probiotic strains, including Akkermansia, with a 180-day guarantee.",
+    "alphafuel pro": "A men's energy and vitality formula with familiar, research-backed ingredients.",
+}
+
+
+def top_picks(items):
+    """Homepage section: every product we rate 3.0/5 or higher, best first."""
+    picks = []
+    for p in items:
+        fr = p.get("full_review")
+        sc = SUB_RATINGS.get(fr.strip("/").split("/")[-1]) if fr else BLOG_RATINGS.get(p["slug"])
+        if sc and sc >= SHOW_RATING:
+            picks.append((sc, p))
+    picks.sort(key=lambda t: (-t[0], t[1]["name"].lower()))
+    cards = []
+    for sc, p in picks:
+        blurb = p["bd"]["claim"].split(". ")[0].rstrip(".") + "." if p.get("bd") else PICK_BLURB.get(p["key"], "")
+        stars = (f'<span class="rating-stars" aria-hidden="true"><span class="rs-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
+                 f'<span class="rs-fg" style="width:{sc / 5 * 100:.0f}%">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span>')
+        cards.append(f'''        <article class="review-card">
+          <span class="rc-tag">{e(p["cat"])}</span>
+          <h3>{e(p["name"])}</h3>
+          <p class="pick-rating">{stars} <strong>{sc:.1f} / 5</strong> &middot; {rating_label(sc)}</p>
+          <p>{e(blurb)}</p>
+          <div class="rc-actions">
+            <a class="btn btn-primary" href="{e(page_url(p))}">Read Review</a>
+            <a class="btn btn-buy" href="{e(p["link"])}" rel="sponsored nofollow noopener" target="_blank">Buy Now</a>
+          </div>
+        </article>''')
+    return f'''  <!-- Top-rated picks (3.0/5 and up) -->
+  <section class="featured top-picks" id="top-picks" aria-labelledby="picks-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="picks-h">Top-Rated Picks</h2>
+        <p>The supplements that scored best in our label, research and safety checks. <a href="how-we-review#ratings">How we rate</a> &middot; <a href="best-prostate-supplements/">Best prostate supplements compared</a></p>
+      </div>
+      <div class="review-grid">
+{chr(10).join(cards)}
+      </div>
+    </div>
+  </section>
+
+'''
+
+
 def home(items, cats):
     counts = {c: sum(1 for p in items if p["cat"] == c) for c in cats}
     chips = "\n".join(f'        <button type="button" class="chip" data-filter="{slug(c)}" aria-pressed="false">{e(c)} <span>{counts[c]}</span></button>' for c in cats)
@@ -616,7 +668,7 @@ def home(items, cats):
         {"@type": "WebSite", "@id": DOMAIN + "/#website", "url": DOMAIN + "/", "name": "MediPicker",
          "publisher": {"@id": DOMAIN + "/#org"}, "inLanguage": "en-US"}]}
     tpl = io.open(os.path.join(HERE, "home_template.html"), encoding="utf-8").read()
-    return (tpl.replace("{{COUNT}}", str(len(items))).replace("{{CAT_COUNT}}", str(len(cats)))
+    return (tpl.replace("{{COUNT}}", str(len(items))).replace("{{CAT_COUNT}}", str(len(cats))).replace("{{TOP_PICKS}}", top_picks(items))
                .replace("{{CHIPS}}", chips).replace("{{SECTIONS}}", "\n\n".join(sections))
                .replace("{{ITEMLIST_LD}}", json.dumps(item_list, ensure_ascii=False, indent=2))
                .replace("{{SITE_LD}}", json.dumps(site_ld, ensure_ascii=False, indent=2)))

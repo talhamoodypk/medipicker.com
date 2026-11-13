@@ -32,6 +32,8 @@ def box(score):
 
 
 for sub, score in SUB.items():
+    if score < 3.0:  # ratings below 3.0 are not shown (2026-11-13); see hide_low_sub_ratings.py
+        continue
     folder = os.path.join(ROOT, "medipicker.com", "reviews", sub)  # moved from <sub>.medipicker.com on 10 Nov 2026
     path = os.path.join(folder, "index.html")
     s = io.open(path, encoding="utf-8").read()
