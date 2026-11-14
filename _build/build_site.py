@@ -41,6 +41,8 @@ DOMAIN = "https://medipicker.com"
 TODAY = "2026-10-15"
 TODAY_TXT = "October 15, 2026"
 MOVED = "2026-11-10"  # in-depth reviews moved from sub-domains to /reviews/<sub>/
+ALIASES = {"goldalign": "Gold Align", "emperor-s-vigor-tonic": "Emperor Vigor Tonic", "honeyburn": "Honey Burn",
+           "glucoguard-pro": "GlucoGuard", "claritox-pro": "Claritox", "ultrak9-pro": "UltraK9", "dentitox-pro": "Dentitox"}
 SHOW_RATING = 3.0  # user decision 2026-11-13: star ratings shown (and marked up) only from 3.0/5; lower scores stay internal
 YEAR = "2026"
 e = html.escape
@@ -96,8 +98,13 @@ def seo(p):
     n, c = p["name"], CATEGORY_COPY[p["cat"]]
     f = p["facts"]
     # Bing flags titles over ~65 characters, so fall back to shorter patterns for long product names.
-    title = next(t for t in (f"{n} Review 2026: Ingredients, Price & Where to Buy", f"{n} Review 2026: Ingredients, Price & Safety",
-                             f"{n} Review 2026: Ingredients & Price", f"{n} Review 2026") if len(t) <= 60 or t.endswith("2026"))
+    if p.get("bd"):
+        # 2026-11-14: GSC + Semrush show "<name> reviews" (plural), "side effects", "does it work", "complaints" are what people search
+        title = next(t for t in (f"{n} Reviews 2026: Ingredients, Side Effects & Does It Work?", f"{n} Reviews 2026: Ingredients & Side Effects",
+                                 f"{n} Reviews 2026: Does It Work?", f"{n} Reviews 2026") if len(t) <= 60 or t.endswith("2026"))
+    else:
+        title = next(t for t in (f"{n} Review 2026: Ingredients, Price & Where to Buy", f"{n} Review 2026: Ingredients, Price & Safety",
+                                 f"{n} Review 2026: Ingredients & Price", f"{n} Review 2026") if len(t) <= 60 or t.endswith("2026"))
     if len(title) + len(" | MediPicker") <= 65:
         title += " | MediPicker"
     parts = [f"{n} review: what this {c['noun']} contains"]
@@ -106,6 +113,16 @@ def seo(p):
     if f.get("guarantee_days"):
         parts.append(f"{f['guarantee_days']}-day guarantee")
     desc = ", ".join(parts) + f" and where to buy {n} from the official website."
+    if p.get("bd"):
+        g = f.get("guarantee_days")
+        for d2 in (f"{n} reviews 2026: we checked the label, ingredients, side effects and complaints"
+                   + (f", price from {sym(p)}{min(f['prices'])}" if f.get("prices") else "") + (f" and the {g}-day refund" if g else "")
+                   + f". Does {n} work? Our verdict.",
+                   f"{n} reviews 2026: ingredients, side effects, complaints and price. Does {n} work? Our honest verdict.",
+                   f"{n} reviews: ingredients, side effects and does it work?"):
+            if len(d2) <= 160:
+                desc = d2
+                break
     if len(desc) > 160:
         desc = f"{n} review: ingredients, price, guarantee and where to buy {n} from the official website."
     if len(desc) > 160:
@@ -228,6 +245,22 @@ def faq_items(p):
                f"The safest place to buy {n} is the official website, where you get genuine product and the maker's guarantee. Third-party listings may not include the guarantee."))
     if p["cat"] != "Home & Lifestyle":
         qa.append((f"Is {n} safe?", c["safety"][0] + " " + c["safety"][1]))
+    d = p.get("bd")
+    if d:
+        # Search-intent questions (GSC + Semrush, 2026-11-14), answered only from this review's own findings
+        g = f.get("guarantee_days")
+        sentences = d["verdict"].split(". ")
+        qa.append((f"Does {n} work?", ". ".join(sentences[:2]).rstrip(".") + ". " + "See our verdict above for details."))
+        if d.get("cons"):
+            qa.append((f"{n} reviews and complaints: is it a scam?",
+                       f"{n} is a real product sold through its official order page, but our review found these problems: "
+                       + "; ".join(x[0].lower() + x[1:] for x in d["cons"]) + "."
+                       + (f" If you buy, keep your order confirmation so you can use the {g}-day refund." if g else "")))
+        qa.append((f"Is {n} sold on Amazon or Walmart?",
+                   f"The seller sells {n} through its official website. Listings on Amazon, Walmart or other marketplaces may come from "
+                   f"resellers and may not include the{' ' + str(g) + '-day' if g else ''} money-back guarantee, so we recommend the official site only."))
+        qa.append((f"What are the side effects of {n}?",
+                   c["safety"][0] + " " + c["safety"][1] + " Read the safety section above for warnings specific to this formula."))
     return qa
 
 
@@ -355,6 +388,7 @@ def product_page(p, by_cat):
     root = "../../"
     url = f"{DOMAIN}/blog/{p['slug']}/"
     title, desc, kws = seo(p)
+    heading = title.replace(" | MediPicker", "")
     faqs = faq_items(p)
     R = rich(p, by_cat) if p["bd"] else {}
     if p["bd"]:
@@ -373,7 +407,7 @@ def product_page(p, by_cat):
     g = f.get("guarantee_days")
 
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Article", "headline": f"{n} Review 2026: Ingredients, Price & Where to Buy", "description": desc,
+        {"@type": "Article", "headline": heading, "description": desc,
          "datePublished": TODAY, "dateModified": p["updated"], "mainEntityOfPage": url,
          "author": {"@type": "Organization", "name": "MediPicker Editorial Team", "url": DOMAIN + "/about"},
          "publisher": {"@type": "Organization", "name": "MediPicker", "url": DOMAIN + "/"}, "inLanguage": "en-US"},
@@ -478,6 +512,8 @@ def product_page(p, by_cat):
     if R:
         lede = (f'{e(p["bd"]["claim"].split(". ")[0].rstrip("."))}. We checked the official {e(n)} website for the ingredients, dosage, '
                 f'prices and refund terms, compared the claims with published research and list the safety points to know before you buy.')
+        if p["slug"] in ALIASES:  # alternative spellings people search (Semrush, 2026-11-14)
+            lede += f' (You may also see it searched as <em>{e(ALIASES[p["slug"]])}</em>.)'
     else:
         lede = (f'<strong>{e(n)}</strong> is a {e(c["noun"])} designed to {e(c["purpose"])}.* In this review we cover what it is, the ingredients named '
                 f'on its official website, the current price, the money-back guarantee and how to buy it safely.')
@@ -503,7 +539,7 @@ def product_page(p, by_cat):
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{root}">MediPicker</a> <span aria-hidden="true">&rsaquo;</span> <a href="{root}blog/">Reviews</a> <span aria-hidden="true">&rsaquo;</span> <span>{e(n)}</span></nav>
     <article>
       <span class="rc-tag">{e(p["cat"])}</span>
-      <h1>{e(n)} Review 2026: Ingredients, Price &amp; Where to Buy</h1>
+      <h1>{e(heading)}</h1>
       <p class="byline">By <a href="{root}about"><strong>MediPicker Editorial Team</strong></a> &middot; <a href="{root}how-we-review">How we review</a> &middot; Updated <time datetime="{p['updated']}">{nice_date(p['updated'])}</time></p>
 {disclosure(root)}      <p class="lede">{lede}</p>
 {"" if low else "      <p>" + buy(p, "Buy " + e(n) + " Now", "btn btn-buy btn-lg") + "</p>" + chr(10)}
